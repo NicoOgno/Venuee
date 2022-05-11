@@ -3,30 +3,30 @@
   src: url("../../assets/fonts/bentonsansregular/BentonSansRegular.otf");
 }
 
-.login-container {
+.loginContainer {
   background: black;
   min-width: 100vh;
   min-height: 100vh;
   background: linear-gradient(360deg, #000000 65%, rgba(0, 0, 0, 0) 150%);
 }
 
-.login-sub-container {
+.loginSubContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.background-img {
+.backgroundImg {
   background-image: url("../../assets/images/background.jpg");
 }
 
-.logo-img {
+.logoImg {
   max-width: 250px;
   max-height: 250px;
   margin-top: 15px;
 }
 
-.app-name {
+.AppName {
   margin-top: 35px;
   color: white;
   text-transform: uppercase;
@@ -37,7 +37,7 @@
   font-weight: 400;
 }
 
-.login-form {
+.loginForm {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,7 +48,7 @@
   max-width: 450px;
 }
 
-.login-input-field {
+.loginInputField {
   background: rgba(43, 43, 43, 1);
   color: white;
   min-width: 100%;
@@ -61,7 +61,7 @@
   letter-spacing: 2.5px;
 }
 
-.login-button {
+.loginButton {
   background: linear-gradient(180deg, #78b242 0%, #458740 100%);
   color: white;
   text-transform: uppercase;
@@ -74,7 +74,7 @@
   margin-top: 25px;
 }
 
-.signup-link {
+.signupLink {
   color: white;
   font-family: bentonSansReg;
   text-transform: uppercase;
@@ -82,28 +82,28 @@
   margin-top: 25px;
 }
 
-.sign-for-free {
+.signForFree {
   background: linear-gradient(98.81deg, #9bb899 -0.82%, #77b573 101.53%);
   background-clip: text;
   color: transparent;
   background-clip: text;
 }
 
-.toggle-container {
+.toggleContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.user-span {
+.userSpan {
   color: white;
   text-transform: uppercase;
   margin-right: 15px;
   font-family: bentonSansReg;
 }
 
-.vendor-span {
+.vendorSpan {
   color: white;
   text-transform: uppercase;
   margin-left: 15px;

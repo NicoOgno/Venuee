@@ -1,12 +1,12 @@
 import React from "react";
-import "./style.css";
+import styles from "./toggle.module.css";
 
 export default function Toggle() {
   return (
     <div className="my-toggle">
-      <label class="switch">
+      <label className={styles.switch}>
         <input type="checkbox" />
-        <span class="slider round"></span>
+        <span className={`${styles.slider} ${styles.round}`}></span>
       </label>
     </div>
   );
