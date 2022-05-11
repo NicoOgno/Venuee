@@ -1,33 +1,36 @@
 import React from "react";
-import "./style.css";
+import styles from "./logInPage.module.css";
 import Toggle from "../Toggle/Toggle";
 import logo from "../../assets/images/clipart1129793.png";
 
 export default function LogInPage() {
   return (
     <>
-      <div className="background-img">
-        <div className="login-container">
-          <div className="login-sub-container">
-            <img src={logo} className="logo-img" />
-            <h1 className="app-name">venuee</h1>
-            <form className="login-form">
-              <input className="login-input-field" placeholder="EMAIL"></input>
+      <div className={styles.backgroundImg}>
+        <div className={styles.loginContainer}>
+          <div className={styles.loginSubContainer}>
+            <img src={logo} className={styles.logoImg} />
+            <h1 className={styles.appName}>venuee</h1>
+            <form className={styles.loginForm}>
               <input
-                className="login-input-field"
+                className={styles.loginInputField}
+                placeholder="EMAIL"
+              ></input>
+              <input
+                className={styles.loginInputField}
                 type="password"
                 placeholder="PASSWORD"
               ></input>
-              <div className="toggle-container">
-                <span className="user-span">user</span>
-                <Toggle className="testit" />
-                <span className="vendor-span">vendor</span>
+              <div className={styles.toggleContainer}>
+                <span className={styles.userSpan}>user</span>
+                <Toggle />
+                <span className={styles.vendorSpan}>vendor</span>
               </div>
-              <button className="login-button">login</button>
+              <button className={styles.loginButton}>login</button>
             </form>
-            <a className="signup-link">
+            <a className={styles.signupLink}>
               don't have an account?{" "}
-              <span className="sign-for-free">sign up for free</span>
+              <span className={styles.signForFree}>sign up for free</span>
             </a>
           </div>
         </div>
