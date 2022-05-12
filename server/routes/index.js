@@ -26,13 +26,13 @@ router.get('/users', controllers.getAllUsers);
 
 // VENDOR
 // Create vendor
-router.post('/vendor', () => {});
+router.post('/vendor', controllers.postVendor);
 
 // Get vendor
-router.get('/vendor/:id', () => {})
+router.get('/vendor/:id', controllers.getVendor);
 
 // vendor reservations
-router.get('/vendor/reservation/:id', () => {});
+router.get('/vendor/reservation/:id', controllers.getVendorReservations);
 
 
 exports.router = router;
