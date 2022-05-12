@@ -65,6 +65,7 @@
   min-height: 45px;
   letter-spacing: 2.5px;
   padding-left: 25px;
+  text-transform: uppercase;
 }
 
 .registerButton {

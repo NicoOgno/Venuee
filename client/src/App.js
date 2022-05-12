@@ -7,9 +7,9 @@ import UserSideBar from "./components/UserSideBar/UserSideBar";
 function App() {
   return (
     <div>
-      <UserRegisterPage />
+      {/* <UserRegisterPage /> */}
       {/* <LogInPage /> */}
-      {/* <VendorRegisterPage /> */}
+      <VendorRegisterPage />
       {/* <UserSideBar /> */}
     </div>
   );
