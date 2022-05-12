@@ -3,6 +3,7 @@ import LogInPage from "./components/LogInPage/LogInPage";
 import Dashboard from "./components/Dashboard/Dashboard";
 import UserReservationCard from "./components/UserReservationCard/UserReservationCard";
 import VendorReservationCard from "./components/VendorReservationCard/VendorReservationCard";
+import Calendar from "./components/Calendar/Calendar";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       {/* <Dashboard /> */}
       {/* <UserReservationCard /> */}
       <VendorReservationCard />
+      {/* <Calendar /> */}
     </div>
   );
 }
