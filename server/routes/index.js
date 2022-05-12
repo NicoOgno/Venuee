@@ -3,42 +3,29 @@ const router = Router();
 
 // RESERVATIONS
 // Create reservation
-router.post('/reservations', (req, res) => {
-  res.send('Reservation was created!');
-});
+router.post('/reservations', () => {});
 
 // Delete reservation
-router.delete('/reservations/delete', (req, res) => {
-  res.send('Reservation Deleted')
-});
+router.delete('/reservations/:id', () => {});
+
 
 // USER
 // Create user
-router.post('/user', (req, res) => {
-  res.send('User was created!')
-})
+router.post('/user', () => {})
 
 // Get user reservations
-router.get('/user/1', (req, res) => {
-  res.json('Here are the user reservations');
-});
+router.get('/user/:id', () => {});
+
 
 // VENDOR
 // Create vendor
-router.post('/vendor', (req, res) => {
-  console.log('Vendor was created!')
-  res.send();
-});
+router.post('/vendor', () => {});
 
 // Get vendor
-router.get('/vendor/1', (req, res) => {
-  res.send('Get vendor info')
-})
+router.get('/vendor/:id', () => {})
 
 // vendor reservations
-router.get('/vendor/reservation/1', (req, res) => {
-  res.send('Here are this vendor reservations');
-});
+router.get('/vendor/reservation/:id', () => {});
 
 
 exports.router = router;

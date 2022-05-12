@@ -9,7 +9,6 @@ const PORT = process.env.PORT;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// app.get('/', (req, res) => res.send('Hello World!'))
 app.use(router);
 
 app.listen(PORT, () => { console.log(`Server started at port ${PORT}`);
