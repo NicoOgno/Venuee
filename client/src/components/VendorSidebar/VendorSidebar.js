@@ -1,19 +1,19 @@
 import React from "react";
 import styles from "./style.module.css";
 import logo from "../../assets/images/clipart1129793.png";
-import { UserSidebarData } from "./UserSidebarData";
-import { UtilitiesData } from "./UtilitiesData";
+import { VendorSidebarData } from "./VendorSidebarData";
+import { UtilitiesData } from "../UserSidebar/UtilitiesData";
 
-function UserSidebar() {
+function VendorSidebar() {
   return (
     <div className={styles.sidebarContainer}>
       <div className={styles.profileHeader}>
         <img src={logo} className={styles.profileImg} />
-        <div className={styles.profileName}>Booger</div>
+        <div className={styles.profileName}>Vendor</div>
       </div>
       <div>
         <ul className={styles.sidebarList}>
-          {UserSidebarData.map((value, key) => {
+          {VendorSidebarData.map((value, key) => {
             return (
               <li
                 key={key}
@@ -53,4 +53,4 @@ function UserSidebar() {
   );
 }
 
-export default UserSidebar;
+export default VendorSidebar;
