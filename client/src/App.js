@@ -1,14 +1,16 @@
 import "./App.css";
 import LogInPage from "./components/LogInPage/LogInPage";
 import Dashboard from "./components/Dashboard/Dashboard";
-import Reservation from "./components/VendorReservationCard/Reservation";
+import UserReservationCard from "./components/UserReservationCard/UserReservationCard";
+import VendorReservationCard from "./components/VendorReservationCard/VendorReservationCard";
 
 function App() {
   return (
     <div>
       {/* <LogInPage /> */}
       {/* <Dashboard /> */}
-      <Reservation />
+      {/* <UserReservationCard /> */}
+      <VendorReservationCard />
     </div>
   );
 }

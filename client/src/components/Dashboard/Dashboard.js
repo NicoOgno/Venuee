@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import Reservation from "../VendorReservationCard/Reservation";
+import UserReservationCard from "../UserReservationCard/UserReservationCard";
 
 export default function Dashboard() {
   return (
@@ -8,7 +8,7 @@ export default function Dashboard() {
       <div className="dashboard-container">
         <div className="sidebar-container"></div>
         <div className="reservations-container">
-          <Reservation />
+          <UserReservationCard />
         </div>
       </div>
     </div>
