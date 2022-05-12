@@ -8,7 +8,7 @@ function UserSidebar() {
   return (
     <div className={styles.sidebarContainer}>
       <div className={styles.profileHeader}>
-        <img src={logo} className={styles.profileImg} />
+        <img src={logo} alt={"no img avail"} className={styles.profileImg} />
         <div className={styles.profileName}>Booger</div>
       </div>
       <div>
