@@ -4,6 +4,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import UserReservationCard from "./components/UserReservationCard/UserReservationCard";
 import VendorReservationCard from "./components/VendorReservationCard/VendorReservationCard";
 import Calendar from "./components/Calendar/Calendar";
+import Chatbox from "./components/Chatbox/Chatbox";
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
       {/* <LogInPage /> */}
       {/* <Dashboard /> */}
       {/* <UserReservationCard /> */}
-      <VendorReservationCard />
+      {/* <VendorReservationCard /> */}
       {/* <Calendar /> */}
+      <Chatbox />
     </div>
   );
 }
