@@ -1,3 +1,118 @@
-.background-img {
-  background: pink;
+.container {
+  display: flex;
+  flex-direction: row;
+  background: black;
+  min-width: 100vh;
+  min-height: 100vh;
+}
+
+.leftContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  max-width: 50%;
+}
+
+.registerName {
+  color: white;
+  text-transform: uppercase;
+  font-family: bentonSansReg;
+  font-size: 60px;
+  letter-spacing: 20px;
+  margin-top: 45px;
+  margin-bottom: 15px;
+}
+
+.toggleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userSpan {
+  color: white;
+  text-transform: uppercase;
+  font-family: bentonSansReg;
+  margin-right: 15px;
+}
+
+.vendorSpan {
+  color: white;
+  text-transform: uppercase;
+  font-family: bentonSansReg;
+  margin-left: 15px;
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 70%;
+  margin-top: 85px;
+}
+
+.registerInput {
+  background: rgba(43, 43, 43, 1);
+  color: white;
+  font-family: bentonSansReg;
+  letter-spacing: 2.5px;
+  margin-top: 30px;
+  border-radius: 10px;
+  min-width: 100%;
+  min-height: 45px;
+  letter-spacing: 2.5px;
+  padding-left: 25px;
+}
+
+.registerButton {
+  background: linear-gradient(180deg, #78b242 0%, #458740 100%);
+  color: white;
+  text-transform: uppercase;
+  font-family: bentonSansReg;
+  border-radius: 10px;
+  min-width: 20%;
+  min-height: 40px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-top: 35px;
+}
+
+.loginLink {
+  color: white;
+  font-family: bentonSansReg;
+  text-transform: uppercase;
+  font-size: 15px;
+  margin-top: 35px;
+}
+
+.login {
+  background: linear-gradient(98.81deg, #9bb899 -0.82%, #77b573 101.53%);
+  background-clip: text;
+  color: transparent;
+  background-clip: text;
+}
+
+.rightContainer {
+  flex: 1;
+  max-width: 50%;
+  background-image: url("../../assets/images/background.jpg");
+}
+
+.subRightContainer {
+  background: black;
+  min-width: 100vh;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, transparent 40%, black 60%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jetsons {
+  height: 550px;
+  width: 550px;
+  margin-left: 100px;
 }
