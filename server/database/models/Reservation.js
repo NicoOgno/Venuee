@@ -3,7 +3,7 @@ const sequelize = require('../db');
 
 class Reservation extends Model {}
 Reservation.init({
-  name: {
+  reserveDate: {
     type: DataTypes.DATE,
     allowNull: false,
     validate: {

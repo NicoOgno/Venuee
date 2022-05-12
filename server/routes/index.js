@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const router = Router();
+const controllers = require('../controllers/index');
 
 // RESERVATIONS
 // Create reservation
@@ -11,10 +12,16 @@ router.delete('/reservations/:id', () => {});
 
 // USER
 // Create user
-router.post('/user', () => {})
+router.post('/user', controllers.postUser);
 
 // Get user reservations
-router.get('/user/:id', () => {});
+router.get('/user/reservations/:id', controllers.getUserReservations);
+
+// Get user by id
+router.get('/user/:id', controllers.getUser);
+
+// Get all users
+router.get('/users', controllers.getAllUsers);
 
 
 // VENDOR

@@ -46,7 +46,7 @@ User.init({
       }
     }
   },
-  companyName: {
+  company: {
     type: DataTypes.STRING,
     allowNull: true,
     len: {
