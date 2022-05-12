@@ -1,12 +1,14 @@
 import "./App.css";
 import LogInPage from "./components/LogInPage/LogInPage";
-import UserSideBar from "./components/UserSideBar/UserSideBar";
+import UserSidebar from "./components/UserSidebar/UserSidebar";
+import VendorSidebar from "./components/VendorSidebar/VendorSidebar";
 
 function App() {
   return (
     <div>
       {/* <LogInPage /> */}
-      <UserSideBar/>
+      {/* <UserSidebar /> */}
+      <VendorSidebar />
     </div>
   );
 }

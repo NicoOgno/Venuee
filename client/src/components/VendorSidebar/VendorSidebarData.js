@@ -1,33 +1,33 @@
 import React from "react";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import FormatListBulletedOutlinedIcon from "@mui/icons-material/FormatListBulletedOutlined";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 
-export const UserSidebarData = [
+export const VendorSidebarData = [
   {
-    title: "FIND A VENUE",
+    title: "DASHBOARD",
     icon: (
-      <SearchOutlinedIcon
+      <HomeOutlinedIcon
         fontSize="large"
         color="white"
         height="40px"
         width="75px"
       />
     ),
-    link: "/search",
+    link: "/vendorReservations",
   },
 
   {
-    title: "RESERVATIONS",
+    title: "AVAILABILITY",
     icon: (
-      <FormatListBulletedOutlinedIcon
+      <CalendarMonthOutlinedIcon
         fontSize="large"
         color="white"
         height="40px"
         width="75px"
       />
     ),
-    link: "/userReservations",
+    link: "/setAvailabilty",
   },
 
   {
