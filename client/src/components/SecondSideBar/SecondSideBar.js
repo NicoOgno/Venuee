@@ -16,7 +16,7 @@ export default function SecondSideBar() {
       </ul>
       <ul className={styles.bottomList}>
         <li className={styles.linkListItem}>settings</li>
-        <li className={styles.linkListItem}>logout</li>
+        <li className={styles.linkListItem}>logoutttststs</li>
       </ul>
     </div>
   );
