@@ -40,6 +40,6 @@ export const VendorSidebarData = [
         width="75px"
       />
     ),
-    link: "/userChat",
+    link: "/vendorChat",
   },
 ];
