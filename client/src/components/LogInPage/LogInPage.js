@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./logInPage.module.css";
 import Toggle from "../Toggle/Toggle";
 import logo from "../../assets/images/clipart1129793.png";
 import { useNavigate } from "react-router-dom";
 
 export default function LogInPage() {
+  const [isUser, setIsUser] = useState(true);
+
+  useEffect(() => {
+    setIsUser(true);
+  }, []);
+
   let navigate = useNavigate();
+
+  const handleToggle = () => {
+    setIsUser(!isUser);
+    console.log(isUser);
+  };
+
   return (
     <>
       <div className={styles.backgroundImg}>
@@ -25,7 +37,7 @@ export default function LogInPage() {
               ></input>
               <div className={styles.toggleContainer}>
                 <span className={styles.userSpan}>user</span>
-                <Toggle />
+                <Toggle onClick={handleToggle} />
                 <span className={styles.vendorSpan}>vendor</span>
               </div>
               <button
@@ -40,7 +52,7 @@ export default function LogInPage() {
               <span
                 className={styles.signForFree}
                 onClick={() => {
-                  navigate("/register");
+                  navigate("/userRegister");
                 }}
               >
                 sign up for free

@@ -7,10 +7,10 @@ const router = Router();
 
 // USER
 // Register user
-router.post('/user/register', user.registerUser)
+router.post("/user/register", user.registerUser);
 
 // User login
-router.post('/user/login', user.userLogin);
+router.post("/user/login", user.userLogin);
 
 // User profile by id
 router.get('/user/:id', authMiddleware, user.getUserProfile);
@@ -44,10 +44,9 @@ router.get('/vendor/reservation/:id', vendor.getVendorReservations);
 
 // RESERVATIONS
 // Create reservation
-router.post('/reservations', () => {});
+router.post("/reservations", () => {});
 
 // Delete reservation
-router.delete('/reservations/:id', () => {});
-
+router.delete("/reservations/:id", () => {});
 
 exports.router = router;
