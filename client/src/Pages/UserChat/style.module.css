@@ -1,0 +1,26 @@
+.backgroundImg {
+  background-image: url("../../assets/images/background\ \(1\).jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.userChatContainer {
+  display: flex;
+}
+
+.rightSideContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 70vw;
+}
+
+.demoCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: brown;
+  margin: 3vh;
+  width: 50vw;
+  height: 150px;
+}

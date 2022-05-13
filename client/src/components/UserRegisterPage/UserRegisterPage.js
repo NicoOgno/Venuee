@@ -2,8 +2,10 @@ import React from "react";
 import Toggle from "../Toggle/Toggle";
 import styles from "./userRegisterPage.module.css";
 import jetsons from "../../assets/images/jetsons.png";
+import { useNavigate } from "react-router-dom";
 
 export default function UserRegisterPage() {
+  let navigate = useNavigate();
   return (
     <div className={styles.container}>
       <div className={styles.leftContainer}>
@@ -28,7 +30,15 @@ export default function UserRegisterPage() {
         </form>
         <button className={styles.registerButton}>register</button>
         <a className={styles.loginLink}>
-          already have an account? <span className={styles.login}>login</span>
+          already have an account?{" "}
+          <span
+            className={styles.login}
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            login
+          </span>
         </a>
       </div>
       <div className={styles.rightContainer}>

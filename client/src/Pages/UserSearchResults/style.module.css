@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "bentonSansReg";
+  src: url("../../assets/fonts/bentonsansregular/BentonSansRegular.otf");
+}
+
+.backgroundImg {
+  background-image: url("../../assets/images/background\ \(1\).jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.userSearchContainer {
+  display: flex;
+}
+
+.rightSideContainer {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+}
+
+.searchBarContainer {
+  display: flex;
+  justify-content: space-evenly;
+  height: 50px;
+  width: 70vw;
+  margin-left: 6vw;
+  padding-left: 50px;
+  /* background-color: aqua; */
+  margin-top: 3vh;
+}
+
+.zipcode {
+  margin: 10px;
+  border-style: solid;
+  width: 10vw;
+  text-align: center;
+  color: white;
+}
+
+.type {
+  margin: 10px;
+  border-style: solid;
+  width: 10vw;
+  text-align: center;
+  color: white;
+}
+
+.date {
+  margin: 10px;
+  border-style: solid;
+  width: 10vw;
+  text-align: center;
+  color: white;
+}
+
+.groupSize {
+  margin: 10px;
+  border-style: solid;
+  width: 10vw;
+  text-align: center;
+  color: white;
+}
+
+.searchButton {
+  background: linear-gradient(180deg, #78b242 0%, #458740 100%);
+  color: white;
+  text-transform: uppercase;
+  font-family: bentonSansReg;
+  border-radius: 10px;
+  min-width: 20%;
+  letter-spacing: 1px;
+}
+
+.resultsContainer {
+  display: -ms-inline-grid;
+  width: 70vw;
+  /* background-color: aqua; */
+}
+
+.demoResult {
+  display: inline-grid;
+  grid-row: 3;
+  background-color: brown;
+  margin: 10vh;
+  width: 200px;
+  height: 150px;
+}

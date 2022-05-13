@@ -2,8 +2,10 @@ import React from "react";
 import styles from "./logInPage.module.css";
 import Toggle from "../Toggle/Toggle";
 import logo from "../../assets/images/clipart1129793.png";
+import { useNavigate } from "react-router-dom";
 
 export default function LogInPage() {
+  let navigate = useNavigate();
   return (
     <>
       <div className={styles.backgroundImg}>
@@ -26,11 +28,23 @@ export default function LogInPage() {
                 <Toggle />
                 <span className={styles.vendorSpan}>vendor</span>
               </div>
-              <button className={styles.loginButton}>login</button>
+              <button
+                className={styles.loginButton}
+                onClick={() => navigate("/search")}
+              >
+                login
+              </button>
             </form>
             <a className={styles.signupLink}>
               don't have an account?{" "}
-              <span className={styles.signForFree}>sign up for free</span>
+              <span
+                className={styles.signForFree}
+                onClick={() => {
+                  navigate("/register");
+                }}
+              >
+                sign up for free
+              </span>
             </a>
           </div>
         </div>

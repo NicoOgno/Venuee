@@ -2,13 +2,13 @@ import React from "react";
 import styles from "./style.module.css";
 import logo from "../../assets/images/clipart1129793.png";
 import { UserSidebarData } from "./UserSidebarData";
-import { UtilitiesData } from "./UtilitiesData";
+import { UserUtilitiesData } from "./UserUtilitiesData";
 
 function UserSidebar() {
   return (
     <div className={styles.sidebarContainer}>
       <div className={styles.profileHeader}>
-        <img src={logo} className={styles.profileImg} />
+        <img src={logo} alt={"no img avail"} className={styles.profileImg} />
         <div className={styles.profileName}>Booger</div>
       </div>
       <div>
@@ -32,7 +32,7 @@ function UserSidebar() {
       </div>
       <div>
         <ul className={styles.utilSidebarList}>
-          {UtilitiesData.map((value, key) => {
+          {UserUtilitiesData.map((value, key) => {
             return (
               <li
                 key={key}
