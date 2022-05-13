@@ -3,7 +3,7 @@ const sequelize = require('../db');
 
 class User extends Model {}
 User.init({
-  name: {
+  firstName: {
     type: DataTypes.STRING,
     allowNull: false,
     validate: {
@@ -46,14 +46,6 @@ User.init({
       }
     }
   },
-  company: {
-    type: DataTypes.STRING,
-    allowNull: true,
-    len: {
-      args: [2, 45],
-      msg: 'company name length must be between 2 and 45 characters'
-    }
-  },
   password: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -65,6 +57,14 @@ User.init({
         args: [6, 150],
         msg: 'password must be at least 6 characters'
       }
+    }
+  },
+  company: {
+    type: DataTypes.STRING,
+    allowNull: true,
+    len: {
+      args: [2, 45],
+      msg: 'company name length must be between 2 and 45 characters'
     }
   },
   userImg: {
