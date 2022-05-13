@@ -36,7 +36,7 @@ exports.userLogin = async (req, res) => {
     const validatedPass = await bcrypt.compare(password, user.password);
     if (!validatedPass) throw new Error();
     const accessToken = jwt.sign({ _id: user._id }, SECRET_KEY);
-    res.status(200).send(user, { accessToken, success: true });
+    res.status(200).send({ user, accessToken, success: true });
   } catch (error) {
     console.log(error);
     res
@@ -49,10 +49,11 @@ exports.userLogin = async (req, res) => {
 exports.getUserProfile = async (req, res) => {
     try {
         const { id } = req.params;
-            console.log('ID', req.id);
-        const user = await User.findOne({ _id: id });
+        console.log('ID', id);
+        const user = await User.findByPk(id);
         res.status(200).send(user);
-    } catch {
+        //console.log('USER', user)
+    } catch (error) {
         res.status(404).send({ error, message: 'Resource not found' });
     }
 };
