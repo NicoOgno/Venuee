@@ -1,0 +1,17 @@
+.backgroundImg {
+  background-image: url("../../../assets/images/background\ \(1\).jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-color: rgba(0, 0, 0, 0.1); */
+}
+
+.vendorChatContainer {
+  display: flex;
+}
+
+.rightSideContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 70vw;
+}
