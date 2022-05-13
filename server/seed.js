@@ -5,17 +5,17 @@ const Reservation = require('./database/models/Reservation');
 const db = require('./database/associations');
 
 const users = [
-  {name: "Rick", lastName: "Lotin", company: "Group Tech", email: "rik@msic.tv", password: "livinlavidaloca"},
-  {name: "Peter", lastName: "Pana", company: "Bowery CO.", email: "pp@bowery.com", password: "secretpass"},
-  {name: "Eliodor", lastName: "Skinner", company: "Swift house", email: "eskinner@shouse.biz", password: "anothersecret"},
-  {name: "John", lastName: "Dolittle", company: "Pets 4 life", email: "dolittle@pets.com", password: "lastsecret"}
+  {firstName: "Rick", lastName: "Lotin", email: "rik@msic.tv", password: "livinlavidaloca", company: "Group Tech", userImg: "urlxxxxxxxx"},
+  {firstName: "Peter", lastName: "Pana", email: "pp@bowery.com", password: "secretpass", company: "Bowery CO.", userImg: "urlxxxxxx"},
+  {firstName: "Eliodor", lastName: "Skinner", email: "eskinner@shouse.biz", password: "anothersecret", company: "Swift house", userImg: "urlxxxxx"},
+  {firstName: "John", lastName: "Dolittle", email: "dolittle@pets.com", password: "lastsecret", company: "Pets 4 life", userImg: "urlxxx"}
 ];
 
 const vendors = [
-  {vendorName: "Real Food", email: "real@foods.com", password: "myunrealfood", address: "rstreet, rcity, rstate, rzipcode", capacity: "45"},
-  {vendorName: "Piccolo Sogno", email: "psogno@psogno.com", password: "greatestsecret", address: "psstreet, pscity, psstate, pszipcode", capacity: "15"},
-  {vendorName: "Tropical Pizza", email: "tropical@pizza.com", password: "pinapplepizza", address: "tstreet, tcity, tstate, tzipcode", capacity: "25"},
-  {vendorName: "Big Barbecue", email: "bb@bbarbecue.com", password: "brutalbarbecues", address: "bstreet, bcity, bstate, bzipcode", capacity: "100"}
+  {businessName: "Real Food", email: "real@foods.com", password: "myunrealfood", streetAddress: "rstreet", city: "rcity", state: "rstate", zipCode: "97021", maxCapacity: "45", "type": "restaurant"},
+  {businessName: "Piccolo Sogno", email: "psogno@psogno.com", password: "greatestsecret", streetAddress: "pstreet", city: "pcity", state: "pstate", zipCode: "97021", maxCapacity: "15", "type": "banquet hall"},
+  {businessName: "Tropical Pizza", email: "tropical@pizza.com", password: "pinapplepizza", streetAddress: "tstreet", city: "tcity", state: "tstate", zipCode: "97211", maxCapacity: "25", "type": "bar"},
+  {businessName: "Big Barbecue", email: "bb@bbarbecue.com", password: "brutalbarbecues", streetAddress: "bstreet", city: "bcity", state: "bstate", zipCode: "97211", maxCapacity: "100", "type": "bar"}
 ];
 
 const reservations = [
