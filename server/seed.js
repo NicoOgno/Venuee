@@ -5,17 +5,17 @@ const Reservation = require('./database/models/Reservation');
 const db = require('./database/associations');
 
 const users = [
-  {firstName: "Rick", lastName: "Lotin", email: "rik@msic.tv", password: "livinlavidaloca", company: "Group Tech", userImg: "urlxxxxxxxx"},
-  {firstName: "Peter", lastName: "Pana", email: "pp@bowery.com", password: "secretpass", company: "Bowery CO.", userImg: "urlxxxxxx"},
-  {firstName: "Eliodor", lastName: "Skinner", email: "eskinner@shouse.biz", password: "anothersecret", company: "Swift house", userImg: "urlxxxxx"},
-  {firstName: "John", lastName: "Dolittle", email: "dolittle@pets.com", password: "lastsecret", company: "Pets 4 life", userImg: "urlxxx"}
+  {userName: "RickT1989", email: "rik@msic.tv", password: "livinlavidaloca", company: "Group Tech", userImg: "urlxxxxxxxx"},
+  {userName: "PeterP", email: "pp@bowery.com", password: "secretpass", company: "Bowery CO.", userImg: "urlxxxxxx"},
+  {userName: "EliodorSkinner", email: "eskinner@shouse.biz", password: "anothersecret", company: "Swift house", userImg: "urlxxxxx"},
+  {userName: "JDolittle", email: "dolittle@pets.com", password: "lastsecret", company: "Pets 4 life", userImg: "urlxxx"}
 ];
 
 const vendors = [
-  {businessName: "Real Food", email: "real@foods.com", password: "myunrealfood", streetAddress: "rstreet", city: "rcity", state: "rstate", zipCode: "97021", maxCapacity: "45", "type": "restaurant"},
+  {businessName: "Real Food", email: "real@foods.com", password: "myunrealfood", streetAddress: "rstreet", city: "rcity", state: "rstate", zipCode: "97021", maxCapacity: "45", "type": "lounge"},
   {businessName: "Piccolo Sogno", email: "psogno@psogno.com", password: "greatestsecret", streetAddress: "pstreet", city: "pcity", state: "pstate", zipCode: "97021", maxCapacity: "15", "type": "banquet hall"},
   {businessName: "Tropical Pizza", email: "tropical@pizza.com", password: "pinapplepizza", streetAddress: "tstreet", city: "tcity", state: "tstate", zipCode: "97211", maxCapacity: "25", "type": "bar"},
-  {businessName: "Big Barbecue", email: "bb@bbarbecue.com", password: "brutalbarbecues", streetAddress: "bstreet", city: "bcity", state: "bstate", zipCode: "97211", maxCapacity: "100", "type": "bar"}
+  {businessName: "Big Barbecue", email: "bb@bbarbecue.com", password: "brutalbarbecues", streetAddress: "bstreet", city: "bcity", state: "bstate", zipCode: "97211", maxCapacity: "100", "type": "restaurant"}
 ];
 
 const reservations = [

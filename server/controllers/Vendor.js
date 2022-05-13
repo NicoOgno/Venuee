@@ -41,6 +41,11 @@ exports.vendorLogin = async (req, res) => {
     }
 };
 
+// GET VENDOR PROFILE BY ID
+exports.getVendor = async () => {
+    
+}
+
 // GET ALL VENDORS
 exports.getAllVendors = async (req, res) => {
     try {

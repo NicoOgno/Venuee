@@ -1,5 +1,5 @@
 const { Router } = require('express');
-//const authMiddleware = require('../middleware/auth')
+const authMiddleware = require('../middleware/auth')
 const user = require('../controllers/User');
 const vendor = require('../controllers/Vendor');
 const reservation = require('../controllers/Reservation');
@@ -12,30 +12,33 @@ router.post('/user/register', user.registerUser)
 // User login
 router.post('/user/login', user.userLogin);
 
-// Get user by id
-router.get('/user/:id', user.getUser);
+// User profile by id
+router.get('/user/:id', authMiddleware, user.getUserProfile);
 
-// Get all users
+// All users
 router.get('/users', user.getAllUsers);
 
-// Get user reservations
+// User reservations
 router.get('/user/reservations/:id', user.getUserReservations);
+
+// User logout
+router.post('/logout', authMiddleware, user.userLogout);
 
 
 // VENDOR
-// Create vendor
+// Register vendor
 router.post('/vendor/register', vendor.registerVendor);
 
-// Vendor Login
+// Vendor login
 router.post('/vendor/login', vendor.vendorLogin);
 
-// Get vendor by id
-router.get('/vendor/:id', vendor.vendorLogin);
+// Vendor profile by id
+router.get('/vendor/:id', authMiddleware, vendor.getVendor);
 
-// Get all vendors
+// All vendors
 router.get('/vendors', vendor.getAllVendors)
 
-// vendor reservations
+// Vendor reservations
 router.get('/vendor/reservation/:id', vendor.getVendorReservations);
 
 

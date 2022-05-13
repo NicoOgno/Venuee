@@ -1,39 +1,23 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../db');
 
+
 class User extends Model {}
 User.init({
-  firstName: {
+  userName: {
     type: DataTypes.STRING,
     allowNull: false,
     validate: {
       notNull: {
-        msg: 'field name is empty'
+        msg: 'field username is empty'
       },
       isAlpha: {
         args: true,
-        msg: 'name must be letters only'
+        msg: 'username must be one word'
       },
       len: {
-        args: [3, 15],
-        msg: 'name length must be between 3 and 15 characters'
-      }
-    }
-  },
-  lastName: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    validate: {
-      notNull: {
-        msg: 'field last name is empty'
-      },
-      isAlpha: {
-        args: true,
-        msg: 'last name must be letters only'
-      },
-      len: {
-        args: [2, 15],
-        msg: 'last name length must be between 2 and 15 characters'
+        args: [3, 20],
+        msg: 'username length must be between 3 and 20 characters'
       }
     }
   },
