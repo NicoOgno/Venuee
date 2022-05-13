@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const Vendor = require('../database/models/Vendor');
 const SECRET_KEY = process.env.SECRET_KEY;
 
-const vendorAuthMiddleware = async (req, res, next) => {
+const vendorMiddleware = async (req, res, next) => {
     console.log("REQ RES", req, res)
     const authHeaders = req.headers['authorization'];
     if (!authHeaders) return res.sendStatus(403);
@@ -22,4 +22,4 @@ const vendorAuthMiddleware = async (req, res, next) => {
     }
 };
 
-module.exports = vendorAuthMiddleware;
+module.exports = vendorMiddleware;

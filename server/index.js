@@ -3,14 +3,18 @@ const app = express();
 require('dotenv').config();
 
 const sequelize = require('./database/db');
-const { router } = require('./routes/index');
+const { userRouter } = require('./routes/user');
+const { vendorRouter } = require('./routes/vendor');
+const { reservationRouter } = require('./routes/reservation');
 const db = require('./database/associations');
 const PORT = process.env.PORT;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use(router);
+app.use('/user', userRouter);
+app.use('/vendor', vendorRouter);
+app.use('/reservation', reservationRouter);
 
 app.listen(PORT, () => { console.log(`Server started at port ${PORT}`);
 

@@ -2,8 +2,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../database/models/User');
 const SECRET_KEY = process.env.SECRET_KEY;
 
-const userAuthMiddleware = async (req, res, next) => {
-    console.log("REQ RES", req, res)
+const userMiddleware = async (req, res, next) => {
     const authHeaders = req.headers['authorization'];
     if (!authHeaders) return res.sendStatus(403);
     const token = authHeaders.split(' ')[1];
@@ -22,4 +21,4 @@ const userAuthMiddleware = async (req, res, next) => {
     }
 };
 
-module.exports = userAuthMiddleware;
+module.exports = userMiddleware;
