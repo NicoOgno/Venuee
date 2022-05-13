@@ -90,6 +90,7 @@
 }
 
 .login {
+  cursor: pointer;
   background: linear-gradient(98.81deg, #9bb899 -0.82%, #77b573 101.53%);
   background-clip: text;
   color: transparent;

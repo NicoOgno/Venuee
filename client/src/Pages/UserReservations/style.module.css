@@ -1,0 +1,23 @@
+.backgroundImg {
+  background-image: url("../../assets/images/background\ \(1\).jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.userReservationContainer {
+  display: flex;
+}
+
+.rightSideContainer {
+  display: -ms-inline-grid;
+  width: 70vw;
+}
+
+.demoCard {
+  display: inline-grid;
+  grid-row: 3;
+  background-color: brown;
+  margin: 10vh;
+  width: 200px;
+  height: 150px;
+}

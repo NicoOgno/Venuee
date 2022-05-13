@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./style.module.css";
 import logo from "../../assets/images/clipart1129793.png";
 import { VendorSidebarData } from "./VendorSidebarData";
-import { UtilitiesData } from "../UserSideBar/UtilitiesData";
+import { VendorUtilitiesData } from "./VendorUtilitesData";
 
 function VendorSidebar() {
   return (
@@ -32,7 +32,7 @@ function VendorSidebar() {
       </div>
       <div>
         <ul className={styles.utilSidebarList}>
-          {UtilitiesData.map((value, key) => {
+          {VendorUtilitiesData.map((value, key) => {
             return (
               <li
                 key={key}
