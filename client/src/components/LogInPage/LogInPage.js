@@ -11,6 +11,8 @@ export default function LogInPage() {
     setIsUser(true);
   }, []);
 
+  const handleLogin = () =>
+    isUser ? navigate("/search") : navigate("/vendorReservations");
   let navigate = useNavigate();
 
   const handleToggle = () => {
@@ -40,10 +42,7 @@ export default function LogInPage() {
                 <Toggle onClick={handleToggle} />
                 <span className={styles.vendorSpan}>vendor</span>
               </div>
-              <button
-                className={styles.loginButton}
-                onClick={() => navigate("/search")}
-              >
+              <button className={styles.loginButton} onClick={handleLogin}>
                 login
               </button>
             </form>

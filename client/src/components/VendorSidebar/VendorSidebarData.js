@@ -27,7 +27,7 @@ export const VendorSidebarData = [
         width="75px"
       />
     ),
-    link: "/setAvailabilty",
+    link: "/VendorAvailability",
   },
 
   {
