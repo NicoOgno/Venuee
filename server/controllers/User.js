@@ -6,7 +6,7 @@ const SECRET_KEY = process.env.SECRET_KEY;
 // USER REGISTER
 exports.registerUser = async (req, res) => {
   try {
-    const { firstName, lastName, email, password, userImg } = req.body;
+    const { email, password } = req.body;
     const user = await User.findOne({ where: { email: email } });
     if (user) {
       return res
@@ -49,10 +49,12 @@ exports.userLogin = async (req, res) => {
 exports.getUserProfile = async (req, res) => {
     try {
         const { id } = req.params;
-        console.log('ID', id);
+        //console.log('ID', id);
         const user = await User.findByPk(id);
+        console.log('USER', user)
+        delete user.dataValues.password;
         res.status(200).send(user);
-        //console.log('USER', user)
+        
     } catch (error) {
         res.status(404).send({ error, message: 'Resource not found' });
     }
@@ -73,7 +75,7 @@ exports.getUserProfile = async (req, res) => {
 exports.getAllUsers = async (req, res) => {
     try {
         const users = await User.findAll();
-        console.log('USERS', users);
+        //console.log('USERS', users);
         return res.status(200).json(users);
     } catch (error) {
         console.error(error);

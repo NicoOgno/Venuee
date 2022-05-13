@@ -1,5 +1,6 @@
 const { Router } = require('express');
-const authMiddleware = require('../middleware/auth')
+const userMiddleware = require('../middleware/user');
+const vendorMiddleware = require('../middleware/vendor');
 const user = require('../controllers/User');
 const vendor = require('../controllers/Vendor');
 const reservation = require('../controllers/Reservation');
@@ -13,7 +14,7 @@ router.post("/user/register", user.registerUser);
 router.post("/user/login", user.userLogin);
 
 // User profile by id
-router.get('/user/:id', authMiddleware, user.getUserProfile);
+router.get('/user/:id', userMiddleware, user.getUserProfile);
 
 // All users
 router.get('/users', user.getAllUsers);
@@ -22,7 +23,7 @@ router.get('/users', user.getAllUsers);
 router.get('/user/reservations/:id', user.getUserReservations);
 
 // User logout
-router.post('/logout', authMiddleware, user.userLogout);
+router.post('/logout', userMiddleware, user.userLogout);
 
 
 // VENDOR
@@ -33,13 +34,16 @@ router.post('/vendor/register', vendor.registerVendor);
 router.post('/vendor/login', vendor.vendorLogin);
 
 // Vendor profile by id
-router.get('/vendor/:id', authMiddleware, vendor.getVendor);
+router.get('/vendor/:id', vendorMiddleware, vendor.getVendorProfile);
 
 // All vendors
 router.get('/vendors', vendor.getAllVendors)
 
 // Vendor reservations
 router.get('/vendor/reservation/:id', vendor.getVendorReservations);
+
+// Vendor logout
+router.post('/logout', vendorMiddleware, user.userLogout);
 
 
 // RESERVATIONS
