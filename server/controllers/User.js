@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../database/models/User");
 const SECRET_KEY = process.env.SECRET_KEY;
 
-// REGISTER
+// USER REGISTER
 exports.registerUser = async (req, res) => {
   try {
     const { firstName, lastName, email, password, userImg } = req.body;
@@ -28,7 +28,7 @@ exports.registerUser = async (req, res) => {
   }
 };
 
-// LOGIN
+// USER LOGIN
 exports.userLogin = async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -45,46 +45,60 @@ exports.userLogin = async (req, res) => {
   }
 };
 
-// GET USER
-exports.getUser = async (req, res) => {
-  try {
-    const id = req.params.id;
-    const user = await User.findByPk(id);
-    return res.status(200).json(user);
-  } catch (error) {
-    console.error(error);
-    return res.status(500).send({ res: "Internal server error", error: true });
-  }
+// GET USER PROFILE
+exports.getUserProfile = async (req, res) => {
+    try {
+        const { id } = req.params;
+            console.log('ID', req.id);
+        const user = await User.findOne({ _id: id });
+        res.status(200).send(user);
+    } catch {
+        res.status(404).send({ error, message: 'Resource not found' });
+    }
 };
+//   exports.getUserProfile = async (req, res) => {
+//     try {
+//       const id = req.params.id;
+//       const user = await User.findByPk(id);
+//       return res.status(200).json(user);
+//     } catch (error) {
+//       console.error(error);
+//       return res.status(500).send({res: 'Internal server error', error: true});
+//     }
+//   };
+
 
 // GET ALL USERS
 exports.getAllUsers = async (req, res) => {
-  try {
-    const users = await User.findAll();
-    console.log("USERS", users);
-    return res.status(200).json(users);
-  } catch (error) {
-    console.error(error);
-    return res.status(500).send({ res: "Internal server error", error: true });
-  }
+    try {
+        const users = await User.findAll();
+        console.log('USERS', users);
+        return res.status(200).json(users);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send({res: 'Internal server error', error: true});
+    }
 };
 
 // GET USER RESERVATIONS
 exports.getUserReservations = async (req, res) => {
-  try {
-    const id = req.params.id;
-    const user = await User.findOne({
-      where: { id: id },
-      include: {
-        model: Reservation,
-        as: "userReserve",
-        attributes: ["reserveDate", "partySize"],
-      },
-      attributes: ["name", "lastName", "email"],
-    });
-    return res.status(200).json(user);
-  } catch (error) {
-    console.error(error, "in controllers");
-    return res.status(500).send({ res: "Internal server error", error: true });
-  }
+    try {
+        const id = req.params.id;
+        const user = await User.findOne({ where: {id: id},
+            include: {
+                model: Reservation,
+                as: 'userReserve',
+                attributes: ['reserveDate', 'partySize']
+            },
+            attributes: ['name', 'lastName', 'email']
+        });
+        return res.status(200).json(user);
+    } catch (error) {
+        console.error(error, 'in controllers');
+        return res.status(500).send({res: 'Internal server error', error: true});
+    }
+};
+
+exports.userLogout = (req, res) => {
+
 };

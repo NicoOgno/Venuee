@@ -105,16 +105,12 @@ Vendor.init({
         validate: {
             notNull: {
             msg: 'type field missing'
-            },
-            len: {
-            args: [3, 150],
-            msg: 'type must be at least 3 characters'
             }
         }
     },
     vendorImg: {
     type: DataTypes.STRING,
-    allowNull: true,
+    allowNull: false,
     }
 }, { sequelize, modelName: 'vendor', timestamps: false });
 

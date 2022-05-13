@@ -3,9 +3,8 @@ const User = require('../database/models/User');
 const SECRET_KEY = process.env.SECRET_KEY;
 
 const authMiddleware = async (req, res, next) => {
-    
+    console.log("REQ RES", req, res)
     const authHeaders = req.headers['authorization'];
-
     if (!authHeaders) return res.sendStatus(403);
     const token = authHeaders.split(' ')[1];
     console.log('AUTH HEADERS', authHeaders);
