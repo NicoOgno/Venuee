@@ -1,8 +1,8 @@
 const baseURL = process.env.REACT_APP_BASE_URL;
 
-const userServices = {};
+const apiUserServices = {};
 
-userServices.userLogin = (user) => {
+apiUserServices.userLogin = (user) => {
   return fetch(`${baseURL}/user/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -12,7 +12,7 @@ userServices.userLogin = (user) => {
     .catch((err) => console.log(err));
 };
 
-userServices.register = (user) => {
+apiUserServices.UserRegister = (user) => {
   return fetch(`${baseURL}/user/register`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -22,10 +22,10 @@ userServices.register = (user) => {
     .catch((err) => console.log(err));
 };
 
-userServices.testSearch = () => {
+apiUserServices.testSearch = () => {
   return fetch(`${baseURL}/vendors`)
     .then((res) => res.json())
     .then((data) => data)
     .catch((err) => err);
 };
-export default userServices;
+export default apiUserServices;

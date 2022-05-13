@@ -1,14 +1,42 @@
-const sequelize = require('./database/db');
-const User = require('./database/models/User');
-const Vendor = require('./database/models/Vendor');
-const Reservation = require('./database/models/Reservation');
-const db = require('./database/associations');
+const sequelize = require("./database/db");
+const User = require("./database/models/User");
+const Vendor = require("./database/models/Vendor");
+const Reservation = require("./database/models/Reservation");
+const db = require("./database/associations");
 
 const users = [
-  {userName: "RickT1989", email: "rik@msic.tv", password: "livinlavidaloca", company: "Group Tech", userImg: "urlxxxxxxxx"},
-  {userName: "PeterP", email: "pp@bowery.com", password: "secretpass", company: "Bowery CO.", userImg: "urlxxxxxx"},
-  {userName: "EliodorSkinner", email: "eskinner@shouse.biz", password: "anothersecret", company: "Swift house", userImg: "urlxxxxx"},
-  {userName: "JDolittle", email: "dolittle@pets.com", password: "lastsecret", company: "Pets 4 life", userImg: "urlxxx"}
+  {
+    userName: "RickT1989",
+    email: "rik@msic.tv",
+    password: "livinlavidaloca",
+    company: "Group Tech",
+    userImg:
+      "https://firebasestorage.googleapis.com/v0/b/venuee-41927.appspot.com/o/charlie.jpg?alt=media&token=d0ff7fa7-66fe-4088-94fb-6277663b44e9",
+  },
+  {
+    userName: "PeterP",
+    email: "pp@bowery.com",
+    password: "secretpass",
+    company: "Bowery CO.",
+    userImg:
+      "https://firebasestorage.googleapis.com/v0/b/venuee-41927.appspot.com/o/max.jpg?alt=media&token=b271f445-2cfa-4e00-a29e-83ee2df9476f",
+  },
+  {
+    userName: "EliodorSkinner",
+    email: "eskinner@shouse.biz",
+    password: "anothersecret",
+    company: "Swift house",
+    userImg:
+      "https://firebasestorage.googleapis.com/v0/b/venuee-41927.appspot.com/o/dee.jpg?alt=media&token=27828acb-591a-4a44-819b-c0c5a2054a60",
+  },
+  {
+    userName: "JDolittle",
+    email: "dolittle@pets.com",
+    password: "lastsecret",
+    company: "Pets 4 life",
+    userImg:
+      "https://firebasestorage.googleapis.com/v0/b/venuee-41927.appspot.com/o/dennis.jpg?alt=media&token=2c5c2a6a-91d9-4ccb-b236-3c15717ab617",
+  },
 ];
 
 const vendors = [
@@ -19,10 +47,30 @@ const vendors = [
 ];
 
 const reservations = [
-  {reserveDate: new Date('December 10, 2022 13:00:00'), partySize: 5, confirmationId: 1, reserveId: 1 },
-  {reserveDate: new Date('September 7, 2022 17:30:00'), partySize: 50, confirmationId: 2, reserveId: 3 },
-  {reserveDate: new Date('November 1, 2022 10:30:00'), partySize: 10, confirmationId: 3, reserveId: 2 },
-  {reserveDate: new Date('December 17, 2022 13:30:00'), partySize: 25, confirmationId: 4, reserveId: 4 }
+  {
+    reserveDate: new Date("December 10, 2022 13:00:00"),
+    partySize: 5,
+    confirmationId: 1,
+    reserveId: 1,
+  },
+  {
+    reserveDate: new Date("September 7, 2022 17:30:00"),
+    partySize: 50,
+    confirmationId: 2,
+    reserveId: 3,
+  },
+  {
+    reserveDate: new Date("November 1, 2022 10:30:00"),
+    partySize: 10,
+    confirmationId: 3,
+    reserveId: 2,
+  },
+  {
+    reserveDate: new Date("December 17, 2022 13:30:00"),
+    partySize: 25,
+    confirmationId: 4,
+    reserveId: 4,
+  },
 ];
 
 sequelize.sync ({ force: false }).then(() => {
@@ -41,3 +89,4 @@ sequelize.sync ({ force: false }).then(() => {
   };
 
 });
+
