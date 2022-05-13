@@ -11,10 +11,6 @@ User.init({
       notNull: {
         msg: 'field username is empty'
       },
-      isAlpha: {
-        args: true,
-        msg: 'username must be one word'
-      },
       len: {
         args: [3, 20],
         msg: 'username length must be between 3 and 20 characters'

@@ -6,7 +6,7 @@ const SECRET_KEY = process.env.SECRET_KEY;
 // USER REGISTER
 exports.registerUser = async (req, res) => {
   try {
-    const { firstName, lastName, email, password, userImg } = req.body;
+    const { email, password } = req.body;
     const user = await User.findOne({ where: { email: email } });
     if (user) {
       return res
@@ -30,13 +30,14 @@ exports.registerUser = async (req, res) => {
 
 // USER LOGIN
 exports.userLogin = async (req, res) => {
+    console.log('inside')
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ where: { email: email } });
     const validatedPass = await bcrypt.compare(password, user.password);
     if (!validatedPass) throw new Error();
     const accessToken = jwt.sign({ _id: user._id }, SECRET_KEY);
-    res.status(200).send({ user, accessToken, success: true });
+    res.status(200).send({ accessToken, success: true });
   } catch (error) {
     console.log(error);
     res
@@ -49,34 +50,27 @@ exports.userLogin = async (req, res) => {
 exports.getUserProfile = async (req, res) => {
     try {
         const { id } = req.params;
-        console.log('ID', id);
+        //console.log('ID', id);
         const user = await User.findByPk(id);
+        console.log('USER', user)
+        delete user.dataValues.password;
         res.status(200).send(user);
-        //console.log('USER', user)
+        
     } catch (error) {
         res.status(404).send({ error, message: 'Resource not found' });
     }
 };
-//   exports.getUserProfile = async (req, res) => {
-//     try {
-//       const id = req.params.id;
-//       const user = await User.findByPk(id);
-//       return res.status(200).json(user);
-//     } catch (error) {
-//       console.error(error);
-//       return res.status(500).send({res: 'Internal server error', error: true});
-//     }
-//   };
 
 
 // GET ALL USERS
 exports.getAllUsers = async (req, res) => {
+    console.log('IM HERE');
     try {
         const users = await User.findAll();
-        console.log('USERS', users);
+        //console.log('USERS', users);
         return res.status(200).json(users);
     } catch (error) {
-        console.error(error);
+        console.error('ERROR', error);
         return res.status(500).send({res: 'Internal server error', error: true});
     }
 };

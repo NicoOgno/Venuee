@@ -40,50 +40,10 @@ const users = [
 ];
 
 const vendors = [
-  {
-    businessName: "Real Food",
-    email: "real@foods.com",
-    password: "myunrealfood",
-    streetAddress: "rstreet",
-    city: "rcity",
-    state: "rstate",
-    zipCode: "97021",
-    maxCapacity: "45",
-    type: "lounge",
-  },
-  {
-    businessName: "Piccolo Sogno",
-    email: "psogno@psogno.com",
-    password: "greatestsecret",
-    streetAddress: "pstreet",
-    city: "pcity",
-    state: "pstate",
-    zipCode: "97021",
-    maxCapacity: "15",
-    type: "banquet hall",
-  },
-  {
-    businessName: "Tropical Pizza",
-    email: "tropical@pizza.com",
-    password: "pinapplepizza",
-    streetAddress: "tstreet",
-    city: "tcity",
-    state: "tstate",
-    zipCode: "97211",
-    maxCapacity: "25",
-    type: "bar",
-  },
-  {
-    businessName: "Big Barbecue",
-    email: "bb@bbarbecue.com",
-    password: "brutalbarbecues",
-    streetAddress: "bstreet",
-    city: "bcity",
-    state: "bstate",
-    zipCode: "97211",
-    maxCapacity: "100",
-    type: "restaurant",
-  },
+  {businessName: "Real Food", email: "real@foods.com", password: "myunrealfood", streetAddress: "rstreet", city: "rcity", state: "rstate", zipCode: "97021", maxCapacity: "45", type: "lounge", vendorImg: "url111"},
+  {businessName: "Piccolo Sogno", email: "psogno@psogno.com", password: "greatestsecret", streetAddress: "pstreet", city: "pcity", state: "pstate", zipCode: "97021", maxCapacity: "15", type: "banquet hall", vendorImg: "url222"},
+  {businessName: "Tropical Pizza", email: "tropical@pizza.com", password: "pinapplepizza", streetAddress: "tstreet", city: "tcity", state: "tstate", zipCode: "97211", maxCapacity: "25", type: "bar", vendorImg: "url333"},
+  {businessName: "Big Barbecue", email: "bb@bbarbecue.com", password: "brutalbarbecues", streetAddress: "bstreet", city: "bcity", state: "bstate", zipCode: "97211", maxCapacity: "100", type: "restaurant", vendorImg: "url444"}
 ];
 
 const reservations = [
@@ -113,21 +73,20 @@ const reservations = [
   },
 ];
 
-sequelize
-  .sync({ force: false })
-  .then(() => {
-    // Conexión establecida
-    console.log("Conexión establecida...");
-  })
-  .then(async () => {
-    // Rellenar usuarios
-    for (let i = 0; i < users.length; i++) {
-      await User.create(users[i]);
-    }
-    for (let i = 0; i < vendors.length; i++) {
-      await Vendor.create(vendors[i]);
-    }
-    for (let i = 0; i < reservations.length; i++) {
-      await Reservation.create(reservations[i]);
-    }
-  });
+sequelize.sync ({ force: false }).then(() => {
+  // Conexión establecida
+  console.log("Conexión establecida...");
+}).then(async () => {
+  // Rellenar usuarios
+  for (let i = 0; i < users.length; i++) {
+    await User.create(users[i]);
+  };
+  for (let i = 0; i < vendors.length; i++){
+    await Vendor.create(vendors[i]);
+  };
+  for ( let i = 0; i < reservations.length; i++){
+    await Reservation.create(reservations[i]);
+  };
+
+});
+
