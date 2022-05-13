@@ -42,9 +42,16 @@ exports.vendorLogin = async (req, res) => {
 };
 
 // GET VENDOR PROFILE BY ID
-exports.getVendor = async () => {
-    
-}
+exports.getVendorProfile = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const vendor = await Vendor.findByPk(id);
+        delete vendor.dataValues.password;
+        res.status(200).send(vendor);
+    } catch (error) {
+        res.status(404).send({ error, message: 'Vendor not found' });
+    }
+};
 
 // GET ALL VENDORS
 exports.getAllVendors = async (req, res) => {

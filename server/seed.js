@@ -12,10 +12,10 @@ const users = [
 ];
 
 const vendors = [
-  {businessName: "Real Food", email: "real@foods.com", password: "myunrealfood", streetAddress: "rstreet", city: "rcity", state: "rstate", zipCode: "97021", maxCapacity: "45", "type": "lounge"},
-  {businessName: "Piccolo Sogno", email: "psogno@psogno.com", password: "greatestsecret", streetAddress: "pstreet", city: "pcity", state: "pstate", zipCode: "97021", maxCapacity: "15", "type": "banquet hall"},
-  {businessName: "Tropical Pizza", email: "tropical@pizza.com", password: "pinapplepizza", streetAddress: "tstreet", city: "tcity", state: "tstate", zipCode: "97211", maxCapacity: "25", "type": "bar"},
-  {businessName: "Big Barbecue", email: "bb@bbarbecue.com", password: "brutalbarbecues", streetAddress: "bstreet", city: "bcity", state: "bstate", zipCode: "97211", maxCapacity: "100", "type": "restaurant"}
+  {businessName: "Real Food", email: "real@foods.com", password: "myunrealfood", streetAddress: "rstreet", city: "rcity", state: "rstate", zipCode: "97021", maxCapacity: "45", type: "lounge", vendorImg: "url111"},
+  {businessName: "Piccolo Sogno", email: "psogno@psogno.com", password: "greatestsecret", streetAddress: "pstreet", city: "pcity", state: "pstate", zipCode: "97021", maxCapacity: "15", type: "banquet hall", vendorImg: "url222"},
+  {businessName: "Tropical Pizza", email: "tropical@pizza.com", password: "pinapplepizza", streetAddress: "tstreet", city: "tcity", state: "tstate", zipCode: "97211", maxCapacity: "25", type: "bar", vendorImg: "url333"},
+  {businessName: "Big Barbecue", email: "bb@bbarbecue.com", password: "brutalbarbecues", streetAddress: "bstreet", city: "bcity", state: "bstate", zipCode: "97211", maxCapacity: "100", type: "restaurant", vendorImg: "url444"}
 ];
 
 const reservations = [
@@ -25,7 +25,7 @@ const reservations = [
   {reserveDate: new Date('December 17, 2022 13:30:00'), partySize: 25, confirmationId: 4, reserveId: 4 }
 ];
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync ({ force: false }).then(() => {
   // Conexión establecida
   console.log("Conexión establecida...");
 }).then(async () => {
