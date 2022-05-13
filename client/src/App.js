@@ -5,6 +5,7 @@ import UserReservationCard from "./components/UserReservationCard/UserReservatio
 import VendorReservationCard from "./components/VendorReservationCard/VendorReservationCard";
 import Calendar from "./components/Calendar/Calendar";
 import Chatbox from "./components/Chatbox/Chatbox";
+import UserReservationWindow from "./components/UserReservationWindow/UserReserveWindow";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       {/* <UserReservationCard /> */}
       {/* <VendorReservationCard /> */}
       {/* <Calendar /> */}
-      <Chatbox />
+      {/* <Chatbox /> */}
+      <UserReservationWindow />
     </div>
   );
 }
