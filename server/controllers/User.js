@@ -1,6 +1,8 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../database/models/User");
+const Reservation = require('../database/models/Reservation');
+const Vendor = require('../database/models/Vendor');
 const SECRET_KEY = process.env.SECRET_KEY;
 
 // USER REGISTER
@@ -86,17 +88,21 @@ exports.getAllUsers = async (req, res) => {
 
 // GET USER RESERVATIONS
 exports.getUserReservations = async (req, res) => {
-    try {
+    try {//'businessName', 'email', 'streetAddress', 'type', 'vendorImg'
         const id = req.params.id;
         const user = await User.findOne({ where: {id: id},
             include: {
-                model: Reservation,
-                as: 'userReserve',
-                attributes: ['reserveDate', 'partySize']
+              model: Reservation,
+              as: 'userReserve',
+              attributes: ['reserveDate', 'partySize', 'vendorId']
             },
-            attributes: ['name', 'lastName', 'email']
+            attributes: ['userName', 'email']
         });
-        return res.status(200).json(user);
+        const reservation = await Reservation.findOne({where: {vendorId: user.userReserve[0].vendorId}});
+        const { vendorId } = reservation;
+        const vendorInfo = await Vendor.findOne({where: {id: vendorId}})
+        const { businessName, email, streetAddress, type, vendorImg } = vendorInfo;
+        return res.status(200).json({user, businessName, email, streetAddress, type, vendorImg });
     } catch (error) {
         console.error(error, 'in controllers');
         return res.status(500).send({res: 'Internal server error', error: true});

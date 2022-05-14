@@ -17,7 +17,7 @@ userRouter.get('/find/:id', userMiddleware, user.getUserProfile);
 userRouter.get('/allUsers', user.getAllUsers);
 
 // User reservations
-userRouter.get('/reservations/:id', user.getUserReservations);
+userRouter.get('/reservations/:id', userMiddleware, user.getUserReservations);
 
 // User logout
 userRouter.post('/logout', userMiddleware, user.userLogout);
