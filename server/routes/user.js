@@ -10,7 +10,7 @@ userRouter.post('/register', user.registerUser);
 // User login
 userRouter.post('/login', user.userLogin);
 
-// User profile by id
+// User profile
 userRouter.get('/find/:id', userMiddleware, user.getUserProfile);
 
 // All users

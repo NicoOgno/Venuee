@@ -62,14 +62,11 @@ exports.userLogin = async (req, res) => {
 exports.getUserProfile = async (req, res) => {
     try {
         const { id } = req.params;
-        //console.log('ID', id);
         const user = await User.findByPk(id);
-        console.log('USER', user)
         delete user.dataValues.password;
-        res.status(200).send(user);
-
+        return res.status(200).send(user);
     } catch (error) {
-        res.status(404).send({ error, message: 'Resource not found' });
+        return res.status(404).send({ error, message: 'Resource not found' });
     }
 };
 
