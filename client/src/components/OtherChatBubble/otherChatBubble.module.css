@@ -1,0 +1,17 @@
+.chatBubble {
+  color: #0f1828;
+  font-family: bentonSansReg;
+  background: white;
+  border-radius: 16px 16px 0px 16px;
+  max-width: 45%;
+  margin-top: 25px;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  flex: 0 1 auto;
+  padding: 15px;
+  margin-left: 65px;
+  align-self: flex-start;
+}
