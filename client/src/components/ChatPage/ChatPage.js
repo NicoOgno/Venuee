@@ -24,7 +24,7 @@ export default function ChatPage() {
               <OtherChatBubble msg="this chat page aint it" />
               <MyChatBubble msg="man shutup man, florida men stand up" />
               <OtherChatBubble msg="what fam???" />
-              <MyChatBubble msg="Florida>Queens" />
+              <MyChatBubble msg="Florida>Queens cause we the best we got the humidity and the mosquitos and fuck all yall north of the mason dixon line we outchea waffle house stand uuuuppppp" />
               <MyChatBubble msg="FACTS" />
             </div>
             <div className={styles.chatInputContainer}>
