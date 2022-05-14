@@ -85,29 +85,6 @@ exports.getAllUsers = async (req, res) => {
     }
 };
 
-// GET USER RESERVATIONS
-exports.getUserReservations = async (req, res) => {
-    try {
-        const id = req.params.id;
-        const user = await User.findOne({ where: {id: id},
-            include: {
-              model: Reservation,
-              as: 'userReserve',
-              attributes: ['reserveDate', 'partySize', 'vendorId']
-            },
-            attributes: ['userName', 'email']
-        });
-        const reservation = await Reservation.findOne({where: {vendorId: user.userReserve[0].vendorId}});
-        const { vendorId } = reservation;
-        const vendorInfo = await Vendor.findOne({where: {id: vendorId}})
-        const { businessName, email, streetAddress, type, vendorImg } = vendorInfo;
-        return res.status(200).json({user, businessName, email, streetAddress, type, vendorImg });
-    } catch (error) {
-        console.error(error, 'in controllers');
-        return res.status(500).send({res: 'Internal server error', error: true});
-    }
-};
-
 exports.userLogout = (req, res) => {
 
 };
