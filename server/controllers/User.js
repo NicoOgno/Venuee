@@ -75,7 +75,6 @@ exports.getUserProfile = async (req, res) => {
 
 // GET ALL USERS
 exports.getAllUsers = async (req, res) => {
-    console.log('IM HERE');
     try {
         const users = await User.findAll();
         //console.log('USERS', users);
@@ -88,7 +87,7 @@ exports.getAllUsers = async (req, res) => {
 
 // GET USER RESERVATIONS
 exports.getUserReservations = async (req, res) => {
-    try {//'businessName', 'email', 'streetAddress', 'type', 'vendorImg'
+    try {
         const id = req.params.id;
         const user = await User.findOne({ where: {id: id},
             include: {
