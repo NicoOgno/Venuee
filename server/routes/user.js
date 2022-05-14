@@ -10,14 +10,14 @@ userRouter.post('/register', user.registerUser);
 // User login
 userRouter.post('/login', user.userLogin);
 
-// User profile by id
+// User profile
 userRouter.get('/find/:id', userMiddleware, user.getUserProfile);
 
 // All users
 userRouter.get('/allUsers', user.getAllUsers);
 
 // User reservations
-userRouter.get('/reservations/:id', user.getUserReservations);
+userRouter.get('/reservations/:id', userMiddleware, user.getUserReservations);
 
 // User logout
 userRouter.post('/logout', userMiddleware, user.userLogout);
