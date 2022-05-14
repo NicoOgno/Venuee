@@ -1,12 +1,12 @@
 import React from "react";
-import "./style.css";
+import styles from "./toggle.module.css";
 
-export default function Toggle() {
+export default function Toggle({ onClick, value }) {
   return (
     <div className="my-toggle">
-      <label class="switch">
-        <input type="checkbox" />
-        <span class="slider round"></span>
+      <label className={styles.switch}>
+        <input type="checkbox" onChange={onClick} defaultChecked={value} />
+        <span className={`${styles.slider} ${styles.round}`}></span>
       </label>
     </div>
   );
