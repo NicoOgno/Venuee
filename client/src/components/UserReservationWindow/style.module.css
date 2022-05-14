@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "generalsansmedium";
+  src: url("../../assets/fonts/generalsans/GeneralSans-Medium.otf");
+}
+
+@font-face {
+  font-family: "generalsanslightitalic";
+  src: url("../../assets/fonts/generalsans/GeneralSans-LightItalic.otf");
+}
+
+.venueImg img {
+  width: 95%;
+  height: 700px;
+  padding-top: 5%;
+  padding-left: 25%;
+}
+
+.reservationInfo {
+  font-family: generalsansmedium;
+  position: absolute;
+  top: 14%;
+  left: 28%;
+}
+
+.reservationInfoBox {
+  background-color: rgba(159, 159, 159, 0.67);
+  padding: 2% 2% 2% 2%;
+  width: 104%;
+}
+
+.venueName {
+  letter-spacing: 2rem;
+  color: white;
+}
+
+.reservationDate {
+  letter-spacing: 2rem;
+  margin-top: 0.5rem;
+  color: white;
+}
+
+.venueBio {
+  color: white;
+  font-family: generalsanslightitalic;
+  position: absolute;
+  top: 28rem;
+  margin-right: 30%;
+}
+
+.reserveButton {
+  background-color: rgba(130, 197, 81, 1);
+  font-weight: 700;
+  font-size: 125%;
+  color: white;
+  padding: 10px 55px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 63%;
+  right: 8%;
+  cursor: pointer;
+  transition: ease background-color 500ms;
+}
+
+.reserveButton:hover {
+  background-color: rgb(101, 152, 62);
+}
