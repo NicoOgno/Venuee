@@ -58,6 +58,10 @@
   align-items: center;
 }
 
+.row.active {
+  background: rgba(196, 196, 196, 0.4);
+}
+
 .row:hover {
   cursor: pointer;
   background: rgba(77, 76, 76, 0.4);

@@ -14,7 +14,7 @@ export const UserSidebarData = [
         width="75px"
       />
     ),
-    link: "/search",
+    link: "/userSearch",
   },
 
   {

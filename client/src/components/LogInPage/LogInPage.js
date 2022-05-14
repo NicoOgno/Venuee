@@ -4,6 +4,7 @@ import Toggle from "../Toggle/Toggle";
 import logo from "../../assets/images/clipart1129793.png";
 import { useNavigate } from "react-router-dom";
 import apiUserServices from "../../ApiServices/apiUserServices";
+import apiVendorServices from "../../ApiServices/apiVendorServices";
 
 const initialFormState = {
   email: "",
@@ -16,10 +17,6 @@ export default function LogInPage() {
   const [isUser, setIsUser] = useState(true);
   const [formState, setFormState] = useState(initialFormState);
 
-  useEffect(() => {
-    setIsUser(true);
-  }, []);
-
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setFormState((prevFormState) => ({
@@ -28,31 +25,39 @@ export default function LogInPage() {
     }));
   };
 
-  //CLICK HANDLER ONCE ROUTES ARE FINISHED
-  // const handleLogin = async (e) => {
-  //   e.preventDefault();
-  //   const { email, password } = formState;
-  //   const user = { email, password };
-  //   //TODO add vendor login when path avail
-  //   const res = await apiUserServices.userLogin(user);
-  //   navigate("/vendorReservations");
-
-  //   if (res.error) {
-  //     alert(`${res.message}`);
-  //     setFormState(initialFormState);
-  //   }
-  // };
-
-  //Manual navigate
-  const handleLogin = () =>
-    isUser ? navigate("/search") : navigate("/vendorReservations");
-
-  const handleToggle = () => {
-    setIsUser(!isUser);
+  // CLICK HANDLER ONCE ROUTES ARE FINISHED
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const { email, password } = formState;
+    const user = { email, password };
+    //TODO add vendor login when path avail
+    if (isUser) {
+      const res = await apiUserServices.userLogin(user);
+      if (res.accessToken) {
+        navigate("/userSearch");
+      } else {
+        alert("Incorrect Credentials");
+      }
+    } else {
+      const res = await apiVendorServices.vendorLogin(user);
+      if (res.accessToken) {
+        navigate("/vendorReservations");
+      } else {
+        alert("Incorrect Credentials");
+      }
+    }
   };
 
   const validateForm = () => {
     return !formState.email || !formState.password;
+  };
+
+  //Manual navigate
+  // const handleLogin = () =>
+  //   isUser ? navigate("/userSearch") : navigate("/vendorReservations");
+
+  const handleToggle = () => {
+    setIsUser(!isUser);
   };
 
   return (
@@ -72,7 +77,7 @@ export default function LogInPage() {
               ></input>
               <input
                 className={styles.loginInputField}
-                type="password"
+                // type="password"
                 placeholder="PASSWORD"
                 name="password"
                 onChange={handleOnChange}
@@ -85,8 +90,8 @@ export default function LogInPage() {
               <button
                 className={styles.loginButton}
                 onClick={handleLogin}
-                //UNDISABLE ONCE ROUTES USED
-                // disabled={validateForm}
+                type="submit"
+                disabled={validateForm()}
               >
                 login
               </button>
