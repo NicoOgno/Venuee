@@ -28,7 +28,7 @@ exports.registerUser = async (req, res) => {
       email: storedUser.email,
       company: storedUser.company,
     }, SECRET_KEY, { expiresIn: '2h'});
-    return res.status(201).send({ accessToken });
+    return res.status(201).send({ accessToken, success: true });
   } catch (error) {
     console.log("ERROR", error);
     return res.status(400).send({ error, message: "Could not create user" });
@@ -37,17 +37,22 @@ exports.registerUser = async (req, res) => {
 
 // USER LOGIN
 exports.userLogin = async (req, res) => {
-    console.log('inside')
-  const { email, password } = req.body;
   try {
+    const { email, password } = req.body;
     const user = await User.findOne({ where: { email: email } });
     const validatedPass = await bcrypt.compare(password, user.password);
     if (!validatedPass) throw new Error();
-    const accessToken = jwt.sign({ _id: user._id }, SECRET_KEY);
-    res.status(200).send({ accessToken, success: true });
+    const accessToken = jwt.sign({
+      id: user.id,
+      userName: user.userName,
+      email: user.email,
+      company: user.company,
+      userImg: user.userImg
+    }, SECRET_KEY, { expiresIn: '2h'});
+    return res.status(200).send({ accessToken, success: true });
   } catch (error) {
     console.log(error);
-    res
+    return res
       .status(400)
       .send({ error: "401", message: "Username or password is incorrect" });
   }
