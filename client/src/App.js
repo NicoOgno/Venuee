@@ -15,15 +15,16 @@ import VendorAvailability from "./Pages/VendorPages/VendorAvailability/VendorAva
 import VendorChat from "./Pages/VendorPages/VendorChat/VendorChat";
 import VendorChatFull from "./Pages/VendorPages/VendorChatFull/VendorChatFull";
 import VendorProfileInfo from "./Pages/VendorPages/VendorProfileInfo/VendorProfileInfo";
+import Login from "./Pages/UserPages/Login/Login";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LogInPage />} />
+        <Route path="/" element={<Login />} />
         <Route path="/userRegister" element={<UserRegisterPage />} />
         <Route path="/vendorRegister" element={<VendorRegisterPage />} />
-        <Route path="/search" element={<UserSearch />} />
+        <Route path="/userSearch" element={<UserSearch />} />
         <Route path="/searchResults" element={<UserSearchResults />} />
         <Route path="/userReservations" element={<UserReservations />} />
         <Route path="/userChat" element={<UserChat />} />
