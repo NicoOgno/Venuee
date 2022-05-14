@@ -55,7 +55,7 @@ exports.getUserProfile = async (req, res) => {
         console.log('USER', user)
         delete user.dataValues.password;
         res.status(200).send(user);
-        
+
     } catch (error) {
         res.status(404).send({ error, message: 'Resource not found' });
     }
