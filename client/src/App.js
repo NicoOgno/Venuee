@@ -16,7 +16,7 @@ function App() {
       {/* <VendorReservationCard /> */}
       {/* <Calendar /> */}
       {/* <Chatbox /> */}
-      <UserReservationWindow />
+      {/* <UserReservationWindow /> */}
     </div>
   );
 }
