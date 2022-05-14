@@ -1,0 +1,23 @@
+.backgroundImg {
+  background-image: url("../../../assets/images/background\ \(1\).jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.vendorAvailabilityContainer {
+  display: flex;
+}
+
+.rightSideContainer {
+  display: flex;
+  width: 70vw;
+}
+
+.demoCalendar {
+  display: flex;
+
+  background-color: brown;
+  margin: 10vh;
+  width: 900px;
+  height: 800px;
+}

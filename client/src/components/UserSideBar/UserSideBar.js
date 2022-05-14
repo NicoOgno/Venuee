@@ -1,49 +1,49 @@
 import React from "react";
-import "./style.css";
+import styles from "./style.module.css";
 import logo from "../../assets/images/clipart1129793.png";
 import { UserSidebarData } from "./UserSidebarData";
 import { UserUtilitiesData } from "./UserUtilitiesData";
 
-function UserSideBar() {
+function UserSidebar() {
   return (
-    <div className="sidebar-container">
-      <div className="profile-header">
-        <img src={logo} className="profile-img" />
-        <div className="profile-name">Booger</div>
+    <div className={styles.sidebarContainer}>
+      <div className={styles.profileHeader}>
+        <img src={logo} alt={"no img avail"} className={styles.profileImg} />
+        <div className={styles.profileName}>Booger</div>
       </div>
       <div>
-        <ul className="sidebar-list">
+        <ul className={styles.sidebarList}>
           {UserSidebarData.map((value, key) => {
             return (
               <li
                 key={key}
-                className="row"
+                className={styles.row}
                 id={window.location.pathname === value.link ? "active" : ""}
                 onClick={() => {
                   window.location.pathname = value.link;
                 }}
               >
-                <div className="icon">{value.icon}</div>
-                <div className="title">{value.title}</div>
+                <div className={styles.icon}>{value.icon}</div>
+                <div className={styles.title}>{value.title}</div>
               </li>
             );
           })}
         </ul>
       </div>
       <div>
-        <ul className="util-sidebar-list">
+        <ul className={styles.utilSidebarList}>
           {UserUtilitiesData.map((value, key) => {
             return (
               <li
                 key={key}
-                className="util-row"
+                className={styles.utilRow}
                 id={window.location.pathname === value.link ? "active" : ""}
                 onClick={() => {
                   window.location.pathname = value.link;
                 }}
               >
-                <div className="util-icon">{value.icon}</div>
-                <div className="util-title">{value.title}</div>
+                <div className={styles.utilIcon}>{value.icon}</div>
+                <div className={styles.utilTitle}>{value.title}</div>
               </li>
             );
           })}
@@ -53,4 +53,4 @@ function UserSideBar() {
   );
 }
 
-export default UserSideBar;
+export default UserSidebar;

@@ -2,13 +2,13 @@
   font-family: "bentonSansReg";
   src: url("../../assets/fonts/bentonsansregular/BentonSansRegular.otf");
 }
-.sidebar-container {
+.sidebarContainer {
   height: 100vh;
   width: 20%;
   background: #131313;
 }
 
-.profile-header {
+.profileHeader {
   height: 16vh;
   display: flex;
   flex-direction: row;
@@ -16,7 +16,7 @@
   align-items: center;
 }
 
-.profile-img {
+.profileImg {
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -26,7 +26,7 @@
   border-radius: 60%;
 }
 
-.profile-name {
+.profileName {
   font-family: "bentonSansReg";
   font-size: 30px;
   padding-left: 20px;
@@ -36,13 +36,13 @@
   color: white;
 }
 
-.sidebar-list {
+.sidebarList {
   padding: 0;
   width: 100%;
   margin-top: 35%;
 }
 
-.sidebar-list #active {
+.sidebarList #active {
   background: rgba(196, 196, 196, 0.4);
 }
 
@@ -65,23 +65,25 @@
 
 .icon {
   flex: 30%;
+  padding-left: 30px;
 }
 
 .title {
+  font-size: large;
   flex: 70%;
 }
 
-.util-sidebar-list {
+.utilSidebarList {
   padding: 0;
   width: 100%;
   margin-top: 71%;
 }
 
-.util-sidebar-list #active {
+.utilSidebarList #active {
   background: rgba(196, 196, 196, 0.4);
 }
 
-.util-row {
+.utilRow {
   color: white;
   font-family: "bentonSansReg";
   height: 50px;
@@ -93,15 +95,16 @@
   align-items: center;
 }
 
-.util-row:hover {
+.utilRow:hover {
   cursor: pointer;
   background: rgba(77, 76, 76, 0.4);
 }
 
-.util-icon {
+.utilIcon {
+  padding-left: 25px;
   flex: 10%;
 }
 
-.util-title {
+.utilTitle {
   flex: 70%;
 }

@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "bentonSansReg";
+  src: url("../../assets/fonts/bentonsansregular/BentonSansRegular.otf");
+}
+
+.chatboxContainer {
+  background-color: darkgrey;
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-family: bentonSansReg;
+}
+
+.avatarImg {
+  min-width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+}
+
+.chatboxInfo {
+  padding-left: 3rem;
+}
+
+.chatboxUser {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+
+.chatboxTextDescription {
+  color: rgba(97, 97, 97, 0.281);
+  font-weight: 300;
+}
+
+.chatboxTime {
+  color: rgba(97, 97, 97, 0.281);
+  position: absolute;
+  font-weight: 500;
+  width: 104px;
+  left: 1750px;
+  top: 50px;
+}

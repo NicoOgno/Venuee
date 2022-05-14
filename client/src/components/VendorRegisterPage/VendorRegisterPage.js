@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Toggle from "../Toggle/Toggle";
 import styles from "./vendorRegisterPage.module.css";
 import jetsons from "../../assets/images/jetsons.png";
+import { useNavigate } from "react-router-dom";
+import { isUnitless } from "@mui/material/styles/cssUtils";
 
 export default function VendorRegisterPage() {
+  const [isUser, setIsUser] = useState(false);
+
+  useEffect(() => {
+    setIsUser(false);
+  }, []);
+
+  const handleRegister = () => navigate("/");
+
+  const handleToggle = () => {
+    setIsUser(!isUser);
+    navigate("/userRegister");
+  };
+  let navigate = useNavigate();
   return (
     <div className={styles.container}>
       <div className={styles.leftContainer}>
         <h1 className={styles.registerName}>register</h1>
         <div className={styles.toggleContainer}>
           <span className={styles.userSpan}>user</span>
-          <Toggle />
+          <Toggle onClick={handleToggle} value={true} />
           <span className={styles.vendorSpan}>vendor</span>
         </div>
         <form className={styles.registerForm}>
@@ -39,9 +54,19 @@ export default function VendorRegisterPage() {
             <button className={styles.uploadPicsButton}>+</button>
           </div>
         </form>
-        <button className={styles.registerButton}>register</button>
+        <button className={styles.registerButton} onClick={handleRegister}>
+          register
+        </button>
         <a className={styles.loginLink}>
-          already have an account? <span className={styles.login}>login</span>
+          already have an account?{" "}
+          <span
+            className={styles.login}
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            login
+          </span>
         </a>
       </div>
       <div className={styles.rightContainer}>

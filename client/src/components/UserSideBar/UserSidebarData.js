@@ -1,22 +1,45 @@
 import React from "react";
-import { SearchOutline, ListOutline, ChatbubblesOutline } from "react-ionicons";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import FormatListBulletedOutlinedIcon from "@mui/icons-material/FormatListBulletedOutlined";
+import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 
 export const UserSidebarData = [
   {
     title: "FIND A VENUE",
-    icon: <SearchOutline color="white" height="40px" width="75px" />,
+    icon: (
+      <SearchOutlinedIcon
+        fontSize="large"
+        color="white"
+        height="40px"
+        width="75px"
+      />
+    ),
     link: "/search",
   },
 
   {
     title: "RESERVATIONS",
-    icon: <ListOutline color="white" height="40px" width="75px" />,
+    icon: (
+      <FormatListBulletedOutlinedIcon
+        fontSize="large"
+        color="white"
+        height="40px"
+        width="75px"
+      />
+    ),
     link: "/userReservations",
   },
 
   {
     title: "CHAT",
-    icon: <ChatbubblesOutline color="white" height="40px" width="75px" />,
+    icon: (
+      <ChatOutlinedIcon
+        fontSize="large"
+        color="white"
+        height="40px"
+        width="75px"
+      />
+    ),
     link: "/userChat",
   },
 ];
