@@ -14,6 +14,7 @@ const userMiddleware = async (req, res, next) => {
         // attempt to find user object and set to req
         const user = await User.findOne({ _id });
         if (!user) return res.sendStatus(401);
+        // storing user in req to use in controller
         req.user = user;
         next();
     } catch (error) {

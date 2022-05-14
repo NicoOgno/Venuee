@@ -50,26 +50,26 @@ const reservations = [
   {
     reserveDate: new Date("December 10, 2022 13:00:00"),
     partySize: 5,
-    confirmationId: 1,
-    reserveId: 1,
+    userId: 1,
+    vendorId: 1,
   },
   {
     reserveDate: new Date("September 7, 2022 17:30:00"),
     partySize: 50,
-    confirmationId: 2,
-    reserveId: 3,
+    userId: 2,
+    vendorId: 3,
   },
   {
     reserveDate: new Date("November 1, 2022 10:30:00"),
     partySize: 10,
-    confirmationId: 3,
-    reserveId: 2,
+    userId: 3,
+    vendorId: 2,
   },
   {
     reserveDate: new Date("December 17, 2022 13:30:00"),
     partySize: 25,
-    confirmationId: 4,
-    reserveId: 4,
+    userId: 4,
+    vendorId: 4,
   },
 ];
 

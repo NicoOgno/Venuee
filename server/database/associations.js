@@ -4,8 +4,8 @@ const Reservation = require('./models/Reservation');
 
 User.hasMany(Reservation, { as: 'userReserve', foreignKey: 'userId' });
 
-Reservation.belongsTo(User, { as: 'userRes', foreignKey: 'userId' });
+Reservation.belongsTo(User, { as: 'userInfo', foreignKey: 'userId' });
 
 Vendor.hasMany(Reservation, { as: 'vendorReserve', foreignKey: 'vendorId' });
 
-Reservation.belongsTo(Vendor, { as: 'reserve', foreignKey: 'vendorId' })
+Reservation.belongsTo(Vendor, { as: 'vendorInfo', foreignKey: 'vendorId' })

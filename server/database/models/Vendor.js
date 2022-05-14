@@ -64,7 +64,7 @@ Vendor.init({
             }
         }
     },
-        state: {
+    state: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
