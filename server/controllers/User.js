@@ -6,25 +6,32 @@ const SECRET_KEY = process.env.SECRET_KEY;
 // USER REGISTER
 exports.registerUser = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { userName, email, password, company, userImg } = req.body;
     const user = await User.findOne({ where: { email: email } });
     if (user) {
       return res
         .status(409)
-        .send({ error: "409", message: "User already exists" });
+        .send({ error: "409", message: "Email already exists" });
+    }
+    const nameUser = await User.findOne({ where: { userName: userName } });
+    if (nameUser) {
+      return res
+        .status(409)
+        .send({ error: "409", message: "User name already taken" });
     }
     if (password === "") throw new Error();
     const hash = await bcrypt.hash(password, 10);
-    const newUser = new User({
-      ...req.body,
-      password: hash,
-    });
-    const { _id } = await newUser.save();
-    const accessToken = jwt.sign({ _id }, SECRET_KEY);
-    res.status(201).send({ accessToken });
+    const storedUser = await User.create({userName, email, password: hash, company, userImg});
+    const accessToken = jwt.sign({
+      id: storedUser.id,
+      userName: storedUser.userName,
+      email: storedUser.email,
+      company: storedUser.company,
+    }, SECRET_KEY, { expiresIn: '2h'});
+    return res.status(201).send({ accessToken });
   } catch (error) {
     console.log("ERROR", error);
-    res.status(400).send({ error, message: "Could not create user" });
+    return res.status(400).send({ error, message: "Could not create user" });
   }
 };
 
