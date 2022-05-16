@@ -1,4 +1,4 @@
-const baseURL = process.env.REACT_APP_BASE_URL;
+const baseURL = process.env.REACT_APP_SERVER_PORT;
 
 const apiVendorServices = {};
 
@@ -10,6 +10,19 @@ apiVendorServices.vendorLogin = (vendor) => {
   })
     .then((res) => res.json())
     .catch((err) => console.log(err));
+};
+
+apiVendorServices.getVendorProfileInfo = async (token) => {
+  try {
+    const res = await fetch(`${baseURL}/vendor/find`, {
+      headers: { authorization: `${token}` },
+    });
+    const data = await res.json();
+    console.log(data);
+    return data;
+  } catch (err) {
+    return err;
+  }
 };
 
 export default apiVendorServices;

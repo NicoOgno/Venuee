@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import VendorSidebar from "../../../components/VendorSidebar/VendorSidebar";
 import styles from "./style.module.css";
+import apiVendorServices from "../../../ApiServices/apiVendorServices";
 
 function VendorReservations() {
+  const token = localStorage.getItem("accessToken");
+  console.log(token);
+
+  useEffect(() => {
+    apiVendorServices.getVendorProfileInfo(token);
+  });
   return (
     <div className={styles.backgroundImg}>
       <div className={styles.vendorReservationContainer}>

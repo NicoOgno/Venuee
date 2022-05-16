@@ -77,8 +77,7 @@ exports.userLogin = async (req, res) => {
 // GET USER PROFILE
 exports.getUserProfile = async (req, res) => {
   try {
-    const { id } = req.params;
-    const user = await User.findByPk(id);
+    const user = req.user;
     delete user.dataValues.password;
     return res.status(200).send(user);
   } catch (error) {

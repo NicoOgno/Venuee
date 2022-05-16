@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./style.module.css";
 import logo from "../../assets/images/clipart1129793.png";
 import { UserSidebarData } from "./UserSidebarData";
 import { UserUtilitiesData } from "./UserUtilitiesData";
-import { accordionDetailsClasses } from "@mui/material";
 
 function UserSidebar() {
-  const [selectedTagName, setSelectedTagName] = useState(0);
   return (
     <div className={styles.sidebarContainer}>
       <div className={styles.profileHeader}>
@@ -20,14 +18,9 @@ function UserSidebar() {
               <li
                 key={key}
                 className={styles.row}
-                tagName={key}
                 id={window.location.pathname === value.link ? "active" : ""}
                 onClick={() => {
                   window.location.pathname = value.link;
-                  setSelectedTagName(key);
-                  document
-                    .getElementsByTagName(selectedTagName)
-                    .addClassName(styles.active);
                 }}
               >
                 <div className={styles.icon}>{value.icon}</div>
