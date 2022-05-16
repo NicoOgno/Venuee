@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Toggle from "../Toggle/Toggle";
 import styles from "./userRegisterPage.module.css";
 import jetsons from "../../assets/images/jetsons.png";
@@ -12,47 +12,38 @@ const initialFormState = {
   password: "",
 };
 
-// Just writing out the logic here for how I think I can handle this user register form page
-// Going to use the useref hook that way I don't update any states unless we are actually attempting
-// to submit
-// When we click the button, it will check the conditions of every ref in the input fields
-// if there are input fields that are not filled in properly, the button does nothing
-// and it will also highlight those fields that are done incorrectly
-// by changing the state/color of them in some way
-// I think that could work
-
 export default function UserRegisterPage() {
   let navigate = useNavigate();
 
-  // defining the useRef variables
-  const usernameRef = useRef();
-  const companyNameRef = useRef();
-  const emailRef = useRef();
-  const passwordRef = useRef();
-
   const [isUser, setIsUser] = useState(true);
-  // const [formState, setFormState] = useState(initialFormState);
+  const [formState, setFormState] = useState(initialFormState);
 
-  // const handleOnChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormState((prevFormState) => ({
-  //     ...prevFormState,
-  //     [name]: value,
-  //   }));
-  // };
+  const handleOnChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormState((prevFormState) => ({
+      ...prevFormState,
+      [name]: value,
+    }));
+  };
+  console.log(formState);
   //TODO ONCE ROUTES OPEN
-  // const handleRegister = async (e) => {
-  //   e.preventDefault();
-  //   const { email, companyName, password, username } = formState;
-  //   const user = { email, companyName, password, username };
-  //   const res = await apiUserServices.UserRegister(user);
+  const handleRegister = async (e) => {
+    console.log("submitted");
 
-  //   if(res.error) {
-  //     alert(`${res.message}`);
-  //     setFormState(initialFormState)
-  //   }
+    e.preventDefault();
+    // const { email, companyName, password, username } = formState;
+    // const user = { email, companyName, password, username };
+    const res = await apiUserServices.UserRegister(formState);
+
+    if (res.error) {
+      alert(`${res.message}`);
+      setFormState(initialFormState);
+    }
+  };
+  // const handleRegister = () => {
+  //   // navigate("/");
   // };
-  const handleRegister = () => navigate("/");
   const handleToggle = () => {
     setIsUser(!isUser);
     navigate("/vendorRegister");
@@ -67,43 +58,43 @@ export default function UserRegisterPage() {
           <Toggle onClick={handleToggle} value={false} />
           <span className={styles.vendorSpan}>vendor</span>
         </div>
-        <form className={styles.registerForm}>
+        <form className={styles.registerForm} onSubmit={handleRegister}>
           <input
             className={styles.registerInput}
             placeholder="username"
             name="username"
-            ref={usernameRef}
-            // value={formState.username}
-            // onChange={handleOnChange}
+            value={formState.username}
+            onChange={handleOnChange}
+            required
           />
           <input
             className={styles.registerInput}
             placeholder="company name(optional)"
             name="companyName"
-            ref={companyNameRef}
-            // value={formState.companyName}
-            // onChange={handleOnChange}
+            value={formState.companyName}
+            onChange={handleOnChange}
           />
           <input
             className={styles.registerInput}
             placeholder="email"
             name="email"
-            ref={emailRef}
-            // value={formState.email}
-            // onChange={handleOnChange}
+            value={formState.email}
+            onChange={handleOnChange}
+            required
           />
           <input
-            className={`${styles.registerInput} ${styles.lowerCaseInput}`}
+            className={styles.registerInput}
             placeholder="password"
             name="password"
-            ref={passwordRef}
-            // value={formState.password}
-            // onChange={handleOnChange}
+            value={formState.password}
+            onChange={handleOnChange}
+            required
           />
+          <button type="submit" className={styles.registerButton}>
+            register
+          </button>
         </form>
-        <button className={styles.registerButton} onClick={handleRegister}>
-          register
-        </button>
+
         <a className={styles.loginLink}>
           already have an account?{" "}
           <span
