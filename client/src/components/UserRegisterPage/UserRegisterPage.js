@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Toggle from "../Toggle/Toggle";
 import styles from "./userRegisterPage.module.css";
 import jetsons from "../../assets/images/jetsons.png";
@@ -12,8 +12,23 @@ const initialFormState = {
   password: "",
 };
 
+// Just writing out the logic here for how I think I can handle this user register form page
+// Going to use the useref hook that way I don't update any states unless we are actually attempting
+// to submit
+// When we click the button, it will check the conditions of every ref in the input fields
+// if there are input fields that are not filled in properly, the button does nothing
+// and it will also highlight those fields that are done incorrectly
+// by changing the state/color of them in some way
+// I think that could work
+
 export default function UserRegisterPage() {
   let navigate = useNavigate();
+
+  // defining the useRef variables
+  const userName = useRef();
+  const companyName = useRef();
+  const email = useRef();
+  const password = useRef();
 
   const [isUser, setIsUser] = useState(true);
   const [formState, setFormState] = useState(initialFormState);
