@@ -40,10 +40,13 @@ const users = [
 ];
 
 const vendors = [
-  {businessName: "Real Food", email: "real@foods.com", password: "myunrealfood", streetAddress: "rstreet", city: "rcity", state: "rstate", zipCode: "97021", maxCapacity: "45", type: "lounge", vendorImg: "url111"},
-  {businessName: "Piccolo Sogno", email: "psogno@psogno.com", password: "greatestsecret", streetAddress: "pstreet", city: "pcity", state: "pstate", zipCode: "97021", maxCapacity: "15", type: "banquet hall", vendorImg: "url222"},
-  {businessName: "Tropical Pizza", email: "tropical@pizza.com", password: "pinapplepizza", streetAddress: "tstreet", city: "tcity", state: "tstate", zipCode: "97211", maxCapacity: "25", type: "bar", vendorImg: "url333"},
-  {businessName: "Big Barbecue", email: "bb@bbarbecue.com", password: "brutalbarbecues", streetAddress: "bstreet", city: "bcity", state: "bstate", zipCode: "97211", maxCapacity: "100", type: "restaurant", vendorImg: "url444"}
+  {businessName: "Real Food", email: "real@foods.com", password: "myunrealfood", streetAddress: "rstreet", city: "rcity", state: "rstate", zipCode: "97111", maxCapacity: "45", type: "lounge", vendorImg: "url111"},
+  {businessName: "Piccolo Sogno", email: "psogno@psogno.com", password: "greatestsecret", streetAddress: "pstreet", city: "pcity", state: "pstate", zipCode: "97222", maxCapacity: "15", type: "banquet hall", vendorImg: "url222"},
+  {businessName: "Tropical Pizza", email: "tropical@pizza.com", password: "pinapplepizza", streetAddress: "tstreet", city: "tcity", state: "tstate", zipCode: "97222", maxCapacity: "25", type: "bar", vendorImg: "url333"},
+  {businessName: "Big Barbecue", email: "bb@bbarbecue.com", password: "brutalbarbecues", streetAddress: "bstreet", city: "bcity", state: "bstate", zipCode: "97111", maxCapacity: "100", type: "restaurant", vendorImg: "url444"},
+  {businessName: "Doug Fir Lounge", email: "events@dougfir.com", password: "eatfir", streetAddress: "801 NE Burnside Ave", city: "Portland", state: "Oregon", zipCode: "97222", maxCapacity: "80", type: "lounge", vendorImg: "url555" },
+  {businessName: "Harlow", email: "events@harlow.com", password: "harlow2022", streetAddress: "3710 SE Belmont St", city: "Portland", state: "Oregon", zipCode: "97111", maxCapacity: "30", type: "restaurant", vendorImg: "url666" },
+  {businessName: "Opal28", email: "events@opal.com", password: "opal2022", streetAddress: "900 SW Lovejoy Ave", city: "Portland", state: "Oregon", zipCode: "97222", maxCapacity: "20", type: "restaurant", vendorImg: "url777" },
 ];
 
 const reservations = [
@@ -54,26 +57,45 @@ const reservations = [
     vendorId: 1,
   },
   {
-    reserveDate: new Date("September 7, 2022 17:30:00"),
+    reserveDate: new Date("December 10, 2022 17:30:00"),
     partySize: 50,
     userId: 2,
     vendorId: 3,
   },
   {
-    reserveDate: new Date("November 1, 2022 10:30:00"),
+    reserveDate: new Date("December 11, 2022 10:30:00"),
     partySize: 10,
-    userId: 3,
+    userId: 2,
     vendorId: 2,
   },
   {
-    reserveDate: new Date("December 17, 2022 13:30:00"),
-    partySize: 25,
-    userId: 4,
+    reserveDate: new Date("December 11, 2022 13:30:00"),
+    partySize: 80,
+    userId: 3,
     vendorId: 4,
   },
+  {
+    reserveDate: new Date("December 12, 2022 13:30:00"),
+    partySize: 80,
+    userId: 3,
+    vendorId: 4,
+  },
+  {
+    reserveDate: new Date("December 12, 2022 13:30:00"),
+    partySize: 80,
+    userId: 4,
+    vendorId: 7,
+  },
+  {
+    reserveDate: new Date("December 13, 2022 13:30:00"),
+    partySize: 80,
+    userId: 4,
+    vendorId: 2,
+  },
+  
 ];
 
-sequelize.sync ({ force: false }).then(() => {
+sequelize.sync ({ force: true }).then(() => {
 }).then(async () => {
   for (let i = 0; i < users.length; i++) {
     await User.create(users[i]);
