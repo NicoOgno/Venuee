@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const Vendor = require("../database/models/Vendor");
-const Reservation = require('../database/models/Reservation');
+const Reservation = require("../database/models/Reservation");
 const SECRET_KEY = process.env.SECRET_KEY;
 
 // REGISTER
@@ -48,7 +48,22 @@ exports.vendorLogin = async (req, res) => {
     //UNCOMMENT WHEN NOT USING MOCK DATA
     // const validatedPass = await bcrypt.compare(password, vendor.password);
     // if (!validatedPass) throw new Error();
-    const accessToken = jwt.sign({ _id: vendor._id }, SECRET_KEY);
+    const accessToken = jwt.sign(
+      {
+        id: vendor.id,
+        businessName: vendor.businessName,
+        email: vendor.email,
+        streetAddress: vendor.streetAddress,
+        city: vendor.city,
+        state: vendor.state,
+        zipCode: vendor.zipCode,
+        maxCapacity: vendor.maxCapacity,
+        type: vendor.type,
+        vendorImg: vendor.vendorImg,
+      },
+      SECRET_KEY,
+      { expiresIn: "2h" }
+    );
     return res.status(200).send({ accessToken, success: true });
   } catch (error) {
     return res
@@ -60,8 +75,7 @@ exports.vendorLogin = async (req, res) => {
 // GET VENDOR PROFILE BY ID
 exports.getVendorProfile = async (req, res) => {
   try {
-    const { id } = req.params;
-    const vendor = await Vendor.findByPk(id);
+    const vendor = req.vendor;
     delete vendor.dataValues.password;
     return res.status(200).send(vendor);
   } catch (error) {
@@ -102,23 +116,32 @@ exports.getVendorReservations = async (req, res) => {
 
 exports.getAvailableVendors = async (req, res) => {
   try {
-    const { dateRequested, zipcodeRequested, typeRequested, groupSize }  = req.body;
-    const vendors = await Vendor.findAll({raw: true });
-    const reservations = await Reservation.findAll({raw: true});
+    const { dateRequested, zipcodeRequested, typeRequested, groupSize } =
+      req.body;
+    const vendors = await Vendor.findAll({ raw: true });
+    const reservations = await Reservation.findAll({ raw: true });
 
-    const vendorMatch = vendors.filter(v => {
-      return v.zipCode == zipcodeRequested && v.type == typeRequested && v.maxCapacity >= groupSize });
+    const vendorMatch = vendors.filter((v) => {
+      return (
+        v.zipCode == zipcodeRequested &&
+        v.type == typeRequested &&
+        v.maxCapacity >= groupSize
+      );
+    });
 
-    const filteredDates = reservations.filter(r => {
-      return String(r.reserveDate) == String(new Date(dateRequested))}).map(r => {
+    const filteredDates = reservations
+      .filter((r) => {
+        return String(r.reserveDate) == String(new Date(dateRequested));
+      })
+      .map((r) => {
         return r.vendorId;
       });
 
-    const availableVenues = vendorMatch.filter(v => {
+    const availableVenues = vendorMatch.filter((v) => {
       return !filteredDates.includes(v.id);
     });
     return res.status(200).json(availableVenues);
   } catch (error) {
-    return res.status(500).send({ res: 'Internal server error', error: true });
+    return res.status(500).send({ res: "Internal server error", error: true });
   }
 };

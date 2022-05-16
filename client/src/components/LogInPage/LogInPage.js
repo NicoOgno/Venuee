@@ -34,6 +34,8 @@ export default function LogInPage() {
     if (isUser) {
       const res = await apiUserServices.userLogin(user);
       if (res.accessToken) {
+        const { accessToken } = res;
+        localStorage.setItem("accessToken", accessToken);
         navigate("/userSearch");
       } else {
         alert("Incorrect Credentials");
@@ -41,6 +43,8 @@ export default function LogInPage() {
     } else {
       const res = await apiVendorServices.vendorLogin(user);
       if (res.accessToken) {
+        const { accessToken } = res;
+        localStorage.setItem("accessToken", accessToken);
         navigate("/vendorReservations");
       } else {
         alert("Incorrect Credentials");

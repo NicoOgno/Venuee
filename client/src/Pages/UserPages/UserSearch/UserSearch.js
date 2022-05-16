@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import UserSideBar from "../../../components/UserSideBar/UserSideBar";
 import styles from "./style.module.css";
 import { useNavigate } from "react-router-dom";
+import apiUserServices from "../../../ApiServices/apiUserServices";
 
 function UserSearch() {
+  const token = localStorage.getItem("accessToken");
+  const currentUser = apiUserServices.getUserProfileInfo(token);
+  useEffect(() => {
+    apiUserServices.getUserProfileInfo(token);
+  });
   let navigate = useNavigate();
   return (
     <div className={styles.backgroundImg}>
