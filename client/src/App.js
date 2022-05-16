@@ -17,7 +17,7 @@ import VendorChatFull from "./Pages/VendorPages/VendorChatFull/VendorChatFull";
 import VendorProfileInfo from "./Pages/VendorPages/VendorProfileInfo/VendorProfileInfo";
 import Login from "./Pages/UserPages/Login/Login";
 
-import UserSettings from "./components/UserSettings/UserSettings";
+import VendorSettings from "./components/VendorSettings/VendorSettings";
 
 function App() {
   return (
@@ -39,7 +39,7 @@ function App() {
     //     <Route path="/vendorProfileInfo" element={<VendorProfileInfo />} />
     //   </Routes>
     // </Router>
-    <UserSettings />
+    <VendorSettings />
 
     // <div>
     //   {/* <UserRegisterPage /> */}
