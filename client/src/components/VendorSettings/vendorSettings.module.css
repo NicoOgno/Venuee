@@ -13,7 +13,6 @@
 }
 
 .vendorProfile {
-  background: pink;
   display: flex;
   flex-direction: column;
   align-items: center;
