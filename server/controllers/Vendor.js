@@ -111,14 +111,14 @@ exports.getAvailableVendors = async (req, res) => {
 
     const filteredDates = reservations.filter(r => {
       return String(r.reserveDate) == String(new Date(dateRequested))}).map(r => {
-        return r.vendorId
+        return r.vendorId;
       });
 
     const availableVenues = vendorMatch.filter(v => {
-      return !filteredDates.includes(v.id)
+      return !filteredDates.includes(v.id);
     });
     return res.status(200).json(availableVenues);
   } catch (error) {
     return res.status(500).send({ res: 'Internal server error', error: true });
   }
-}
+};
