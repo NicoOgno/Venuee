@@ -12,6 +12,9 @@ vendorRouter.post('/login', vendor.vendorLogin);
 // Vendor profile by id
 vendorRouter.get('/find/:id', vendorMiddleware, vendor.getVendorProfile);
 
+// Available Vendors
+vendorRouter.get('/availability', vendor.getAvailableVendors);
+
 // All vendors
 vendorRouter.get('/allVendors', vendor.getAllVendors)
 

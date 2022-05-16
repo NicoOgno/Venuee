@@ -74,10 +74,7 @@ const reservations = [
 ];
 
 sequelize.sync ({ force: false }).then(() => {
-  // Conexión establecida
-  console.log("Conexión establecida...");
 }).then(async () => {
-  // Rellenar usuarios
   for (let i = 0; i < users.length; i++) {
     await User.create(users[i]);
   };
