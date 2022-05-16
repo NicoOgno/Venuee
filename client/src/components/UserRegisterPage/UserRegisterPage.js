@@ -25,21 +25,21 @@ export default function UserRegisterPage() {
   let navigate = useNavigate();
 
   // defining the useRef variables
-  const userName = useRef();
-  const companyName = useRef();
-  const email = useRef();
-  const password = useRef();
+  const usernameRef = useRef();
+  const companyNameRef = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
 
   const [isUser, setIsUser] = useState(true);
-  const [formState, setFormState] = useState(initialFormState);
+  // const [formState, setFormState] = useState(initialFormState);
 
-  const handleOnChange = (e) => {
-    const { name, value } = e.target;
-    setFormState((prevFormState) => ({
-      ...prevFormState,
-      [name]: value,
-    }));
-  };
+  // const handleOnChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormState((prevFormState) => ({
+  //     ...prevFormState,
+  //     [name]: value,
+  //   }));
+  // };
   //TODO ONCE ROUTES OPEN
   // const handleRegister = async (e) => {
   //   e.preventDefault();
@@ -72,29 +72,33 @@ export default function UserRegisterPage() {
             className={styles.registerInput}
             placeholder="username"
             name="username"
-            value={formState.username}
-            onChange={handleOnChange}
+            ref={usernameRef}
+            // value={formState.username}
+            // onChange={handleOnChange}
           />
           <input
             className={styles.registerInput}
             placeholder="company name(optional)"
             name="companyName"
-            value={formState.companyName}
-            onChange={handleOnChange}
+            ref={companyNameRef}
+            // value={formState.companyName}
+            // onChange={handleOnChange}
           />
           <input
             className={styles.registerInput}
             placeholder="email"
             name="email"
-            value={formState.email}
-            onChange={handleOnChange}
+            ref={emailRef}
+            // value={formState.email}
+            // onChange={handleOnChange}
           />
           <input
             className={`${styles.registerInput} ${styles.lowerCaseInput}`}
             placeholder="password"
             name="password"
-            value={formState.password}
-            onChange={handleOnChange}
+            ref={passwordRef}
+            // value={formState.password}
+            // onChange={handleOnChange}
           />
         </form>
         <button className={styles.registerButton} onClick={handleRegister}>
