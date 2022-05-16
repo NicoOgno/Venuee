@@ -31,11 +31,7 @@ export default function VendorRegisterPage() {
         <form className={styles.registerForm}>
           <input className={styles.registerInput} placeholder="business name" />
           <input className={styles.registerInput} placeholder="email" />
-          <input
-            className={styles.registerInput}
-            placeholder="password"
-            type="password"
-          />
+          <input className={styles.registerInput} placeholder="password" />
           <input
             className={styles.registerInput}
             placeholder="street address"

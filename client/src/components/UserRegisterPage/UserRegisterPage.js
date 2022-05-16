@@ -75,9 +75,8 @@ export default function UserRegisterPage() {
             onChange={handleOnChange}
           />
           <input
-            className={styles.registerInput}
+            className={`${styles.registerInput} ${styles.lowerCaseInput}`}
             placeholder="password"
-            type="password"
             name="password"
             value={formState.password}
             onChange={handleOnChange}

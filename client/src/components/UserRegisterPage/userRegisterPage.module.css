@@ -68,6 +68,10 @@
   text-transform: uppercase;
 }
 
+.lowerCaseInput {
+  text-transform: lowercase;
+}
+
 .registerButton {
   background: linear-gradient(180deg, #78b242 0%, #458740 100%);
   color: white;
