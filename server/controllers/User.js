@@ -53,8 +53,8 @@ exports.userLogin = async (req, res) => {
     const { email, password } = req.body;
     const user = await User.findOne({ where: { email: email } });
     // UNCOMMENT OUT WHEN NOT USING MOCK DATA
-    // const validatedPass = await bcrypt.compare(password, user.password);
-    // if (!validatedPass) throw new Error();
+    const validatedPass = await bcrypt.compare(password, user.password);
+    if (!validatedPass) throw new Error();
     const accessToken = jwt.sign(
       {
         id: user.id,
