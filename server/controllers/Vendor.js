@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const Vendor = require("../database/models/Vendor");
+const Reservation = require('../database/models/Reservation');
 const SECRET_KEY = process.env.SECRET_KEY;
 
 // REGISTER
@@ -98,3 +99,26 @@ exports.getVendorReservations = async (req, res) => {
     return res.status(500).send({ res: "Internal server error", error: true });
   }
 };
+
+exports.getAvailableVendors = async (req, res) => {
+  try {
+    const { dateRequested, zipcodeRequested, typeRequested, groupSize }  = req.body;
+    const vendors = await Vendor.findAll({raw: true });
+    const reservations = await Reservation.findAll({raw: true});
+
+    const vendorMatch = vendors.filter(v => {
+      return v.zipCode == zipcodeRequested && v.type == typeRequested && v.maxCapacity >= groupSize });
+
+    const filteredDates = reservations.filter(r => {
+      return String(r.reserveDate) == String(new Date(dateRequested))}).map(r => {
+        return r.vendorId
+      });
+
+    const availableVenues = vendorMatch.filter(v => {
+      return !filteredDates.includes(v.id)
+    });
+    return res.status(200).json(availableVenues);
+  } catch (error) {
+    return res.status(500).send({ res: 'Internal server error', error: true });
+  }
+}
