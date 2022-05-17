@@ -1,8 +1,8 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import UserSideBar from '../../../components/UserSideBar/UserSideBar';
 import apiUserServices from '../../../ApiServices/apiUserServices';
-import { UserContext } from '../../../App';
+
 // import styles from "./styles.module.css";
 
 function UserProfileInfo() {
@@ -11,12 +11,16 @@ function UserProfileInfo() {
   const token = localStorage.getItem('accessToken');
 
   useEffect(() => {
-    apiUserServices.getUserProfileInfo(token);
+    const getUser = async () => {
+      let res = await apiUserServices.getUserProfileInfo(token);
+      setUser(res);
+    };
+    getUser();
   }, []);
 
-  const currentUser = useContext(UserContext);
-  const [user, setUser] = useState(currentUser);
-  console.log(user);
+  const [user, setUser] = useState({});
+  console.log('this is state', user);
+
   return <UserSideBar />;
 }
 

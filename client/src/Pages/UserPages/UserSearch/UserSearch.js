@@ -1,9 +1,8 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import UserSideBar from '../../../components/UserSideBar/UserSideBar';
 import styles from './style.module.css';
 import { useNavigate } from 'react-router-dom';
 import apiUserServices from '../../../ApiServices/apiUserServices';
-import { UserContext } from '../../../App';
 
 function UserSearch() {
   let navigate = useNavigate();
@@ -11,12 +10,15 @@ function UserSearch() {
   const token = localStorage.getItem('accessToken');
 
   useEffect(() => {
-    apiUserServices.getUserProfileInfo(token);
+    const getUser = async () => {
+      let res = await apiUserServices.getUserProfileInfo(token);
+      setUser(res);
+    };
+    getUser();
   }, []);
 
-  const currentUser = useContext(UserContext);
-  const [user, setUser] = useState(currentUser);
-  console.log(user);
+  const [user, setUser] = useState({});
+  console.log('this is state', user);
 
   return (
     <div className={styles.backgroundImg}>

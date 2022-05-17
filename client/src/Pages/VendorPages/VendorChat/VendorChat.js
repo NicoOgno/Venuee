@@ -1,20 +1,22 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import apiVendorServices from '../../../ApiServices/apiVendorServices';
 import VendorSidebar from '../../../components/VendorSidebar/VendorSidebar';
 import styles from './style.module.css';
-import { VendorContext } from '../../../App';
 
 function VendorChat() {
   let navigate = useNavigate();
   const token = localStorage.getItem('accessToken');
 
   useEffect(() => {
-    apiVendorServices.getVendorProfileInfo(token);
-  });
+    const getVendor = async () => {
+      let res = await apiVendorServices.getVendorProfileInfo(token);
+      setVendor(res);
+    };
+    getVendor();
+  }, []);
 
-  const currentVendor = useContext(VendorContext);
-  const [vendor, setVendor] = useState(currentVendor);
+  const [vendor, setVendor] = useState({});
   console.log(vendor);
   return (
     <div className={styles.backgroundImg}>

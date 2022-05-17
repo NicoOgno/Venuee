@@ -36,7 +36,6 @@ apiUserServices.getUserProfileInfo = async (token) => {
       headers: { authorization: `${token}` },
     });
     const data = await res.json();
-    console.log(data);
     return data;
   } catch (err) {
     return err;
