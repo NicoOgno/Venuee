@@ -4,7 +4,7 @@ const Vendor = require("../database/models/Vendor");
 const Reservation = require("../database/models/Reservation");
 const SECRET_KEY = process.env.SECRET_KEY;
 
-// REGISTER
+// REGISTER NEW VENDOR
 exports.registerVendor = async (req, res) => {
     try {
         const {
@@ -40,7 +40,7 @@ exports.registerVendor = async (req, res) => {
     }
 };
 
-// LOGIN
+// VENDOR LOGIN
 exports.vendorLogin = async (req, res) => {
 
   const { email, password } = req.body;
@@ -74,7 +74,7 @@ exports.vendorLogin = async (req, res) => {
 
 };
 
-// GET VENDOR PROFILE BY ID
+// GET VENDOR PROFILE
 exports.getVendorProfile = async (req, res) => {
   try {
     const vendor = req.vendor;
@@ -96,27 +96,27 @@ exports.getAllVendors = async (req, res) => {
         return res.status(500).send({ res: "Internal server error", error: true });
     }
 };
+// <<<DUPLICATE>>> GET A VENDOR'S RESERVATIONS
+// exports.getVendorReservations = async (req, res) => {
+//     try {
+//         const id = req.params.id;
+//         const vendor = await Vendor.findOne({
+//             where: { id: id },
+//             include: {
+//             model: Reservation,
+//             as: "vendorReserve",
+//             attributes: ["reserveDate", "partySize"],
+//             },
+//             attributes: ["vendorName", "address"],
+//         });
+//         return res.status(200).json(vendor);
+//     } catch (error) {
+//         console.error(error, "in controllers");
+//         return res.status(500).send({ res: "Internal server error", error: true });
+//     }
+// };
 
-// GET REGISTRATIONS
-exports.getVendorReservations = async (req, res) => {
-    try {
-        const id = req.params.id;
-        const vendor = await Vendor.findOne({
-            where: { id: id },
-            include: {
-            model: Reservation,
-            as: "vendorReserve",
-            attributes: ["reserveDate", "partySize"],
-            },
-            attributes: ["vendorName", "address"],
-        });
-        return res.status(200).json(vendor);
-    } catch (error) {
-        console.error(error, "in controllers");
-        return res.status(500).send({ res: "Internal server error", error: true });
-    }
-};
-
+// FIND AVAILABLE VENDORS
 exports.getAvailableVendors = async (req, res) => {
     try {
         const { dateRequested, zipcodeRequested, typeRequested, groupSize }  = req.body;
