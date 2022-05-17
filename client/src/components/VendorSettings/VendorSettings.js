@@ -26,7 +26,9 @@ export default function VendorSettings() {
     }));
   };
 
-  console.log(formState);
+  const updateVendor = () => {
+    console.log(formState);
+  };
 
   return (
     <div className={styles.vendorSettingsPageContainer}>
@@ -43,7 +45,13 @@ export default function VendorSettings() {
         <div className={styles.infoHeaderContainer}>
           <h3 className={styles.basicInfoHeader}>basic info</h3>
           <button className={styles.cancelButton}>cancel</button>
-          <button className={styles.updateButton}>update</button>
+          <button
+            className={styles.updateButton}
+            type="button"
+            onClick={updateVendor}
+          >
+            update
+          </button>
         </div>
         <form className={styles.formInputsContainer}>
           <div className={styles.inputGroupAlone}>
@@ -146,6 +154,7 @@ export default function VendorSettings() {
               </label>
               <input name="upload-pictures" className={styles.inputField} />
             </div>
+            <button className={styles.uploadPicsButton}>+</button>
           </div>
         </form>
       </div>
