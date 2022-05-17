@@ -14,7 +14,7 @@ reservationRouter.post("/unavailable", vendorMiddleware, reservation.createVendo
 reservationRouter.get("/user", userMiddleware, reservation.getUserReservations);
 
 // GET A VENDOR'S RESERVATIONS
-reservationRouter.get("/vendor", reservation.getVendorReservations);
+reservationRouter.get("/vendor", vendorMiddleware, reservation.getVendorReservations);
 
 // GET RESERVATION BY RES ID - Need this one?
 reservationRouter.get("/:id", reservation.getReservationById);
