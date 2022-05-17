@@ -3,7 +3,6 @@ import styles from "./style.module.css";
 import logo from "../../assets/images/clipart1129793.png";
 import { UserSidebarData } from "./UserSidebarData";
 import { UserUtilitiesData } from "./UserUtilitiesData";
-import { accordionDetailsClasses } from "@mui/material";
 
 function UserSidebar() {
   const [selectedTagName, setSelectedTagName] = useState(0);

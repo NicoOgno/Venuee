@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import LogInPage from "./components/LogInPage/LogInPage";
+// import LogInPage from "./components/LogInPage/LogInPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import UserReservations from "./Pages/UserPages/UserReservations/UserReservations";
 import UserChat from "./Pages/UserPages/UserChat/UserChat";
@@ -37,16 +37,6 @@ function App() {
         <Route path="/vendorProfileInfo" element={<VendorProfileInfo />} />
       </Routes>
     </Router>
-
-    // <div>
-    //   {/* <UserRegisterPage /> */}
-    //   {/* <LogInPage /> */}
-    //   {/* <VendorRegisterPage /> */}
-    //   {/* <UserSideBar /> */}
-    //   {/*<ChatPage />*/}
-    //   <UserSideBar />
-    //   {/* <VendorSidebar /> */}
-    // </div>
   );
 }
 
