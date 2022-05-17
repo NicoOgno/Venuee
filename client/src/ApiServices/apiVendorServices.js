@@ -4,8 +4,8 @@ const apiVendorServices = {};
 
 apiVendorServices.vendorLogin = (vendor) => {
   return fetch(`${baseURL}/vendor/login`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(vendor),
   })
     .then((res) => res.json())

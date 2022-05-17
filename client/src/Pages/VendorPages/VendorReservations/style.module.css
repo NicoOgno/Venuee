@@ -13,12 +13,3 @@
   display: -ms-inline-grid;
   width: 70vw;
 }
-
-.demoCard {
-  display: inline-grid;
-  grid-row: 3;
-  background-color: brown;
-  margin: 10vh;
-  width: 200px;
-  height: 150px;
-}

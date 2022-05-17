@@ -3,9 +3,22 @@ import Toggle from "../Toggle/Toggle";
 import styles from "./vendorRegisterPage.module.css";
 import jetsons from "../../assets/images/jetsons.png";
 import { useNavigate } from "react-router-dom";
-import { isUnitless } from "@mui/material/styles/cssUtils";
 
-export default function VendorRegisterPage() {
+const initialFormState = {
+  businessName: "",
+  email: "",
+  password: "",
+  streetAddress: "",
+  city: "",
+  state: "",
+  zipCode: "",
+  capacity: "",
+  uploadPictures: "",
+};
+
+export default function VendorRegisterPage(props) {
+  let navigate = useNavigate();
+
   const [isUser, setIsUser] = useState(false);
 
   useEffect(() => {
@@ -14,11 +27,23 @@ export default function VendorRegisterPage() {
 
   const handleRegister = () => navigate("/");
 
+  //UPLOADING IMAGES
   const handleToggle = () => {
     setIsUser(!isUser);
     navigate("/userRegister");
   };
-  let navigate = useNavigate();
+
+  const hiddenFileInput = React.useRef(null);
+
+  const handleClick = (event) => {
+    hiddenFileInput.current.click();
+  };
+
+  const handleChange = (event) => {
+    const fileUploaded = event.target.files[0];
+    props.handleFile(fileUploaded);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.leftContainer}>
@@ -44,10 +69,20 @@ export default function VendorRegisterPage() {
           <div className={styles.bizDetails}>
             <input className={styles.capacity} placeholder="capacity" />
             <input
+              type="file"
+              id="file"
+              accept="image/*"
+              multiple="multiple"
               className={styles.uploadPictures}
               placeholder="upload pictures"
+              ref={hiddenFileInput}
+              onChange={handleChange}
             />
-            <button className={styles.uploadPicsButton}>+</button>
+            <input
+              onClick={handleClick}
+              className={styles.uploadPicsButton}
+              id="upload-pics-button"
+            />
           </div>
         </form>
         <button className={styles.registerButton} onClick={handleRegister}>
