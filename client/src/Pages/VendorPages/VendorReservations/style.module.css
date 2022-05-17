@@ -10,6 +10,13 @@
 }
 
 .rightSideContainer {
-  display: -ms-inline-grid;
+  display: flex;
   width: 70vw;
+}
+
+.vendorReservationCard {
+  height: 10%;
+  width: 10%;
+  display: grid;
+  grid-row: 3;
 }

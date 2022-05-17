@@ -1,14 +1,14 @@
-import React from "react";
-import styles from "./style.module.css";
-import logo from "../../assets/images/clipart1129793.png";
-import { UserSidebarData } from "./UserSidebarData";
-import { UserUtilitiesData } from "./UserUtilitiesData";
+import React from 'react';
+import styles from './style.module.css';
+import logo from '../../assets/images/clipart1129793.png';
+import { UserSidebarData } from './UserSidebarData';
+import { UserUtilitiesData } from './UserUtilitiesData';
 
 function UserSidebar() {
   return (
     <div className={styles.sidebarContainer}>
       <div className={styles.profileHeader}>
-        <img src={logo} alt={"no img avail"} className={styles.profileImg} />
+        <img src={logo} alt={'no img avail'} className={styles.profileImg} />
         <div className={styles.profileName}>Booger</div>
       </div>
       <div>
@@ -18,7 +18,7 @@ function UserSidebar() {
               <li
                 key={key}
                 className={styles.row}
-                id={window.location.pathname === value.link ? "active" : ""}
+                id={window.location.pathname === value.link ? 'active' : ''}
                 onClick={() => {
                   window.location.pathname = value.link;
                 }}
@@ -37,7 +37,7 @@ function UserSidebar() {
               <li
                 key={key}
                 className={styles.utilRow}
-                id={window.location.pathname === value.link ? "active" : ""}
+                id={window.location.pathname === value.link ? 'active' : ''}
                 onClick={() => {
                   window.location.pathname = value.link;
                 }}
