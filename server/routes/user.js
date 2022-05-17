@@ -1,22 +1,24 @@
-const { Router } = require('express');
-const userMiddleware = require('../middleware/user');
-const user = require('../controllers/User');
+const { Router } = require("express");
+const userMiddleware = require("../middleware/user");
+const user = require("../controllers/User");
 const userRouter = Router();
 
-// USER
-// Register user
-userRouter.post('/register', user.registerUser);
+// REGISTER NEW USER
+userRouter.post("/register", user.registerUser);
 
-// User login
-userRouter.post('/login', user.userLogin);
+// USER LOGIN
+userRouter.post("/login", user.userLogin);
 
-// User profile
-userRouter.get('/find/:id', userMiddleware, user.getUserProfile);
+// GET USER
+userRouter.get("/find", userMiddleware, user.getUserProfile);
 
-// All users
-userRouter.get('/allUsers', user.getAllUsers);
+// GET ALL USERS
+userRouter.get("/allUsers", user.getAllUsers);
 
-// User logout
-userRouter.post('/logout', userMiddleware, user.userLogout);
+// USER LOGOUT
+userRouter.post("/logout", userMiddleware, user.userLogout);
+
+// DELETE USER
+// userRouter.delete()
 
 exports.userRouter = userRouter;
