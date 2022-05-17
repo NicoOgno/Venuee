@@ -5,8 +5,8 @@ const apiUserServices = {};
 apiUserServices.userLogin = (user) => {
   console.log(baseURL);
   return fetch(`${baseURL}/user/login`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(user),
   })
     .then((res) => res.json())
@@ -15,8 +15,8 @@ apiUserServices.userLogin = (user) => {
 
 apiUserServices.UserRegister = (user) => {
   return fetch(`${baseURL}/user/register`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(user),
   })
     .then((res) => res.json())

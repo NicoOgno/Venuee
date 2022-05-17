@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../database/models/User");
+
 const SECRET_KEY = process.env.SECRET_KEY;
 
 // REGISTER NEW USER
@@ -9,17 +10,13 @@ exports.registerUser = async (req, res) => {
     const { userName, email, password, company, userImg } = req.body;
     const user = await User.findOne({ where: { email: email } });
     if (user) {
-      return res
-        .status(409)
-        .send({ error: "409", message: "Email already exists" });
+      return res.status(409).send({ error: '409', message: 'Email already exists' });
     }
     const nameUser = await User.findOne({ where: { userName: userName } });
     if (nameUser) {
-      return res
-        .status(409)
-        .send({ error: "409", message: "User name already taken" });
+      return res.status(409).send({ error: '409', message: 'User name already taken' });
     }
-    if (password === "") throw new Error();
+    if (password === '') throw new Error();
     const hash = await bcrypt.hash(password, 10);
     const storedUser = await User.create({
       userName,
@@ -36,12 +33,12 @@ exports.registerUser = async (req, res) => {
         company: storedUser.company,
       },
       SECRET_KEY,
-      { expiresIn: "2h" }
+      { expiresIn: '2h' }
     );
     return res.status(201).send({ accessToken, success: true });
   } catch (error) {
-    console.log("ERROR", error);
-    return res.status(400).send({ error, message: "Could not create user" });
+    console.log('ERROR', error);
+    return res.status(400).send({ error, message: 'Could not create user' });
   }
 };
 
@@ -50,9 +47,11 @@ exports.userLogin = async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ where: { email: email } });
+    
     // COMMENT OUT WHEN USING MOCK DATA
     const validatedPass = await bcrypt.compare(password, user.password);
     if (!validatedPass) throw new Error();
+
     const accessToken = jwt.sign(
       {
         id: user.id,
@@ -62,13 +61,11 @@ exports.userLogin = async (req, res) => {
         userImg: user.userImg,
       },
       SECRET_KEY,
-      { expiresIn: "2h" }
+      { expiresIn: '2h' }
     );
     return res.status(200).send({ accessToken, success: true });
   } catch (error) {
-    return res
-      .status(400)
-      .send({ error, message: "Username or password is incorrect" });
+    return res.status(400).send({ error, message: 'Username or password is incorrect' });
   }
 };
 
@@ -90,7 +87,7 @@ exports.getAllUsers = async (req, res) => {
     //console.log('USERS', users);
     return res.status(200).json(users);
   } catch (error) {
-    return res.status(500).send({ res: "Internal server error", error: true });
+    return res.status(500).send({ res: 'Internal server error', error: true });
   }
 };
 
