@@ -58,12 +58,12 @@ exports.getUserReservations = async (req, res) => {
         include: {
           model: Vendor,
           as: "vendorInfo",
-          attributes: ["businessName", "streetAddress"],
+          attributes: ["businessName", "streetAddress", 'vendorImg'],
         },
       },
     });
     const reservations = user.userReserve;
-    return res.status(200).json({ reservations });
+    return res.status(200).json( reservations );
   } catch (error) {
     console.error(error, "in controllers");
     return res.status(500).send({ res: "Internal server error", error: true });
@@ -73,9 +73,9 @@ exports.getUserReservations = async (req, res) => {
 // GET VENDOR RESERVATIONS
 exports.getVendorReservations = async (req, res) => {
   try {
-    //const id = req.vendor.id;
+    const id = req.vendor.id;
     const vendor = await Vendor.findOne({
-      where: { id: 1 },
+      where: { id },
       include: {
         model: Reservation,
         as: "vendorReserve",
@@ -83,12 +83,12 @@ exports.getVendorReservations = async (req, res) => {
         include: {
           model: User,
           as: "userInfo",
-          attributes: ["userName", "email"],
+          attributes: ["userName", "email", 'userImg', 'company'],
         },
       },
     });
     const reservations = vendor.vendorReserve;
-    return res.status(200).json({ reservations });
+    return res.status(200).json( reservations );
   } catch (error) {
     console.error(error, "in controllers");
     return res.status(500).send({ res: "Internal server error", error: true });
