@@ -20,13 +20,12 @@ export default function UserRegisterPage() {
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
-
     setFormState((prevFormState) => ({
       ...prevFormState,
       [name]: value,
     }));
   };
-  console.log(formState);
+
   //TODO ONCE ROUTES OPEN
   const handleRegister = async (e) => {
     console.log("submitted");

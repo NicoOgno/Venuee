@@ -1,9 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./vendorSettings.module.css";
 import VendorSideBar from "../VendorSidebar/VendorSidebar";
 import tempImg from "../../assets/images/clipart1129793.png";
-import { style } from "@mui/system";
+
+const initialFormState = {
+  businessName: "",
+  email: "",
+  password: "",
+  streetAddress: "",
+  city: "",
+  state: "",
+  zipCode: "",
+  capacity: "",
+};
+
 export default function VendorSettings() {
+  const [formState, setFormState] = useState(initialFormState);
+
+  const handleOnChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormState((prevFormState) => ({
+      ...prevFormState,
+      [name]: value,
+    }));
+  };
+
+  console.log(formState);
+
   return (
     <div className={styles.vendorSettingsPageContainer}>
       <VendorSideBar />
@@ -23,50 +47,85 @@ export default function VendorSettings() {
         </div>
         <form className={styles.formInputsContainer}>
           <div className={styles.inputGroupAlone}>
-            <label htmlFor="business-name" className={styles.inputLabel}>
+            <label htmlFor="businessName" className={styles.inputLabel}>
               business name
             </label>
-            <input name="business-name" className={styles.inputField} />
+            <input
+              name="businessName"
+              placeholder="temp"
+              className={styles.inputField}
+              onChange={handleOnChange}
+            />
           </div>
           <div className={styles.groupMultipleInputs}>
             <div className={styles.inputGroup}>
               <label htmlFor="email" className={styles.inputLabel}>
                 email
               </label>
-              <input name="email" className={styles.inputField} />
+              <input
+                name="email"
+                placeholder="temp"
+                className={styles.inputField}
+                onChange={handleOnChange}
+              />
             </div>
 
             <div className={styles.inputGroup}>
               <label htmlFor="password" className={styles.inputLabel}>
                 password
               </label>
-              <input name="password" className={styles.inputField} />
+              <input
+                name="password"
+                placeholder="temp"
+                className={styles.inputField}
+                onChange={handleOnChange}
+              />
             </div>
           </div>
           <div className={styles.inputGroupAlone}>
-            <label htmlFor="street-address" className={styles.inputLabel}>
+            <label htmlFor="streetAddress" className={styles.inputLabel}>
               street address
             </label>
-            <input name="street-address" className={styles.inputField} />
+            <input
+              name="streetAddress"
+              placeholder="temp"
+              className={styles.inputField}
+              onChange={handleOnChange}
+            />
           </div>
           <div className={styles.groupMultipleInputs}>
             <div className={styles.inputGroupCity}>
               <label htmlFor="city" className={styles.inputLabel}>
                 city
               </label>
-              <input name="city" className={styles.inputField} />
+              <input
+                name="city"
+                placeholder="temp"
+                className={styles.inputField}
+                onChange={handleOnChange}
+              />
             </div>
             <div className={styles.inputGroupState}>
               <label htmlFor="state" className={styles.inputLabel}>
                 state
               </label>
-              <input name="state" className={styles.inputField} />
+              <input
+                name="state"
+                placeholder="temp"
+                className={styles.inputField}
+                onChange={handleOnChange}
+              />
             </div>
             <div className={styles.inputGroupZip}>
-              <label htmlFor="zip-code" className={styles.inputLabel}>
+              <label htmlFor="zipCode" className={styles.inputLabel}>
                 zip code
               </label>
-              <input name="zip-code" className={styles.inputField} />
+              <input
+                name="zipCode"
+                placeholder="temp"
+                className={styles.inputField}
+                onChange={handleOnChange}
+              />
             </div>
           </div>
           <div className={styles.groupMultipleInputs}>
@@ -74,7 +133,12 @@ export default function VendorSettings() {
               <label htmlFor="capacity" className={styles.inputLabel}>
                 capacity
               </label>
-              <input name="capacity" className={styles.inputField} />
+              <input
+                name="capacity"
+                placeholder="temp"
+                className={styles.inputField}
+                onChange={handleOnChange}
+              />
             </div>
             <div className={styles.inputGroupPics}>
               <label htmlFor="upload-pictures" className={styles.inputLabel}>

@@ -16,6 +16,8 @@ import VendorChatFull from "./Pages/VendorPages/VendorChatFull/VendorChatFull";
 import VendorProfileInfo from "./Pages/VendorPages/VendorProfileInfo/VendorProfileInfo";
 import Login from "./Pages/UserPages/Login/Login";
 
+import VendorSettings from "./components/VendorSettings/VendorSettings";
+
 const noCurrentUser = {
   id: "",
   userName: "",
@@ -41,34 +43,35 @@ export const VendorContext = React.createContext();
 
 function App() {
   return (
-    <UserContext.Provider value={noCurrentUser}>
-      <VendorContext.Provider value={noCurrentVendor}>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/userRegister" element={<UserRegisterPage />} />
-            <Route path="/vendorRegister" element={<VendorRegisterPage />} />
-            <Route path="/userSearch" element={<UserSearch />} />
-            <Route path="/searchResults" element={<UserSearchResults />} />
-            <Route path="/userReservations" element={<UserReservations />} />
-            <Route path="/userChat" element={<UserChat />} />
-            <Route path="/userProfileInfo" element={<UserProfileInfo />} />
-            <Route path="/userChatFull" element={<UserChatFull />} />
-            <Route
-              path="/vendorReservations"
-              element={<VendorReservations />}
-            />
-            <Route
-              path="/vendorAvailability"
-              element={<VendorAvailability />}
-            />
-            <Route path="/vendorChat" element={<VendorChat />} />
-            <Route path="/vendorChatFull" element={<VendorChatFull />} />
-            <Route path="/vendorProfileInfo" element={<VendorProfileInfo />} />
-          </Routes>
-        </Router>
-      </VendorContext.Provider>
-    </UserContext.Provider>
+    <VendorSettings />
+    // <UserContext.Provider value={noCurrentUser}>
+    //   <VendorContext.Provider value={noCurrentVendor}>
+    //     <Router>
+    //       <Routes>
+    //         <Route path="/" element={<Login />} />
+    //         <Route path="/userRegister" element={<UserRegisterPage />} />
+    //         <Route path="/vendorRegister" element={<VendorRegisterPage />} />
+    //         <Route path="/userSearch" element={<UserSearch />} />
+    //         <Route path="/searchResults" element={<UserSearchResults />} />
+    //         <Route path="/userReservations" element={<UserReservations />} />
+    //         <Route path="/userChat" element={<UserChat />} />
+    //         <Route path="/userProfileInfo" element={<UserProfileInfo />} />
+    //         <Route path="/userChatFull" element={<UserChatFull />} />
+    //         <Route
+    //           path="/vendorReservations"
+    //           element={<VendorReservations />}
+    //         />
+    //         <Route
+    //           path="/vendorAvailability"
+    //           element={<VendorAvailability />}
+    //         />
+    //         <Route path="/vendorChat" element={<VendorChat />} />
+    //         <Route path="/vendorChatFull" element={<VendorChatFull />} />
+    //         <Route path="/vendorProfileInfo" element={<VendorProfileInfo />} />
+    //       </Routes>
+    //     </Router>
+    //   </VendorContext.Provider>
+    // </UserContext.Provider>
     // <div>
     //   {/* <UserRegisterPage /> */}
     //   {/* <LogInPage /> */}
