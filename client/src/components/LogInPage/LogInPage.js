@@ -30,7 +30,7 @@ export default function LogInPage() {
     e.preventDefault();
     const { email, password } = formState;
     const user = { email, password };
-    //TODO add vendor login when path avail
+
     if (isUser) {
       const res = await apiUserServices.userLogin(user);
       if (res.accessToken) {
@@ -55,11 +55,6 @@ export default function LogInPage() {
   const validateForm = () => {
     return !formState.email || !formState.password;
   };
-
-  //Manual navigate
-  // const handleLogin = () =>
-  //   isUser ? navigate("/userSearch") : navigate("/vendorReservations");
-
   const handleToggle = () => {
     setIsUser(!isUser);
   };
@@ -81,7 +76,7 @@ export default function LogInPage() {
               ></input>
               <input
                 className={styles.loginInputField}
-                // type="password"
+                type="password"
                 placeholder="PASSWORD"
                 name="password"
                 onChange={handleOnChange}
@@ -116,4 +111,4 @@ export default function LogInPage() {
       </div>
     </>
   );
-}
+};
