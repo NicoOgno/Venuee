@@ -3,20 +3,22 @@ const userMiddleware = require("../middleware/user");
 const user = require("../controllers/User");
 const userRouter = Router();
 
-// USER
-// Register user
+// REGISTER NEW USER
 userRouter.post("/register", user.registerUser);
 
-// User login
+// USER LOGIN
 userRouter.post("/login", user.userLogin);
 
-// User profile
+// GET USER
 userRouter.get("/find", userMiddleware, user.getUserProfile);
 
-// All users
+// GET ALL USERS
 userRouter.get("/allUsers", user.getAllUsers);
 
-// User logout
+// USER LOGOUT
 userRouter.post("/logout", userMiddleware, user.userLogout);
+
+// DELETE USER
+// userRouter.delete()
 
 exports.userRouter = userRouter;

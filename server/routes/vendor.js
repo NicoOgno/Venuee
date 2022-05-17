@@ -3,25 +3,28 @@ const vendorMiddleware = require("../middleware/vendor");
 const vendor = require("../controllers/Vendor");
 const vendorRouter = Router();
 
-// Register vendor
+// REGISTER NEW VENDOR
 vendorRouter.post("/register", vendor.registerVendor);
 
-// Vendor login
+// VENDOR LOGIN
 vendorRouter.post("/login", vendor.vendorLogin);
 
-// Vendor profile by id
-vendorRouter.get("/find/", vendorMiddleware, vendor.getVendorProfile);
+// GET VENDOR
+vendorRouter.get("/find", vendorMiddleware, vendor.getVendorProfile);
 
-// Available Vendors
+// GET AVAILABLE VENDORS
 vendorRouter.get("/availability", vendor.getAvailableVendors);
 
-// All vendors
+// <<<DUPLICATE>>> GET A VENDOR'S RESERVATIONS
+//vendorRouter.get("/reservation", vendor.getVendorReservations);
+
+// GET ALL VENDORS
 vendorRouter.get("/allVendors", vendor.getAllVendors);
 
-// Vendor reservations
-vendorRouter.get("/reservation/:id", vendor.getVendorReservations);
+// VENDOR LOGOUT
+// vendorRouter.post('/logout', vendorMiddleware, vendor.vendorLogout);
 
-// Vendor logout
-//vendorRouter.post('/logout', vendorMiddleware, vendor.vendorLogout);
+// DELETE VENDOR PROFILE
+// vendorRouter.delete()
 
 exports.vendorRouter = vendorRouter;

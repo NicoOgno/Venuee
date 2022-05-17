@@ -2,28 +2,24 @@ const { Router } = require("express");
 const userMiddleware = require("../middleware/user");
 const vendorMiddleware = require("../middleware/vendor");
 const reservation = require("../controllers/Reservation");
-const { vendorLogin } = require("../controllers/Vendor");
-const vendorMiddleware = require("../middleware/vendor");
 const reservationRouter = Router();
 
-// Create User reservation
+// CREATE NEW USER RESERVATION
 reservationRouter.post("/", userMiddleware, reservation.createUserReservation);
 
-reservationRouter.post(
-  "/unavailable",
-  vendorMiddleware,
-  reservation.createVendorReservation
-);
+// CREATE NEW VENDOR RESERVATION - (TO MAKE DATE UNAVAILABLE)
+reservationRouter.post("/unavailable", vendorMiddleware, reservation.createVendorReservation);
 
-// Delete reservation
-//reservationRouter.delete('/delete/:id', reservation.deleteReservation);
-
-// Get User Reservation
+// GET A USER'S RESERVATIONS
 reservationRouter.get("/user", userMiddleware, reservation.getUserReservations);
 
-// Get Vendor Reservations
+// GET A VENDOR'S RESERVATIONS
 reservationRouter.get("/vendor", reservation.getVendorReservations);
 
+// GET RESERVATION BY RES ID - Need this one?
 reservationRouter.get("/:id", reservation.getReservationById);
+
+// DELETE A RESERVATION
+// reservationRouter.delete('/delete/:id', reservation.deleteReservation);
 
 exports.reservationRouter = reservationRouter;

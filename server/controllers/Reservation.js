@@ -18,9 +18,13 @@ exports.createUserReservation = async (req, res) => {
       reserveDate,
       userId: req.user.id,
     });
-    return res.status(200).json({ newReservation });
+    if (!newReservation) {
+        throw new Error('failed to make a new reservation');
+    }
+    const vendorInfo = await Vendor.findByPk(vendorId);
+    return res.status(200).json({ newReservation, vendorInfo });
   } catch (error) {
-    console.error(error, "in createReservation controllers");
+    console.error(error, "in createUserReservation controllers");
     return res.status(500).send({ res: "Internal server error", error: true });
   }
 };
@@ -29,8 +33,10 @@ exports.createVendorReservation = async (req, res) => {
   try {
     const { reserveDate } = req.body;
     const newReservation = await Reservation.create({
-      reserveDate,
       vendorId: req.vendor.id,
+      reserveDate,
+      partySize: 1,
+      userId: 1
     });
     return res.status(200).json({ newReservation });
   } catch (error) {
@@ -81,7 +87,6 @@ exports.getVendorReservations = async (req, res) => {
         },
       },
     });
-    console.log({ vendor });
     const reservations = vendor.vendorReserve;
     return res.status(200).json({ reservations });
   } catch (error) {

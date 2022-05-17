@@ -40,13 +40,13 @@ const users = [
 ];
 
 const vendors = [
-  {businessName: "Real Food", email: "real@foods.com", password: "myunrealfood", streetAddress: "rstreet", city: "rcity", state: "rstate", zipCode: "97111", maxCapacity: "45", type: "lounge", vendorImg: "url111"},
+  {businessName: "Real Food", email: "real@foods.com", password: "myunrealfood", streetAddress: "rstreet", city: "rcity", state: "rstate", zipCode: "97111", maxCapacity: "90", type: "lounge", vendorImg: "url111"},
   {businessName: "Piccolo Sogno", email: "psogno@psogno.com", password: "greatestsecret", streetAddress: "pstreet", city: "pcity", state: "pstate", zipCode: "97222", maxCapacity: "15", type: "banquet hall", vendorImg: "url222"},
   {businessName: "Tropical Pizza", email: "tropical@pizza.com", password: "pinapplepizza", streetAddress: "tstreet", city: "tcity", state: "tstate", zipCode: "97222", maxCapacity: "25", type: "bar", vendorImg: "url333"},
   {businessName: "Big Barbecue", email: "bb@bbarbecue.com", password: "brutalbarbecues", streetAddress: "bstreet", city: "bcity", state: "bstate", zipCode: "97111", maxCapacity: "100", type: "restaurant", vendorImg: "url444"},
   {businessName: "Doug Fir Lounge", email: "events@dougfir.com", password: "eatfir", streetAddress: "801 NE Burnside Ave", city: "Portland", state: "Oregon", zipCode: "97222", maxCapacity: "80", type: "lounge", vendorImg: "url555" },
   {businessName: "Harlow", email: "events@harlow.com", password: "harlow2022", streetAddress: "3710 SE Belmont St", city: "Portland", state: "Oregon", zipCode: "97111", maxCapacity: "30", type: "restaurant", vendorImg: "url666" },
-  {businessName: "Opal28", email: "events@opal.com", password: "opal2022", streetAddress: "900 SW Lovejoy Ave", city: "Portland", state: "Oregon", zipCode: "97222", maxCapacity: "20", type: "restaurant", vendorImg: "url777" },
+  {businessName: "Opal28", email: "events@opal.com", password: "opal2022", streetAddress: "900 SW Lovejoy Ave", city: "Portland", state: "Oregon", zipCode: "97222", maxCapacity: "20", type: "bar", vendorImg: "url777" },
 ];
 
 const reservations = [
@@ -95,7 +95,7 @@ const reservations = [
   
 ];
 
-sequelize.sync ({ force: true }).then(() => {
+sequelize.sync ({ force: false }).then(() => {
 }).then(async () => {
   for (let i = 0; i < users.length; i++) {
     await User.create(users[i]);
