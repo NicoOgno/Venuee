@@ -20,24 +20,30 @@ export default function UserRegisterPage() {
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
+
     setFormState((prevFormState) => ({
       ...prevFormState,
       [name]: value,
     }));
   };
+  console.log(formState);
   //TODO ONCE ROUTES OPEN
-  // const handleRegister = async (e) => {
-  //   e.preventDefault();
-  //   const { email, companyName, password, username } = formState;
-  //   const user = { email, companyName, password, username };
-  //   const res = await apiUserServices.UserRegister(user);
+  const handleRegister = async (e) => {
+    console.log("submitted");
 
-  //   if(res.error) {
-  //     alert(`${res.message}`);
-  //     setFormState(initialFormState)
-  //   }
+    e.preventDefault();
+    // const { email, companyName, password, username } = formState;
+    // const user = { email, companyName, password, username };
+    const res = await apiUserServices.UserRegister(formState);
+
+    if (res.error) {
+      alert(`${res.message}`);
+      setFormState(initialFormState);
+    }
+  };
+  // const handleRegister = () => {
+  //   // navigate("/");
   // };
-  const handleRegister = () => navigate("/");
   const handleToggle = () => {
     setIsUser(!isUser);
     navigate("/vendorRegister");
@@ -52,13 +58,14 @@ export default function UserRegisterPage() {
           <Toggle onClick={handleToggle} value={false} />
           <span className={styles.vendorSpan}>vendor</span>
         </div>
-        <form className={styles.registerForm}>
+        <form className={styles.registerForm} onSubmit={handleRegister}>
           <input
             className={styles.registerInput}
             placeholder="username"
             name="username"
             value={formState.username}
             onChange={handleOnChange}
+            required
           />
           <input
             className={styles.registerInput}
@@ -73,18 +80,21 @@ export default function UserRegisterPage() {
             name="email"
             value={formState.email}
             onChange={handleOnChange}
+            required
           />
           <input
-            className={`${styles.registerInput} ${styles.lowerCaseInput}`}
+            className={styles.registerInput}
             placeholder="password"
             name="password"
             value={formState.password}
             onChange={handleOnChange}
+            required
           />
+          <button type="submit" className={styles.registerButton}>
+            register
+          </button>
         </form>
-        <button className={styles.registerButton} onClick={handleRegister}>
-          register
-        </button>
+
         <a className={styles.loginLink}>
           already have an account?{" "}
           <span
