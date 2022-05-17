@@ -1,15 +1,15 @@
-import React from "react";
-import styles from "./style.module.css";
-import logo from "../../assets/images/clipart1129793.png";
-import { VendorSidebarData } from "./VendorSidebarData";
-import { VendorUtilitiesData } from "./VendorUtilitesData";
+import React from 'react';
+import styles from './style.module.css';
+import logo from '../../assets/images/clipart1129793.png';
+import { VendorSidebarData } from './VendorSidebarData';
+import { VendorUtilitiesData } from './VendorUtilitesData';
 
-function VendorSidebar() {
+function VendorSidebar({ vendorName, vendorImg }) {
   return (
     <div className={styles.sidebarContainer}>
       <div className={styles.profileHeader}>
-        <img src={logo} alt={"no img avail"} className={styles.profileImg} />
-        <div className={styles.profileName}>Vendor</div>
+        <img src={logo} alt={'no img avail'} className={styles.profileImg} />
+        <div className={styles.profileName}>{vendorName}</div>
       </div>
       <div>
         <ul className={styles.sidebarList}>
@@ -18,7 +18,7 @@ function VendorSidebar() {
               <li
                 key={key}
                 className={styles.row}
-                id={window.location.pathname === value.link ? "active" : ""}
+                id={window.location.pathname === value.link ? 'active' : ''}
                 onClick={() => {
                   window.location.pathname = value.link;
                 }}
@@ -37,7 +37,7 @@ function VendorSidebar() {
               <li
                 key={key}
                 className={styles.utilRow}
-                id={window.location.pathname === value.link ? "active" : ""}
+                id={window.location.pathname === value.link ? 'active' : ''}
                 onClick={() => {
                   window.location.pathname = value.link;
                 }}
