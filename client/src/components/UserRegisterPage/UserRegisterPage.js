@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 import apiUserServices from "../../ApiServices/apiUserServices";
 
 const initialFormState = {
-  username: "",
-  companyName: "",
+  userName: "",
+  company: "",
   email: "",
   password: "",
 };
@@ -32,18 +32,19 @@ export default function UserRegisterPage() {
     console.log("submitted");
 
     e.preventDefault();
-    // const { email, companyName, password, username } = formState;
-    // const user = { email, companyName, password, username };
-    const res = await apiUserServices.UserRegister(formState);
+    const { email, company, password, userName } = formState;
+    const user = { email, company, password, userName };
+    const res = await apiUserServices.UserRegister(user);
 
     if (res.error) {
       alert(`${res.message}`);
       setFormState(initialFormState);
+      navigate('/userRegister')
+      return
     }
+    navigate("/");
   };
-  // const handleRegister = () => {
-  //   // navigate("/");
-  // };
+
   const handleToggle = () => {
     setIsUser(!isUser);
     navigate("/vendorRegister");
@@ -62,16 +63,16 @@ export default function UserRegisterPage() {
           <input
             className={styles.registerInput}
             placeholder="username"
-            name="username"
-            value={formState.username}
+            name="userName"
+            value={formState.userName}
             onChange={handleOnChange}
             required
           />
           <input
             className={styles.registerInput}
             placeholder="company name(optional)"
-            name="companyName"
-            value={formState.companyName}
+            name="company"
+            value={formState.company}
             onChange={handleOnChange}
           />
           <input
@@ -109,9 +110,9 @@ export default function UserRegisterPage() {
       </div>
       <div className={styles.rightContainer}>
         <div className={styles.subRightContainer}>
-          <img src={jetsons} className={styles.jetsons} />
+          <img src={jetsons} className={styles.jetsons} alt=''/>
         </div>
       </div>
     </div>
   );
-}
+};
