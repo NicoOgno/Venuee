@@ -146,14 +146,14 @@
   margin-top: 15px;
   display: flex;
   flex-direction: column;
-  width: 45%;
+  width: 40%;
 }
 
 .inputGroupPics {
-  margin-top: 15px;
   display: flex;
   flex-direction: column;
-  width: 45%;
+  width: 40%;
+  margin-top: 15px;
 }
 
 .inputLabel {
@@ -169,4 +169,22 @@
   border-radius: 5px;
   height: 45px;
   width: 100%;
+  padding-left: 10px;
+}
+
+.inputField::placeholder {
+  text-transform: uppercase;
+}
+
+.uploadPicsButton {
+  background: #c4c4c4;
+  box-shadow: inset 0px 0px 4px 3px rgba(0, 0, 0, 0.25);
+  color: white;
+  font-family: bentonSansReg;
+  height: 45px;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-top: 34px;
+  min-width: 10%;
+  max-width: 10%;
 }
