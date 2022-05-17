@@ -27,6 +27,7 @@ export default function VendorRegisterPage(props) {
 
   const handleRegister = () => navigate("/");
 
+  //UPLOADING IMAGES
   const handleToggle = () => {
     setIsUser(!isUser);
     navigate("/userRegister");

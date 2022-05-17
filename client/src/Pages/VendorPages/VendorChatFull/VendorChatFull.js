@@ -1,6 +1,6 @@
-import React from "react";
-import VendorSidebar from "../../../components/VendorSidebar/VendorSidebar";
-import styles from "./style.module.css";
+import React from 'react';
+import VendorSidebar from '../../../components/VendorSidebar/VendorSidebar';
+import styles from './style.module.css';
 
 function VendorChatFull() {
   return (

@@ -1,24 +1,30 @@
-const { Router } = require('express');
-const vendorMiddleware = require('../middleware/vendor');
-const vendor = require('../controllers/Vendor');
+const { Router } = require("express");
+const vendorMiddleware = require("../middleware/vendor");
+const vendor = require("../controllers/Vendor");
 const vendorRouter = Router();
 
-// Register vendor
-vendorRouter.post('/register', vendor.registerVendor);
+// REGISTER NEW VENDOR
+vendorRouter.post("/register", vendor.registerVendor);
 
-// Vendor login
-vendorRouter.post('/login', vendor.vendorLogin);
+// VENDOR LOGIN
+vendorRouter.post("/login", vendor.vendorLogin);
 
-// Vendor profile by id
-vendorRouter.get('/find/:id', vendorMiddleware, vendor.getVendorProfile);
+// GET VENDOR
+vendorRouter.get("/find", vendorMiddleware, vendor.getVendorProfile);
 
-// All vendors
-vendorRouter.get('/allVendors', vendor.getAllVendors)
+// GET AVAILABLE VENDORS
+vendorRouter.get("/availability", vendor.getAvailableVendors);
 
-// Vendor reservations
-vendorRouter.get('/reservation/:id', vendor.getVendorReservations);
+// <<<DUPLICATE>>> GET A VENDOR'S RESERVATIONS
+//vendorRouter.get("/reservation", vendor.getVendorReservations);
 
-// Vendor logout
-//vendorRouter.post('/logout', vendorMiddleware, vendor.vendorLogout);
+// GET ALL VENDORS
+vendorRouter.get("/allVendors", vendor.getAllVendors);
+
+// VENDOR LOGOUT
+// vendorRouter.post('/logout', vendorMiddleware, vendor.vendorLogout);
+
+// DELETE VENDOR PROFILE
+// vendorRouter.delete()
 
 exports.vendorRouter = vendorRouter;

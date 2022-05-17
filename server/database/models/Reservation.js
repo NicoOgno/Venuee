@@ -14,7 +14,7 @@ Reservation.init({
   },
   partySize: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
     validate: {
       min: {
         args: 1,
