@@ -39,8 +39,6 @@ const noCurrentVendor = {
 export const UserContext = React.createContext();
 export const VendorContext = React.createContext();
 
-import VendorSettings from "./components/VendorSettings/VendorSettings";
-
 function App() {
   return (
     <UserContext.Provider value={noCurrentUser}>
