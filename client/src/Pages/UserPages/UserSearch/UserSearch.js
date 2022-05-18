@@ -7,23 +7,30 @@ import apiUserServices from '../../../ApiServices/apiUserServices';
 function UserSearch() {
   let navigate = useNavigate();
 
+  const [userReservations, setUserReservations] = useState([]);
+  const [user, setUser] = useState({});
+
   const token = localStorage.getItem('accessToken');
 
+  const getUserReservations = async () => {
+    let res = await apiUserServices.getUserReservations(token);
+    setUserReservations(res);
+  };
+
+  const getUser = async () => {
+    let res = await apiUserServices.getUserProfileInfo(token);
+    setUser(res);
+  };
+
   useEffect(() => {
-    const getUser = async () => {
-      let res = await apiUserServices.getUserProfileInfo(token);
-      setUser(res);
-    };
+    getUserReservations();
     getUser();
   }, []);
-
-  const [user, setUser] = useState({});
-  console.log('this is state', user);
-
+  console.log(userReservations);
   return (
     <div className={styles.backgroundImg}>
       <div className={styles.userSearchContainer}>
-        <UserSideBar />
+        <UserSideBar user={user} />
         <div className={styles.rightSideContainer}>
           <div className={styles.searchBarContainer}>
             <div className={styles.zipcode}>zipcode</div>

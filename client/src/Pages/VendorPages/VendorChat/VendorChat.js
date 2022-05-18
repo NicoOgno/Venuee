@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import apiVendorServices from '../../../ApiServices/apiVendorServices';
 import VendorSidebar from '../../../components/VendorSidebar/VendorSidebar';
 import styles from './style.module.css';
+import ChatCardHome from '../../../components/ChatCardHome/ChatCardHome';
 
 function VendorChat() {
   let navigate = useNavigate();
@@ -18,18 +19,7 @@ function VendorChat() {
 
   const [vendor, setVendor] = useState({});
   console.log(vendor);
-  return (
-    <div className={styles.backgroundImg}>
-      <div className={styles.vendorChatContainer}>
-        <VendorSidebar />
-        <div className={styles.rightSideContainer}>
-          <div className={styles.demoCard}>chat</div>
-          <div className={styles.demoCard}>chat</div>
-          <div className={styles.demoCard}>chat</div>
-        </div>
-      </div>
-    </div>
-  );
+  return <ChatCardHome vendor={vendor} />;
 }
 
 export default VendorChat;
