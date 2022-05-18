@@ -49,6 +49,7 @@ const vendors = [
   {businessName: "Opal28", email: "events@opal.com", password: "opal2022", streetAddress: "900 SW Lovejoy Ave", city: "Portland", state: "Oregon", zipCode: "97214", maxCapacity: "20", type: "bar", vendorImg: "url777" },
 ];
 
+
 const reservations = [
   {
     reserveDate: new Date("June 10, 2022 13:00:00"),
