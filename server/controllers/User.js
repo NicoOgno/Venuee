@@ -1,6 +1,6 @@
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const User = require("../database/models/User");
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const User = require('../database/models/User');
 
 const SECRET_KEY = process.env.SECRET_KEY;
 
@@ -47,10 +47,10 @@ exports.userLogin = async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ where: { email: email } });
-    
+
     // COMMENT OUT WHEN USING MOCK DATA
-    const validatedPass = await bcrypt.compare(password, user.password);
-    if (!validatedPass) throw new Error();
+    // const validatedPass = await bcrypt.compare(password, user.password);
+    // if (!validatedPass) throw new Error();
 
     const accessToken = jwt.sign(
       {
@@ -76,7 +76,7 @@ exports.getUserProfile = async (req, res) => {
     delete user.dataValues.password;
     return res.status(200).send(user);
   } catch (error) {
-    return res.status(404).send({ error, message: "Profile not found" });
+    return res.status(404).send({ error, message: 'Profile not found' });
   }
 };
 

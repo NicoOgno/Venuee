@@ -32,6 +32,7 @@
   margin-top: 25px;
   height: 185px;
   width: 185px;
+  border-radius: 50%;
 }
 
 .profileName {

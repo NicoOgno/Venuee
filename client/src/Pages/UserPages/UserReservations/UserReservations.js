@@ -3,6 +3,7 @@ import apiUserServices from '../../../ApiServices/apiUserServices';
 import UserSideBar from '../../../components/UserSideBar/UserSideBar';
 import styles from './style.module.css';
 import { useNavigate } from 'react-router-dom';
+import UserReservationCard from '../../../components/UserReservationCard/UserReservationCard';
 
 function UserReservations() {
   let navigate = useNavigate();
@@ -23,14 +24,17 @@ function UserReservations() {
   return (
     <div className={styles.backgroundImg}>
       <div className={styles.userReservationContainer}>
-        <UserSideBar />
+        <UserSideBar user={user} />
         <div className={styles.rightSideContainer}>
-          <div className={styles.demoCard}>ressy</div>
-          <div className={styles.demoCard}>ressy</div>
-          <div className={styles.demoCard}>ressy</div>
-          <div className={styles.demoCard}>ressy</div>
-          <div className={styles.demoCard}>ressy</div>
-          <div className={styles.demoCard}>ressy</div>
+          <div className={styles.demoCard}>
+            <UserReservationCard />
+          </div>
+          <div className={styles.demoCard}>
+            <UserReservationCard />
+          </div>
+          <div className={styles.demoCard}>
+            <UserReservationCard />
+          </div>
         </div>
       </div>
     </div>

@@ -21,7 +21,7 @@ function VendorAvailability() {
   return (
     <div className={styles.backgroundImg}>
       <div className={styles.vendorAvailabilityContainer}>
-        <VendorSidebar />
+        <VendorSidebar vendorName={vendor.businessName} vendorImg={vendor.vendorImg} />
         <div className={styles.rightSideContainer}>
           <div className={styles.demoCalendar}>calendar</div>
         </div>

@@ -1,3 +1,4 @@
+
 import React from "react";
 import styles from "./chatCardHome.module.css";
 import VendorSideBar from "../VendorSidebar/VendorSidebar";
@@ -9,10 +10,11 @@ import elon from "../../assets/images/elon.jpeg";
 import peter from "../../assets/images/thiel.jpeg";
 import sheryl from "../../assets/images/sheryl.jpeg";
 
-export default function ChatCardHome() {
+
+export default function ChatCardHome({ vendor }) {
   return (
     <div className={styles.homePageContainer}>
-      <VendorSideBar />
+      <VendorSideBar vendorName={vendor.businessName} vendorImg={vendor.vendorImg} />
       <div className={styles.homeContainer}>
         <div className={styles.cardsContainer}>
           <ChatCard
@@ -45,6 +47,7 @@ export default function ChatCardHome() {
             time="5:08 AM"
             img={peter}
           />
+
         </div>
       </div>
     </div>
