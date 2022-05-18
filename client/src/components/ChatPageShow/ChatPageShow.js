@@ -13,7 +13,8 @@ export default function ChatPageShow() {
 
   const messageRef = useRef();
 
-  const sendMessage = () => {
+  const sendMessage = (e) => {
+    e.preventDefault();
     const testMsg = messageRef.current.value;
     setMyMsg(testMsg);
     messageRef.current.value = null;
@@ -54,12 +55,12 @@ export default function ChatPageShow() {
               {msgSent ? <MyChatBubble msg={myMsg} /> : ''}
               {/* <MyChatBubble msg="man shutup man, florida men stand up" /> */}
             </div>
-            <div className={styles.chatInputContainer}>
+            <form className={styles.chatInputContainer}>
               <input className={styles.messageInput} ref={messageRef}></input>
-              <button type="submit" className={styles.sendButton}>
-                <img src={sendButton} className={styles.sendIcon} onClick={sendMessage} />
+              <button type="submit" className={styles.sendButton} onClick={sendMessage}>
+                <img src={sendButton} className={styles.sendIcon} />
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
