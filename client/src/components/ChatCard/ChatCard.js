@@ -1,9 +1,11 @@
-import React from "react";
-import styles from "./chatCard.module.css";
+import React from 'react';
+import styles from './chatCard.module.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function ChatCard(props) {
+  let navigate = useNavigate();
   const handleClick = () => {
-    console.log("clicked");
+    navigate('/vendorChatFull');
   };
 
   return (
