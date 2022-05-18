@@ -1,8 +1,8 @@
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const User = require("../database/models/User");
-const Reservation = require("../database/models/Reservation");
-const Vendor = require("../database/models/Vendor");
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const User = require('../database/models/User');
+const Reservation = require('../database/models/Reservation');
+const Vendor = require('../database/models/Vendor');
 const SECRET_KEY = process.env.SECRET_KEY;
 
 // CREATE RESERVATION
@@ -19,13 +19,13 @@ exports.createUserReservation = async (req, res) => {
       userId: req.user.id,
     });
     if (!newReservation) {
-        throw new Error('failed to make a new reservation');
+      throw new Error('failed to make a new reservation');
     }
     const vendorInfo = await Vendor.findByPk(vendorId);
     return res.status(200).json({ newReservation, vendorInfo });
   } catch (error) {
-    console.error(error, "in createUserReservation controllers");
-    return res.status(500).send({ res: "Internal server error", error: true });
+    console.error(error, 'in createUserReservation controllers');
+    return res.status(500).send({ res: 'Internal server error', error: true });
   }
 };
 
@@ -36,12 +36,12 @@ exports.createVendorReservation = async (req, res) => {
       vendorId: req.vendor.id,
       reserveDate,
       partySize: 1,
-      userId: 1
+      userId: 1,
     });
     return res.status(200).json({ newReservation });
   } catch (error) {
-    console.error(error, "in createVendorReservation controllers");
-    return res.status(500).send({ res: "Internal server error", error: true });
+    console.error(error, 'in createVendorReservation controllers');
+    return res.status(500).send({ res: 'Internal server error', error: true });
   }
 };
 
@@ -53,20 +53,20 @@ exports.getUserReservations = async (req, res) => {
       where: { id },
       include: {
         model: Reservation,
-        as: "userReserve",
-        attributes: ["reserveDate", "partySize", "vendorId"],
+        as: 'userReserve',
+        attributes: ['reserveDate', 'id', 'partySize', 'vendorId'],
         include: {
           model: Vendor,
-          as: "vendorInfo",
-          attributes: ["businessName", "streetAddress", 'vendorImg'],
+          as: 'vendorInfo',
+          attributes: ['businessName', 'streetAddress', 'vendorImg'],
         },
       },
     });
     const reservations = user.userReserve;
-    return res.status(200).json( reservations );
+    return res.status(200).json(reservations);
   } catch (error) {
-    console.error(error, "in controllers");
-    return res.status(500).send({ res: "Internal server error", error: true });
+    console.error(error, 'in controllers');
+    return res.status(500).send({ res: 'Internal server error', error: true });
   }
 };
 
@@ -78,20 +78,20 @@ exports.getVendorReservations = async (req, res) => {
       where: { id },
       include: {
         model: Reservation,
-        as: "vendorReserve",
-        attributes: ["reserveDate", "partySize", "userId"],
+        as: 'vendorReserve',
+        attributes: ['reserveDate', 'id', 'partySize', 'userId'],
         include: {
           model: User,
-          as: "userInfo",
-          attributes: ["userName", "email", 'userImg', 'company'],
+          as: 'userInfo',
+          attributes: ['userName', 'email', 'userImg', 'company'],
         },
       },
     });
     const reservations = vendor.vendorReserve;
-    return res.status(200).json( reservations );
+    return res.status(200).json(reservations);
   } catch (error) {
-    console.error(error, "in controllers");
-    return res.status(500).send({ res: "Internal server error", error: true });
+    console.error(error, 'in controllers');
+    return res.status(500).send({ res: 'Internal server error', error: true });
   }
 };
 

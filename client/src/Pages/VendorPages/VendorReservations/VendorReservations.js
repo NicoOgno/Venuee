@@ -32,9 +32,9 @@ function VendorReservations() {
       <div className={styles.vendorReservationContainer}>
         <VendorSidebar vendor={vendor} />
         <div className={styles.rightSideContainer}>
-          {vendorReservations.map((item, index) => {
+          {vendorReservations.map((item) => {
             return (
-              <div className={styles.vendorReservationCard} key={index}>
+              <div className={styles.vendorReservationCard} key={item.id}>
                 <VendorReservationCard user={item.userInfo} date={item.reserveDate} />
               </div>
             );
