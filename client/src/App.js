@@ -16,10 +16,6 @@ import VendorChatFull from "./Pages/VendorPages/VendorChatFull/VendorChatFull";
 import VendorProfileInfo from "./Pages/VendorPages/VendorProfileInfo/VendorProfileInfo";
 import Login from "./Pages/UserPages/Login/Login";
 
-import VendorSettings from "./components/VendorSettings/VendorSettings";
-import ChatCardHome from "./components/ChatCardHome/ChatCardHome";
-import ChatPageShow from "./components/ChatPageShow/ChatPageShow";
-
 const noCurrentUser = {
   id: "",
   userName: "",
