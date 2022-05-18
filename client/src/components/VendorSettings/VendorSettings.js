@@ -32,7 +32,7 @@ export default function VendorSettings({ vendor }) {
 
   return (
     <div className={styles.vendorSettingsPageContainer}>
-      <VendorSideBar vendorName={vendor.businessName} vendorImg={vendor.vendorImg} />
+      <VendorSideBar vendor={vendor} />
       <div className={styles.vendorSettingsContainer}>
         <div className={styles.vendorProfile}>
           <h1 className={styles.profileHeader}>profile</h1>
