@@ -41,4 +41,16 @@ apiUserServices.getUserProfileInfo = async (token) => {
     return err;
   }
 };
+
+apiUserServices.getUserReservations = async (token) => {
+  try {
+    const res = await fetch(`${baseURL}/reservation/user`, {
+      headers: { authorization: `${token}` },
+    });
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    return err;
+  }
+};
 export default apiUserServices;

@@ -4,12 +4,12 @@ import logo from '../../assets/images/clipart1129793.png';
 import { UserSidebarData } from './UserSidebarData';
 import { UserUtilitiesData } from './UserUtilitiesData';
 
-function UserSidebar() {
+function UserSidebar({ user }) {
   return (
     <div className={styles.sidebarContainer}>
       <div className={styles.profileHeader}>
-        <img src={logo} alt={'no img avail'} className={styles.profileImg} />
-        <div className={styles.profileName}>Booger</div>
+        <img src={user.userImg} alt={logo} className={styles.profileImg} />
+        <div className={styles.profileName}>{user.userName}</div>
       </div>
       <div>
         <ul className={styles.sidebarList}>

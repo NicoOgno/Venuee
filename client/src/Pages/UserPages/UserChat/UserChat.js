@@ -23,7 +23,7 @@ function UserChat() {
   return (
     <div className={styles.backgroundImg}>
       <div className={styles.userChatContainer}>
-        <UserSideBar />
+        <UserSideBar user={user} />
         <div className={styles.rightSideContainer}>
           <div className={styles.demoCard}>chat</div>
           <div className={styles.demoCard}>chat</div>
