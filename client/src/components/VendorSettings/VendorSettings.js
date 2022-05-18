@@ -36,7 +36,7 @@ export default function VendorSettings({ vendor }) {
       <div className={styles.vendorSettingsContainer}>
         <div className={styles.vendorProfile}>
           <h1 className={styles.profileHeader}>profile</h1>
-          <img src={tempImg} className={styles.profileImg} />
+          <img src={vendor.vendorImg} className={styles.profileImg} />
           <h1 className={styles.profileName}>{vendor.businessName}</h1>
           <button type="submit" className={styles.uploadAvatar}>
             upload new avatar
