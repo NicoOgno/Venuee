@@ -1,5 +1,5 @@
 .backgroundImg {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(../../../assets/images/background-green-temp.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,12 +11,11 @@
 
 .rightSideContainer {
   display: flex;
-  width: 70vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
 
 .vendorReservationCard {
-  height: 10%;
-  width: 10%;
-  display: grid;
-  grid-row: 3;
+  margin-right: 10rem;
 }
