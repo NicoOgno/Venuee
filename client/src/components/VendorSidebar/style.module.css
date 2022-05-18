@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "bentonSansReg";
-  src: url("../../assets/fonts/bentonsansregular/BentonSansRegular.otf");
+  font-family: 'bentonSansReg';
+  src: url('../../assets/fonts/bentonsansregular/BentonSansRegular.otf');
 }
 .sidebarContainer {
   height: 100vh;
@@ -27,7 +27,7 @@
 }
 
 .profileName {
-  font-family: "bentonSansReg";
+  font-family: 'bentonSansReg';
   font-size: 30px;
   padding-left: 20px;
   justify-content: center;
@@ -42,13 +42,9 @@
   margin-top: 35%;
 }
 
-.sidebarList #active {
-  background: rgba(196, 196, 196, 0.4);
-}
-
 .row {
   color: white;
-  font-family: "bentonSansReg";
+  font-family: 'bentonSansReg';
   height: 100px;
   width: 100%;
   display: flex;
@@ -56,6 +52,15 @@
   margin-bottom: 20px;
   justify-content: center;
   align-items: center;
+}
+
+.rowActive {
+  background: rgba(196, 196, 196, 0.4);
+}
+
+.row .rowActive:hover {
+  cursor: pointer;
+  background: rgba(196, 196, 196, 0.4);
 }
 
 .row:hover {
@@ -85,7 +90,7 @@
 
 .utilRow {
   color: white;
-  font-family: "bentonSansReg";
+  font-family: 'bentonSansReg';
   height: 50px;
   width: 100%;
   display: flex;

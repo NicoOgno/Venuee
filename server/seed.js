@@ -51,7 +51,7 @@ const vendors = [
     maxCapacity: '100',
     type: 'bar',
     vendorImg:
-      'https://firebasestorage.googleapis.com/v0/b/venuee-41927.appspot.com/o/1.jpg?alt=media&token=893a79f4-ae06-41d3-9f6e-901b866afe49',
+      'https://firebasestorage.googleapis.com/v0/b/venuee-41927.appspot.com/o/rester%201.jpg?alt=media&token=df49cd73-78ca-40ee-9bba-f3aaf0a2da68',
   },
   {
     businessName: 'Piccolo Sogno',

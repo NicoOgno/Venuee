@@ -59,7 +59,7 @@
   align-items: center;
 }
 
-.row.active {
+.rowActive {
   background: rgba(196, 196, 196, 0.4);
 }
 
