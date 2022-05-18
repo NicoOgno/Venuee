@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import UserSideBar from '../../../components/UserSideBar/UserSideBar';
-import styles from './style.module.css';
-import apiUserServices from '../../../ApiServices/apiUserServices';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import UserSideBar from "../../../components/UserSideBar/UserSideBar";
+import styles from "./style.module.css";
+import apiUserServices from "../../../ApiServices/apiUserServices";
+import VenueSearchBar from "../../../components/VenueSearchBar/VenueSearchBar";
 
 function UserSearchResults() {
   let navigate = useNavigate();
@@ -10,7 +11,7 @@ function UserSearchResults() {
   const [userReservations, setUserReservations] = useState([]);
   const [user, setUser] = useState({});
 
-  const token = localStorage.getItem('accessToken');
+  const token = localStorage.getItem("accessToken");
 
   const getUserReservations = async () => {
     let res = await apiUserServices.getUserReservations(token);
@@ -33,11 +34,12 @@ function UserSearchResults() {
         <UserSideBar user={user} />
         <div className={styles.rightSideContainer}>
           <div className={styles.searchBarContainer}>
-            <div className={styles.zipcode}>zipcode</div>
+            {/* <div className={styles.zipcode}>zipcode</div>
             <div className={styles.type}>type</div>
             <div className={styles.date}>date</div>
             <div className={styles.groupSize}>groupsize</div>
-            <button className={styles.searchButton}>Update</button>
+            <button className={styles.searchButton}>Update</button> */}
+            <VenueSearchBar />
           </div>
           <div className={styles.resultsContainer}>
             <div className={styles.demoResult}></div>
