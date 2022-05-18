@@ -8,6 +8,7 @@ import jack from '../../assets/images/jack.jpeg';
 import elon from '../../assets/images/elon.jpeg';
 import peter from '../../assets/images/thiel.jpeg';
 import sheryl from '../../assets/images/sheryl.jpeg';
+import { useNavigate } from 'react-router-dom';
 
 export default function ChatCardHome({ vendor }) {
   return (
