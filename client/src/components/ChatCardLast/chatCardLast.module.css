@@ -25,12 +25,13 @@
 }
 
 .messagePartnerName {
+  margin-top: 20px;
   color: white;
   text-transform: uppercase;
 }
 
 .messageContent {
-  margin-top: 20px;
+  margin-top: 5px;
   color: rgb(159, 157, 157);
 }
 
