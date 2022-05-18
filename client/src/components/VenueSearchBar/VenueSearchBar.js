@@ -1,26 +1,43 @@
 import React from "react";
 import SearchBarStyle from "./style.module.css";
-import { DropdownButton, Dropdown } from "react-bootstrap";
-import DatePicker from "react-widgets/DatePicker";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
+import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Button from "@mui/material/Button";
 
 export default function venueSearchBar() {
   return (
     <div className={SearchBarStyle.venueSearchBarContainer}>
-      <input className={SearchBarStyle.zipCode} placeholder="ZIP CODE"></input>
-      <Dropdown>
-        <Dropdown.Toggle>TYPE</Dropdown.Toggle>
-        <Dropdown.Menu>
-          <Dropdown.Item>Lounge</Dropdown.Item>
-          <Dropdown.Item>Bar</Dropdown.Item>
-          <Dropdown.Item>Restaurant</Dropdown.Item>
-          <Dropdown.Item>Banquet Hall</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-      <DatePicker
-        defaultValue={new Date()}
-        valueEditFormat={{ dateStyle: "short" }}
-        valueDisplayFormat={{ dateStyle: "short" }}
+      <TextField className={SearchBarStyle.zipCode} label="ZIP CODE" />
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
+        <DesktopDatePicker
+          label="RESERVATION DATE"
+          inputFormat="MM/dd/yyyy"
+          renderInput={(params) => <TextField {...params} />}
+        />
+      </LocalizationProvider>
+      <Box>
+        <FormControl fullWidth>
+          <InputLabel id="venue-type">TYPE</InputLabel>
+          <Select labelId="options" id="options" label="options">
+            <MenuItem>LOUNGE</MenuItem>
+            <MenuItem>BAR</MenuItem>
+            <MenuItem>RESTAURANT</MenuItem>
+            <MenuItem>BANQUET HALL</MenuItem>
+          </Select>
+        </FormControl>
+      </Box>
+      <TextField
+        className={SearchBarStyle.venueCapacity}
+        label="VENUE CAPACITY"
       />
+      <Button>UPDATE</Button>
     </div>
   );
 }
