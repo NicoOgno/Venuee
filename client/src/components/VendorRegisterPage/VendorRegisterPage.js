@@ -139,6 +139,7 @@ export default function VendorRegisterPage(props) {
               multiple="multiple"
               className={styles.uploadPictures}
               placeholder="upload pictures"
+              name="vendorImg"
               ref={hiddenFileInput}
               onChange={handleChange}
             />
