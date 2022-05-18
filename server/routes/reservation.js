@@ -20,6 +20,6 @@ reservationRouter.get("/vendor", vendorMiddleware, reservation.getVendorReservat
 reservationRouter.get("/:id", reservation.getReservationById);
 
 // DELETE A RESERVATION
-// reservationRouter.delete('/delete/:id', reservation.deleteReservation);
+reservationRouter.delete('/delete/:id', reservation.deleteReservationById);
 
 exports.reservationRouter = reservationRouter;

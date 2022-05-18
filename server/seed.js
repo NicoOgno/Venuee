@@ -209,7 +209,7 @@ const reservations = [
 ];
 
 sequelize
-  .sync({ force: true })
+  .sync({ force: false })
   .then(() => {})
   .then(async () => {
     for (let i = 0; i < users.length; i++) {

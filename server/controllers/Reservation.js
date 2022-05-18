@@ -102,3 +102,13 @@ exports.getReservationById = async (req, res) => {
   console.log({ reservation, id });
   return res.status(200).json({ reservation });
 };
+
+exports.deleteReservationById = async (req, res) => {
+  try {
+    const id = req.params.id;
+    await Reservation.destroy({where: {id}});
+    return res.status(200).json('reservation successfully deleted');
+  } catch (error) {
+    return res.status(500).json('server error');
+  }
+};
