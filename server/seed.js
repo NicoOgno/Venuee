@@ -40,62 +40,92 @@ const users = [
 ];
 
 const vendors = [
-  {businessName: "Real Food", email: "real@foods.com", password: "myunrealfood", streetAddress: "rstreet", city: "rcity", state: "rstate", zipCode: "97111", maxCapacity: "90", type: "lounge", vendorImg: "url111"},
-  {businessName: "Piccolo Sogno", email: "psogno@psogno.com", password: "greatestsecret", streetAddress: "pstreet", city: "pcity", state: "pstate", zipCode: "97222", maxCapacity: "15", type: "banquet hall", vendorImg: "url222"},
-  {businessName: "Tropical Pizza", email: "tropical@pizza.com", password: "pinapplepizza", streetAddress: "tstreet", city: "tcity", state: "tstate", zipCode: "97222", maxCapacity: "25", type: "bar", vendorImg: "url333"},
-  {businessName: "Big Barbecue", email: "bb@bbarbecue.com", password: "brutalbarbecues", streetAddress: "bstreet", city: "bcity", state: "bstate", zipCode: "97111", maxCapacity: "100", type: "restaurant", vendorImg: "url444"},
-  {businessName: "Doug Fir Lounge", email: "events@dougfir.com", password: "eatfir", streetAddress: "801 NE Burnside Ave", city: "Portland", state: "Oregon", zipCode: "97222", maxCapacity: "80", type: "lounge", vendorImg: "url555" },
-  {businessName: "Harlow", email: "events@harlow.com", password: "harlow2022", streetAddress: "3710 SE Belmont St", city: "Portland", state: "Oregon", zipCode: "97111", maxCapacity: "30", type: "restaurant", vendorImg: "url666" },
-  {businessName: "Opal28", email: "events@opal.com", password: "opal2022", streetAddress: "900 SW Lovejoy Ave", city: "Portland", state: "Oregon", zipCode: "97222", maxCapacity: "20", type: "bar", vendorImg: "url777" },
+  {businessName: "Nostrana", email: "events@nostrana.com", password: "realfood", streetAddress: "1132 NW Alder St", city: "Portland", state: "Oregon", zipCode: "97204", maxCapacity: "100", type: "bar", vendorImg: "url111"},
+  {businessName: "Piccolo Sogno", email: "psogno@psogno.com", password: "abigsecret", streetAddress: "1167 NW Elm Ave", city: "Portland", state: "Oregon", zipCode: "97204", maxCapacity: "20", type: "bar", vendorImg: "url222"},
+  {businessName: "Tropical Pizza", email: "tropical@pizza.com", password: "pinapplepizza", streetAddress: "1245 NW Burnside St", city: "Portland", state: "Oregon", zipCode: "97204", maxCapacity: "70", type: "bar", vendorImg: "url333"},
+  {businessName: "Big Barbecue", email: "bb@bbarbecue.com", password: "brutalbarbecue", streetAddress: "1988 NW Everett St", city: "Portland", state: "Oregon", zipCode: "97204", maxCapacity: "100", type: "restaurant", vendorImg: "url444"},
+  {businessName: "Doug Fir Lounge", email: "events@dougfir.com", password: "eatburgers", streetAddress: "801 SE Burnside Ave", city: "Portland", state: "Oregon", zipCode: "97214", maxCapacity: "80", type: "restaurant", vendorImg: "url555" },
+  {businessName: "Harlow", email: "events@harlow.com", password: "harlow2022", streetAddress: "3710 SE Belmont St", city: "Portland", state: "Oregon", zipCode: "97214", maxCapacity: "50", type: "restaurant", vendorImg: "url666" },
+  {businessName: "Opal28", email: "events@opal.com", password: "opal2022", streetAddress: "900 SW Lovejoy Ave", city: "Portland", state: "Oregon", zipCode: "97214", maxCapacity: "20", type: "bar", vendorImg: "url777" },
 ];
 
 const reservations = [
   {
-    reserveDate: new Date("December 10, 2022 13:00:00"),
-    partySize: 5,
+    reserveDate: new Date("June 10, 2022 13:00:00"),
+    partySize: 10,
     userId: 1,
     vendorId: 1,
   },
   {
-    reserveDate: new Date("December 10, 2022 17:30:00"),
+    reserveDate: new Date("June 10, 2022 17:30:00"),
+    partySize: 20,
+    userId: 1,
+    vendorId: 2,
+  },
+  {
+    reserveDate: new Date("June 12, 2022 10:30:00"),
     partySize: 50,
-    userId: 2,
+    userId: 1,
     vendorId: 3,
   },
   {
-    reserveDate: new Date("December 11, 2022 10:30:00"),
+    reserveDate: new Date("June 15, 2022 13:30:00"),
+    partySize: 80,
+    userId: 1,
+    vendorId: 4,
+  },
+  {
+    reserveDate: new Date("June 16, 2022 13:30:00"),
+    partySize: 40,
+    userId: 1,
+    vendorId: 5,
+  },
+  {
+    reserveDate: new Date("June 20, 2022 13:30:00"),
+    partySize: 30,
+    userId: 1,
+    vendorId: 6,
+  },
+  {
+    reserveDate: new Date("June 10, 2022 13:00:00"),
     partySize: 10,
     userId: 2,
-    vendorId: 2,
+    vendorId: 1,
   },
   {
-    reserveDate: new Date("December 11, 2022 13:30:00"),
-    partySize: 80,
+    reserveDate: new Date("June 14, 2022 17:30:00"),
+    partySize: 100,
     userId: 3,
-    vendorId: 4,
+    vendorId: 1,
   },
   {
-    reserveDate: new Date("December 12, 2022 13:30:00"),
-    partySize: 80,
-    userId: 3,
-    vendorId: 4,
-  },
-  {
-    reserveDate: new Date("December 12, 2022 13:30:00"),
-    partySize: 80,
+    reserveDate: new Date("June 15, 2022 10:30:00"),
+    partySize: 50,
     userId: 4,
-    vendorId: 7,
+    vendorId: 1,
   },
   {
-    reserveDate: new Date("December 13, 2022 13:30:00"),
+    reserveDate: new Date("June 16, 2022 13:30:00"),
     partySize: 80,
-    userId: 4,
-    vendorId: 2,
+    userId: 5,
+    vendorId: 1,
   },
-  
+  {
+    reserveDate: new Date("June 19, 2022 13:30:00"),
+    partySize: 40,
+    userId: 6,
+    vendorId: 1,
+  },
+  {
+    reserveDate: new Date("June 20, 2022 13:30:00"),
+    partySize: 30,
+    userId: 7,
+    vendorId: 1,
+  },
 ];
 
-sequelize.sync ({ force: false }).then(() => {
+
+sequelize.sync ({ force: true }).then(() => {
 }).then(async () => {
   for (let i = 0; i < users.length; i++) {
     await User.create(users[i]);
