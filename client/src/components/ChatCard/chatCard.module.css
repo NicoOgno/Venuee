@@ -8,6 +8,10 @@
   margin-top: 25px;
 }
 
+.chatCardContainer:hover {
+  cursor: pointer;
+}
+
 .msgImg {
   height: 75px;
   width: 75px;
@@ -30,6 +34,7 @@
 .messageContent {
   margin-top: 5px;
   color: rgb(159, 157, 157);
+  text-transform: uppercase;
 }
 
 .msgTime {
@@ -38,4 +43,5 @@
   margin-top: 20px;
   margin-left: auto;
   margin-right: 5px;
+  text-transform: uppercase;
 }
