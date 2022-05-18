@@ -15,7 +15,11 @@ import VendorChat from "./Pages/VendorPages/VendorChat/VendorChat";
 import VendorChatFull from "./Pages/VendorPages/VendorChatFull/VendorChatFull";
 import VendorProfileInfo from "./Pages/VendorPages/VendorProfileInfo/VendorProfileInfo";
 import Login from "./Pages/UserPages/Login/Login";
+<<<<<<< HEAD
 import VenueSearchBar from "./components/VenueSearchBar/VenueSearchBar";
+=======
+import ChatCardHomeUser from "./components/ChatCardHomeUser/ChatCardHomeUser";
+>>>>>>> c74613dc39b51becb428d34bb164bb3036701440
 
 const noCurrentUser = {
   id: "",

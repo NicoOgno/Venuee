@@ -1,19 +1,22 @@
-import React, { useState, useEffect } from "react";
-import Toggle from "../Toggle/Toggle";
-import styles from "./userRegisterPage.module.css";
-import jetsons from "../../assets/images/jetsons.png";
-import { useNavigate } from "react-router-dom";
-import apiUserServices from "../../ApiServices/apiUserServices";
+import React, { useState, useEffect } from 'react';
+import Toggle from '../Toggle/Toggle';
+import styles from './userRegisterPage.module.css';
+import jetsons from '../../assets/images/jetsons.png';
+import { useNavigate } from 'react-router-dom';
+import apiUserServices from '../../ApiServices/apiUserServices';
 
 const initialFormState = {
-  userName: "",
-  company: "",
-  email: "",
-  password: "",
+  userName: '',
+  company: '',
+  email: '',
+  password: '',
+  userImg: '',
 };
 
 export default function UserRegisterPage() {
   let navigate = useNavigate();
+  const logo =
+    'https://firebasestorage.googleapis.com/v0/b/venuee-41927.appspot.com/o/clipart1129793.png?alt=media&token=4bc0d65b-5017-47ca-a9b7-1a65e0a1056d';
 
   const [isUser, setIsUser] = useState(true);
   const [formState, setFormState] = useState(initialFormState);
@@ -28,25 +31,25 @@ export default function UserRegisterPage() {
 
   //TODO ONCE ROUTES OPEN
   const handleRegister = async (e) => {
-    console.log("submitted");
+    console.log('submitted');
 
     e.preventDefault();
     const { email, company, password, userName } = formState;
-    const user = { email, company, password, userName };
+    const user = { email, company, password, userName, userImg: logo };
     const res = await apiUserServices.UserRegister(user);
 
     if (res.error) {
       alert(`${res.message}`);
       setFormState(initialFormState);
-      navigate('/userRegister')
-      return
+      navigate('/userRegister');
+      return;
     }
-    navigate("/");
+    navigate('/');
   };
 
   const handleToggle = () => {
     setIsUser(!isUser);
-    navigate("/vendorRegister");
+    navigate('/vendorRegister');
   };
 
   return (
@@ -96,11 +99,11 @@ export default function UserRegisterPage() {
         </form>
 
         <a className={styles.loginLink}>
-          already have an account?{" "}
+          already have an account?{' '}
           <span
             className={styles.login}
             onClick={() => {
-              navigate("/");
+              navigate('/');
             }}
           >
             login
@@ -109,9 +112,9 @@ export default function UserRegisterPage() {
       </div>
       <div className={styles.rightContainer}>
         <div className={styles.subRightContainer}>
-          <img src={jetsons} className={styles.jetsons} alt=''/>
+          <img src={jetsons} className={styles.jetsons} alt="" />
         </div>
       </div>
     </div>
   );
-};
+}

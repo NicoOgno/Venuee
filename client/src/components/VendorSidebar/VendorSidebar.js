@@ -4,12 +4,12 @@ import logo from '../../assets/images/clipart1129793.png';
 import { VendorSidebarData } from './VendorSidebarData';
 import { VendorUtilitiesData } from './VendorUtilitesData';
 
-function VendorSidebar({ vendorName, vendorImg }) {
+function VendorSidebar({ vendor }) {
   return (
     <div className={styles.sidebarContainer}>
       <div className={styles.profileHeader}>
-        <img src={logo} alt={'no img avail'} className={styles.profileImg} />
-        <div className={styles.profileName}>{vendorName}</div>
+        <img src={vendor.vendorImg} alt={'NO IMG PROVIDED'} className={styles.profileImg} />
+        <div className={styles.profileName}>{vendor.businessName}</div>
       </div>
       <div>
         <ul className={styles.sidebarList}>
