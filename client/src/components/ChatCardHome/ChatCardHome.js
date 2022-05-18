@@ -1,20 +1,18 @@
-
-import React from "react";
-import styles from "./chatCardHome.module.css";
-import VendorSideBar from "../VendorSidebar/VendorSidebar";
-import ChatCard from "../ChatCard/ChatCard";
-import ChatCardLast from "../ChatCardLast/ChatCardLast";
-import morgan from "../../assets/images/10007447_1405252279743343_829523453_n.jpg";
-import jack from "../../assets/images/jack.jpeg";
-import elon from "../../assets/images/elon.jpeg";
-import peter from "../../assets/images/thiel.jpeg";
-import sheryl from "../../assets/images/sheryl.jpeg";
-
+import React from 'react';
+import styles from './chatCardHome.module.css';
+import VendorSideBar from '../VendorSidebar/VendorSidebar';
+import ChatCard from '../ChatCard/ChatCard';
+import ChatCardLast from '../ChatCardLast/ChatCardLast';
+import morgan from '../../assets/images/10007447_1405252279743343_829523453_n.jpg';
+import jack from '../../assets/images/jack.jpeg';
+import elon from '../../assets/images/elon.jpeg';
+import peter from '../../assets/images/thiel.jpeg';
+import sheryl from '../../assets/images/sheryl.jpeg';
 
 export default function ChatCardHome({ vendor }) {
   return (
     <div className={styles.homePageContainer}>
-      <VendorSideBar vendorName={vendor.businessName} vendorImg={vendor.vendorImg} />
+      <VendorSideBar vendor={vendor} />
       <div className={styles.homeContainer}>
         <div className={styles.cardsContainer}>
           <ChatCard
@@ -47,7 +45,6 @@ export default function ChatCardHome({ vendor }) {
             time="5:08 AM"
             img={peter}
           />
-
         </div>
       </div>
     </div>
