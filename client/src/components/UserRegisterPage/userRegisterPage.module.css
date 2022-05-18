@@ -10,7 +10,6 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-
   align-items: center;
   max-width: 50%;
   padding-top: 5rem;
@@ -111,7 +110,7 @@
   background: black;
   min-width: 100vh;
   min-height: 100vh;
-  background: radial-gradient(circle at center, transparent 40%, black 60%);
+  background: radial-gradient(circle at center, transparent 10%, black 60%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -120,5 +119,5 @@
 .jetsons {
   height: 550px;
   width: 550px;
-  margin-left: 100px;
+  margin-left: 10px;
 }
