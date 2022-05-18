@@ -11,20 +11,23 @@ import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Button from "@mui/material/Button";
 
-export default function venueSearchBar() {
+export default function VenueSearchBar() {
   return (
     <div className={SearchBarStyle.venueSearchBarContainer}>
-      <TextField className={SearchBarStyle.zipCode} label="ZIP CODE" />
-      <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <TextField className={SearchBarStyle.zipCode} label="*ZIP CODE" />
+      <LocalizationProvider
+        dateAdapter={AdapterDateFns}
+        className={SearchBarStyle.datePicker}
+      >
         <DesktopDatePicker
           label="RESERVATION DATE"
           inputFormat="MM/dd/yyyy"
           renderInput={(params) => <TextField {...params} />}
         />
       </LocalizationProvider>
-      <Box>
+      <Box className={SearchBarStyle.typeField}>
         <FormControl fullWidth>
-          <InputLabel id="venue-type">TYPE</InputLabel>
+          <InputLabel id="venue-type">*TYPE</InputLabel>
           <Select labelId="options" id="options" label="options">
             <MenuItem>LOUNGE</MenuItem>
             <MenuItem>BAR</MenuItem>
@@ -35,9 +38,9 @@ export default function venueSearchBar() {
       </Box>
       <TextField
         className={SearchBarStyle.venueCapacity}
-        label="VENUE CAPACITY"
+        label="*VENUE CAPACITY"
       />
-      <Button>UPDATE</Button>
+      <button className={SearchBarStyle.updateButton}>UPDATE</button>
     </div>
   );
 }
