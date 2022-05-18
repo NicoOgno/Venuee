@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import VendorSidebar from '../../../components/VendorSidebar/VendorSidebar';
-import styles from './style.module.css';
-import apiVendorServices from '../../../ApiServices/apiVendorServices';
-import VendorReservationCard from '../../../components/VendorReservationCard/VendorReservationCard';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import VendorSidebar from "../../../components/VendorSidebar/VendorSidebar";
+import styles from "./style.module.css";
+import apiVendorServices from "../../../ApiServices/apiVendorServices";
+import VendorReservationCard from "../../../components/VendorReservationCard/VendorReservationCard";
 
 function VendorReservations() {
   let navigate = useNavigate();
-  const token = localStorage.getItem('accessToken');
+  const token = localStorage.getItem("accessToken");
 
   const getVendor = async () => {
     let res = await apiVendorServices.getVendorProfileInfo(token);
@@ -30,8 +30,14 @@ function VendorReservations() {
   return (
     <div className={styles.backgroundImg}>
       <div className={styles.vendorReservationContainer}>
-        <VendorSidebar vendorName={vendor.businessName} vendorImg={vendor.vendorImg} />
+        <VendorSidebar
+          vendorName={vendor.businessName}
+          vendorImg={vendor.vendorImg}
+        />
         <div className={styles.rightSideContainer}>
+          <div className={styles.vendorReservationCard}>
+            <VendorReservationCard />
+          </div>
           <div className={styles.vendorReservationCard}>
             <VendorReservationCard />
           </div>
