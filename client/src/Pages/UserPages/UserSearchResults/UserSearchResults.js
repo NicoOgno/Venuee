@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../../../App';
 import UserSideBar from '../../../components/UserSideBar/UserSideBar';
 import styles from './style.module.css';
 import apiUserServices from '../../../ApiServices/apiUserServices';
@@ -8,19 +7,30 @@ import apiUserServices from '../../../ApiServices/apiUserServices';
 function UserSearchResults() {
   let navigate = useNavigate();
 
+  const [userReservations, setUserReservations] = useState([]);
+  const [user, setUser] = useState({});
+
   const token = localStorage.getItem('accessToken');
 
+  const getUserReservations = async () => {
+    let res = await apiUserServices.getUserReservations(token);
+    setUserReservations(res);
+  };
+
+  const getUser = async () => {
+    let res = await apiUserServices.getUserProfileInfo(token);
+    setUser(res);
+  };
+
   useEffect(() => {
-    apiUserServices.getUserProfileInfo(token);
+    getUserReservations();
+    getUser();
   }, []);
 
-  const currentUser = useContext(UserContext);
-  const [user, setUser] = useState(currentUser);
-  console.log(user);
   return (
     <div className={styles.backgroundImg}>
       <div className={styles.userSearchContainer}>
-        <UserSideBar />
+        <UserSideBar user={user} />
         <div className={styles.rightSideContainer}>
           <div className={styles.searchBarContainer}>
             <div className={styles.zipcode}>zipcode</div>

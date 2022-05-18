@@ -1,20 +1,20 @@
-import React, { useState } from "react";
-import styles from "./vendorSettings.module.css";
-import VendorSideBar from "../VendorSidebar/VendorSidebar";
-import tempImg from "../../assets/images/clipart1129793.png";
+import React, { useState, useEffect } from 'react';
+import styles from './vendorSettings.module.css';
+import VendorSideBar from '../VendorSidebar/VendorSidebar';
+import tempImg from '../../assets/images/clipart1129793.png';
 
 const initialFormState = {
-  businessName: "",
-  email: "",
-  password: "",
-  streetAddress: "",
-  city: "",
-  state: "",
-  zipCode: "",
-  capacity: "",
+  businessName: '',
+  email: '',
+  password: '',
+  streetAddress: '',
+  city: '',
+  state: '',
+  zipCode: '',
+  capacity: '',
 };
 
-export default function VendorSettings() {
+export default function VendorSettings({ vendor }) {
   const [formState, setFormState] = useState(initialFormState);
 
   const handleOnChange = (e) => {
@@ -32,24 +32,21 @@ export default function VendorSettings() {
 
   return (
     <div className={styles.vendorSettingsPageContainer}>
-      <VendorSideBar />
+      <VendorSideBar vendorName={vendor.businessName} vendorImg={vendor.vendorImg} />
       <div className={styles.vendorSettingsContainer}>
         <div className={styles.vendorProfile}>
           <h1 className={styles.profileHeader}>profile</h1>
           <img src={tempImg} className={styles.profileImg} />
-          <h1 className={styles.profileName}>profile name</h1>
+          <h1 className={styles.profileName}>{vendor.businessName}</h1>
           <button type="submit" className={styles.uploadAvatar}>
             upload new avatar
           </button>
         </div>
         <div className={styles.infoHeaderContainer}>
           <h3 className={styles.basicInfoHeader}>basic info</h3>
+          {/* //TODO ADD CANCEL FUNCTION TO CLEAR FORM AND PUT/PATCH ON SUBMIT BUTTON */}
           <button className={styles.cancelButton}>cancel</button>
-          <button
-            className={styles.updateButton}
-            type="button"
-            onClick={updateVendor}
-          >
+          <button className={styles.updateButton} type="button" onClick={updateVendor}>
             update
           </button>
         </div>
@@ -60,7 +57,7 @@ export default function VendorSettings() {
             </label>
             <input
               name="businessName"
-              placeholder="temp"
+              placeholder={vendor.businessName}
               className={styles.inputField}
               onChange={handleOnChange}
             />
@@ -72,7 +69,7 @@ export default function VendorSettings() {
               </label>
               <input
                 name="email"
-                placeholder="temp"
+                placeholder={vendor.email}
                 className={styles.inputField}
                 onChange={handleOnChange}
               />
@@ -84,7 +81,8 @@ export default function VendorSettings() {
               </label>
               <input
                 name="password"
-                placeholder="temp"
+                type="password"
+                placeholder="CHANGE PASSWORD"
                 className={styles.inputField}
                 onChange={handleOnChange}
               />
@@ -96,7 +94,7 @@ export default function VendorSettings() {
             </label>
             <input
               name="streetAddress"
-              placeholder="temp"
+              placeholder={vendor.streetAddress}
               className={styles.inputField}
               onChange={handleOnChange}
             />
@@ -108,7 +106,7 @@ export default function VendorSettings() {
               </label>
               <input
                 name="city"
-                placeholder="temp"
+                placeholder={vendor.city}
                 className={styles.inputField}
                 onChange={handleOnChange}
               />
@@ -119,7 +117,7 @@ export default function VendorSettings() {
               </label>
               <input
                 name="state"
-                placeholder="temp"
+                placeholder={vendor.state}
                 className={styles.inputField}
                 onChange={handleOnChange}
               />
@@ -130,7 +128,7 @@ export default function VendorSettings() {
               </label>
               <input
                 name="zipCode"
-                placeholder="temp"
+                placeholder={vendor.zipCode}
                 className={styles.inputField}
                 onChange={handleOnChange}
               />
@@ -143,7 +141,7 @@ export default function VendorSettings() {
               </label>
               <input
                 name="capacity"
-                placeholder="temp"
+                placeholder={vendor.maxCapacity}
                 className={styles.inputField}
                 onChange={handleOnChange}
               />

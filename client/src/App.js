@@ -15,7 +15,6 @@ import VendorChat from "./Pages/VendorPages/VendorChat/VendorChat";
 import VendorChatFull from "./Pages/VendorPages/VendorChatFull/VendorChatFull";
 import VendorProfileInfo from "./Pages/VendorPages/VendorProfileInfo/VendorProfileInfo";
 import Login from "./Pages/UserPages/Login/Login";
-import VenueSearchBar from "./components/VenueSearchBar/VenueSearchBar";
 
 const noCurrentUser = {
   id: "",
@@ -70,12 +69,8 @@ function App() {
         </Router>
       </VendorContext.Provider>
     </UserContext.Provider>
-
-    // <VenueSearchBar />
-    // <VendorReservationCard />
-    // <UserReservationCard />
     // <div>
-    // <UserRegisterPage />
+    //   {/* <UserRegisterPage /> */}
     //   {/* <LogInPage /> */}
     //   {/* <VendorRegisterPage /> */}
     //   {/* <UserSideBar /> */}

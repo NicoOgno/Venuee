@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import apiVendorServices from '../../../ApiServices/apiVendorServices';
 import VendorSidebar from '../../../components/VendorSidebar/VendorSidebar';
 import styles from './style.module.css';
+import VendorSettings from '../../../components/VendorSettings/VendorSettings';
 
 function VendorProfileInfo() {
   let navigate = useNavigate();
@@ -18,7 +19,7 @@ function VendorProfileInfo() {
 
   const [vendor, setVendor] = useState({});
 
-  return <VendorSidebar />;
+  return <VendorSettings vendor={vendor} />;
 }
 
 export default VendorProfileInfo;
