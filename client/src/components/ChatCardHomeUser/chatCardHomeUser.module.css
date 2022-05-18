@@ -1,0 +1,23 @@
+.homePageContainer {
+  background: black;
+  display: flex;
+}
+
+.homeContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: bentonSansReg;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url(../../assets/images/background-green-temp.jpg);
+}
+
+.cardsContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 100%;
+  margin-top: 20px;
+}
