@@ -1,17 +1,17 @@
-import React from "react";
-import styles from "./chatCardHomeUser.module.css";
-import UserSideBar from "../UserSideBar/UserSideBar";
-import ChatCard from "../ChatCard/ChatCard";
-import ChatCardLast from "../ChatCardLast/ChatCardLast";
+import React from 'react';
+import styles from './chatCardHomeUser.module.css';
+import UserSideBar from '../UserSideBar/UserSideBar';
+import ChatCard from '../ChatCard/ChatCard';
+import ChatCardLast from '../ChatCardLast/ChatCardLast';
 
-import three from "../../assets/images/3.jpg";
-import four from "../../assets/images/4.jpg";
-import five from "../../assets/images/5.jpg";
+import three from '../../assets/images/3.jpg';
+import four from '../../assets/images/4.jpg';
+import five from '../../assets/images/5.jpg';
 
-export default function ChatCardHomeUser() {
+export default function ChatCardHomeUser({ user }) {
   return (
     <div className={styles.homePageContainer}>
-      <UserSideBar />
+      <UserSideBar user={user} />
       <div className={styles.homeContainer}>
         <div className={styles.cardsContainer}>
           <ChatCard

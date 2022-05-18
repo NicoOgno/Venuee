@@ -3,6 +3,7 @@ import UserSideBar from '../../../components/UserSideBar/UserSideBar';
 import { useNavigate } from 'react-router-dom';
 import styles from './style.module.css';
 import apiUserServices from '../../../ApiServices/apiUserServices';
+import ChatCardHomeUser from '../../../components/ChatCardHomeUser/ChatCardHomeUser';
 
 function UserChat() {
   let navigate = useNavigate();
@@ -20,18 +21,7 @@ function UserChat() {
   const [user, setUser] = useState({});
   console.log('this is state', user);
 
-  return (
-    <div className={styles.backgroundImg}>
-      <div className={styles.userChatContainer}>
-        <UserSideBar user={user} />
-        <div className={styles.rightSideContainer}>
-          <div className={styles.demoCard}>chat</div>
-          <div className={styles.demoCard}>chat</div>
-          <div className={styles.demoCard}>chat</div>
-        </div>
-      </div>
-    </div>
-  );
+  return <ChatCardHomeUser user={user} />;
 }
 
 export default UserChat;
