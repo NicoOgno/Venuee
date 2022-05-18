@@ -18,7 +18,7 @@ export default function ChatCardHome() {
           <ChatCard
             name="Morgan Freeman"
             msg="Them: I'm nominated for another Oscar and need this venue for my party"
-            time="6:55 PM"
+            time="7:55 PM"
             img={morgan}
           />
           <ChatCard
