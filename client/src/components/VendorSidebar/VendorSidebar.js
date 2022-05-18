@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './style.module.css';
-import logo from '../../assets/images/clipart1129793.png';
 import { VendorSidebarData } from './VendorSidebarData';
 import { VendorUtilitiesData } from './VendorUtilitesData';
+import { useNavigate } from 'react-router-dom';
 
 function VendorSidebar({ vendor }) {
+  let navigate = useNavigate();
   return (
     <div className={styles.sidebarContainer}>
       <div className={styles.profileHeader}>
@@ -17,10 +18,13 @@ function VendorSidebar({ vendor }) {
             return (
               <li
                 key={key}
-                className={styles.row}
-                id={window.location.pathname === value.link ? 'active' : ''}
+                className={
+                  window.location.pathname === value.link
+                    ? `${styles.row} ${styles.rowActive}`
+                    : `${styles.row}`
+                }
                 onClick={() => {
-                  window.location.pathname = value.link;
+                  navigate(value.link);
                 }}
               >
                 <div className={styles.icon}>{value.icon}</div>
