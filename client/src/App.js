@@ -39,17 +39,16 @@ function App() {
         <Route path="/vendorProfileInfo" element={<VendorProfileInfo />} />
       </Routes>
     </Router>
-    // <Calendar />
 
     // <div>
     // <Calendar />
     // <VenueSearchBar />
     //   {/* <UserRegisterPage /> */}
-    //   {/* <LogInPage /> */}
+    // {/* <LogInPage /> */}
     //   {/* <VendorRegisterPage /> */}
     //   {/* <UserSideBar /> */}
     //   {/*<ChatPage />*/}
-    //   <UserSideBar />
+    // <UserSideBar />
     //   {/* <VendorSidebar /> */}
     // </div>
   );

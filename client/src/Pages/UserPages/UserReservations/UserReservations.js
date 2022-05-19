@@ -8,14 +8,10 @@ import UserReservationCard from "../../../components/UserReservationCard/UserRes
 function UserReservations() {
   let navigate = useNavigate();
 
-<<<<<<< HEAD
-  const token = localStorage.getItem("accessToken");
-=======
   const [user, setUser] = useState({});
   const [userReservations, setUserReservations] = useState([]);
 
-  const token = localStorage.getItem('accessToken');
->>>>>>> d05b4b9699c0bd8567362daa8d28415002cd1ced
+  const token = localStorage.getItem("accessToken");
 
   const getUserReservations = async () => {
     let res = await apiUserServices.getUserReservations(token);
@@ -32,12 +28,7 @@ function UserReservations() {
     getUserReservations();
   }, []);
 
-<<<<<<< HEAD
-  const [user, setUser] = useState({});
-  console.log("this is state", user);
-=======
   console.log(userReservations);
->>>>>>> d05b4b9699c0bd8567362daa8d28415002cd1ced
 
   return (
     <div className={styles.backgroundImg}>
@@ -46,7 +37,11 @@ function UserReservations() {
         <div className={styles.rightSideContainer}>
           {userReservations.map((item, index) => {
             return (
-              <UserReservationCard vendor={item.vendorInfo} date={item.reserveDate} key={index} />
+              <UserReservationCard
+                vendor={item.vendorInfo}
+                date={item.reserveDate}
+                key={index}
+              />
             );
           })}
         </div>
