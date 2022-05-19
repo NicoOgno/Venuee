@@ -1,14 +1,14 @@
-import React from "react";
-import styles from "./searchResultsCard.module.css";
-import six from "../../assets/images/6.jpg";
+import React from 'react';
+import styles from './searchResultsCard.module.css';
+import six from '../../assets/images/6.jpg';
 
-export default function SearchResultsCard() {
+export default function SearchResultsCard({ info }) {
   return (
     <div className={styles.cardContainer}>
-      <img src={six} className={styles.cardImg}></img>
+      <img src={info.vendorImg} className={styles.cardImg}></img>
       <div className={styles.infoContainer}>
-        <span className={styles.venueName}>Blue's Cat Cafe</span>
-        <span className={styles.venueType}>Restaurant</span>
+        <span className={styles.venueName}>{info.businessName}</span>
+        <span className={styles.venueType}>{info.type}</span>
       </div>
     </div>
   );
