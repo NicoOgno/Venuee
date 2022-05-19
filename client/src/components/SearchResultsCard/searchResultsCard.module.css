@@ -2,12 +2,14 @@
   font-family: bentonSansReg;
   display: flex;
   flex-direction: column;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .cardImg {
-  height: 400px;
-  width: 600px;
-  border-radius: 30px;
+  height: 250px;
+  width: 375px;
+  border-radius: 15px;
 }
 
 .bottomContainer {
@@ -39,11 +41,15 @@
 
 .reserveButton {
   height: 35px;
-  width: 55px;
+  width: 75px;
   background: #404040;
   border: white solid 2px;
   color: white;
   text-transform: uppercase;
+  margin-left: auto;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
 }
 
 .reserveButton:hover {

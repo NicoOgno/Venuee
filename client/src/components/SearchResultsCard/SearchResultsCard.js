@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './searchResultsCard.module.css';
-import six from '../../assets/images/6.jpg';
 
 export default function SearchResultsCard({ info }) {
   return (
