@@ -106,11 +106,11 @@ function UserSearch() {
           </div>
           <div className={styles.noResultsContainer}>
             {matchedResults.length > 0 ? (
-              <>
+              <div className={styles.yesResultsContainer}>
                 {matchedResults.map((item, index) => {
                   return <SearchResultsCard info={item} key={index} />;
                 })}
-              </>
+              </div>
             ) : (
               <>
                 <h3 className={styles.emptySearchText}>NO RESULTS</h3>

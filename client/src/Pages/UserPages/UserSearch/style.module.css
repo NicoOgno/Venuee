@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "bentonSansReg";
-  src: url("../../../assets/fonts/bentonsansregular/BentonSansRegular.otf");
+  font-family: 'bentonSansReg';
+  src: url('../../../assets/fonts/bentonsansregular/BentonSansRegular.otf');
 }
 
 .backgroundImg {
@@ -112,4 +112,11 @@
   flex: 1;
   justify-content: center;
   align-items: center;
+}
+
+.yesResultsContainer {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  margin-top: 75px;
 }
