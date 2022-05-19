@@ -191,19 +191,19 @@ const reservations = [
   {
     reserveDate: new Date('June 16, 2022 13:30:00'),
     partySize: 80,
-    userId: 5,
+    userId: 4,
     vendorId: 1,
   },
   {
     reserveDate: new Date('June 19, 2022 13:30:00'),
     partySize: 40,
-    userId: 6,
+    userId: 2,
     vendorId: 1,
   },
   {
     reserveDate: new Date('June 20, 2022 13:30:00'),
     partySize: 30,
-    userId: 7,
+    userId: 4,
     vendorId: 1,
   },
 ];

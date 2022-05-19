@@ -3,6 +3,7 @@ import UserSideBar from '../../../components/UserSideBar/UserSideBar';
 import styles from './style.module.css';
 import { useNavigate } from 'react-router-dom';
 import apiUserServices from '../../../ApiServices/apiUserServices';
+import SearchResultsCard from '../../../components/SearchResultsCard/SearchResultsCard';
 
 const initialFormState = {
   dateRequested: '',
@@ -21,6 +22,7 @@ function UserSearch() {
   const [formState, setFormState] = useState(initialFormState);
 
   const [matchedResults, setMatchedResults] = useState([]);
+  console.log(matchedResults);
 
   const token = localStorage.getItem('accessToken');
 
@@ -62,19 +64,6 @@ function UserSearch() {
         <UserSideBar user={user} />
         <div className={styles.rightSideContainer}>
           <div className={styles.searchBarContainer}>
-            {/* <div className={styles.zipcode}>zipcode</div>
-            <div className={styles.type}>type</div>
-            <div className={styles.date}>date</div>
-            <div className={styles.groupSize}>groupsize</div> */}
-            {/* //TODO add on click to route to result page// */}
-            {/* <button
-              className={styles.searchButton}
-              onClick={() => {
-                navigate("/searchResults");
-              }}
-            >
-              Update
-            </button> */}
             <form className={styles.formHolder}>
               <input
                 placeholder="*ZIP CODE"
@@ -116,11 +105,20 @@ function UserSearch() {
             </form>
           </div>
           <div className={styles.noResultsContainer}>
-            <h3 className={styles.emptySearchText}>NO RESULTS</h3>
-            <p className={styles.emptySearchText}>
-              TRY ADJUSTING YOUR SEARCH BY CHANGING YOUR ZIP CODE, DATE, AND
-              ADDING A TYPE
-            </p>
+            {matchedResults.length > 0 ? (
+              <>
+                {matchedResults.map((item, index) => {
+                  return <SearchResultsCard info={item} key={index} />;
+                })}
+              </>
+            ) : (
+              <>
+                <h3 className={styles.emptySearchText}>NO RESULTS</h3>
+                <p className={styles.emptySearchText}>
+                  TRY ADJUSTING YOUR SEARCH BY CHANGING YOUR ZIP CODE, DATE, AND ADDING A TYPE
+                </p>
+              </>
+            )}
           </div>
         </div>
       </div>
