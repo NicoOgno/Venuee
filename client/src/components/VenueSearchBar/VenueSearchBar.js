@@ -25,7 +25,10 @@ export default function VenueSearchBar() {
 
   return (
     <div className={SearchBarStyle.venueSearchBarContainer}>
-      <TextField className={SearchBarStyle.zipCode} label="*ZIP CODE" />
+      <TextField
+        InputLabelProps={{ className: SearchBarStyle.zipCode }}
+        label="*ZIP CODE"
+      />
       <LocalizationProvider
         dateAdapter={AdapterDateFns}
         className={SearchBarStyle.datePicker}

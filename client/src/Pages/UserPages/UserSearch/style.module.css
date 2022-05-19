@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'bentonSansReg';
-  src: url('../../../assets/fonts/bentonsansregular/BentonSansRegular.otf');
+  font-family: "bentonSansReg";
+  src: url("../../../assets/fonts/bentonsansregular/BentonSansRegular.otf");
 }
 
 .backgroundImg {
@@ -27,7 +27,6 @@
   width: 70vw;
   margin-left: 6vw;
   padding-left: 50px;
-  /* background-color: aqua; */
   margin-top: 3vh;
 }
 
