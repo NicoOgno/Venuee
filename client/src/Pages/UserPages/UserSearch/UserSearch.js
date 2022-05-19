@@ -62,19 +62,6 @@ function UserSearch() {
         <UserSideBar user={user} />
         <div className={styles.rightSideContainer}>
           <div className={styles.searchBarContainer}>
-            {/* <div className={styles.zipcode}>zipcode</div>
-            <div className={styles.type}>type</div>
-            <div className={styles.date}>date</div>
-            <div className={styles.groupSize}>groupsize</div> */}
-            {/* //TODO add on click to route to result page// */}
-            {/* <button
-              className={styles.searchButton}
-              onClick={() => {
-                navigate("/searchResults");
-              }}
-            >
-              Update
-            </button> */}
             <form className={styles.formHolder}>
               <input
                 placeholder="*ZIP CODE"
@@ -118,8 +105,7 @@ function UserSearch() {
           <div className={styles.noResultsContainer}>
             <h3 className={styles.emptySearchText}>NO RESULTS</h3>
             <p className={styles.emptySearchText}>
-              TRY ADJUSTING YOUR SEARCH BY CHANGING YOUR ZIP CODE, DATE, AND
-              ADDING A TYPE
+              TRY ADJUSTING YOUR SEARCH BY CHANGING YOUR ZIP CODE, DATE, AND ADDING A TYPE
             </p>
           </div>
         </div>
