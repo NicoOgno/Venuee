@@ -19,29 +19,26 @@ import ChatCardHomeUser from "./components/ChatCardHomeUser/ChatCardHomeUser";
 // import Calendar from './components/Calendar/Calendar';
 import VenueSearchBar from "./components/VenueSearchBar/VenueSearchBar";
 
-import SearchResultsCard from "./components/SearchResultsCard/SearchResultsCard";
-
 function App() {
   return (
-    <SearchResultsCard />
-    // <Router>
-    //   <Routes>
-    //     <Route path="/" element={<Login />} />
-    //     <Route path="/userRegister" element={<UserRegisterPage />} />
-    //     <Route path="/vendorRegister" element={<VendorRegisterPage />} />
-    //     <Route path="/userSearch" element={<UserSearch />} />
-    //     <Route path="/searchResults" element={<UserSearchResults />} />
-    //     <Route path="/userReservations" element={<UserReservations />} />
-    //     <Route path="/userChat" element={<UserChat />} />
-    //     <Route path="/userProfileInfo" element={<UserProfileInfo />} />
-    //     <Route path="/userChatFull" element={<UserChatFull />} />
-    //     <Route path="/vendorReservations" element={<VendorReservations />} />
-    //     <Route path="/vendorAvailability" element={<VendorAvailability />} />
-    //     <Route path="/vendorChat" element={<VendorChat />} />
-    //     <Route path="/vendorChatFull" element={<VendorChatFull />} />
-    //     <Route path="/vendorProfileInfo" element={<VendorProfileInfo />} />
-    //   </Routes>
-    // </Router>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/userRegister" element={<UserRegisterPage />} />
+        <Route path="/vendorRegister" element={<VendorRegisterPage />} />
+        <Route path="/userSearch" element={<UserSearch />} />
+        <Route path="/searchResults" element={<UserSearchResults />} />
+        <Route path="/userReservations" element={<UserReservations />} />
+        <Route path="/userChat" element={<UserChat />} />
+        <Route path="/userProfileInfo" element={<UserProfileInfo />} />
+        <Route path="/userChatFull" element={<UserChatFull />} />
+        <Route path="/vendorReservations" element={<VendorReservations />} />
+        <Route path="/vendorAvailability" element={<VendorAvailability />} />
+        <Route path="/vendorChat" element={<VendorChat />} />
+        <Route path="/vendorChatFull" element={<VendorChatFull />} />
+        <Route path="/vendorProfileInfo" element={<VendorProfileInfo />} />
+      </Routes>
+    </Router>
     // <Calendar />
 
     // <div>
