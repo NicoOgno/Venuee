@@ -8,6 +8,7 @@
   min-width: 100vh;
   min-height: 100vh;
   background: linear-gradient(360deg, #000000 65%, rgba(0, 0, 0, 0) 150%);
+  padding-top: 3rem;
 }
 
 .loginSubContainer {
@@ -95,6 +96,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  padding-left: 2rem;
 }
 
 .userSpan {
