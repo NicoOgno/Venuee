@@ -106,7 +106,13 @@ function UserSearch() {
               </button>
             </form>
           </div>
-          <h1 className={styles.emptySearchText}>NO ITEMS YET</h1>
+          <div className={styles.noResultsContainer}>
+            <h3 className={styles.emptySearchText}>NO RESULTS</h3>
+            <p className={styles.emptySearchText}>
+              TRY ADJUSTING YOUR SEARCH BY CHANGING YOUR ZIP CODE, DATE, AND
+              ADDING A TYPE
+            </p>
+          </div>
         </div>
       </div>
     </div>
