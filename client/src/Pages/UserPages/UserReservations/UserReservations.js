@@ -33,15 +33,17 @@ function UserReservations() {
   return (
     <div className={styles.backgroundImg}>
       <div className={styles.userReservationContainer}>
-        <UserSideBar user={user} />
+        <UserSideBar user={user} className={styles.userSideBar} />
         <div className={styles.rightSideContainer}>
           {userReservations.map((item, index) => {
             return (
-              <UserReservationCard
-                vendor={item.vendorInfo}
-                date={item.reserveDate}
-                key={index}
-              />
+              <div className={styles.demoCard}>
+                <UserReservationCard
+                  vendor={item.vendorInfo}
+                  date={item.reserveDate}
+                  key={index}
+                />
+              </div>
             );
           })}
         </div>

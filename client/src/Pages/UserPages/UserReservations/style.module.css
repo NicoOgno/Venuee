@@ -7,20 +7,15 @@
 
 .userReservationContainer {
   display: flex;
+  height: 100%;
 }
 
 .rightSideContainer {
   display: flex;
   flex-direction: column;
-  width: 70vw;
 }
 
 .demoCard {
-  display: inline-grid;
-  grid-row: 3;
-  margin: 10vh;
-  width: 200px;
-  height: 150px;
-  margin-top: 4rem;
-  margin-bottom: 5rem;
+  margin-top: 2rem;
+  margin-left: 5rem;
 }
