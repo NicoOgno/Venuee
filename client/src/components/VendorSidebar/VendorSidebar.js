@@ -9,7 +9,7 @@ function VendorSidebar({ vendor }) {
   return (
     <div className={styles.sidebarContainer}>
       <div className={styles.profileHeader}>
-        <img src={vendor.vendorImg} alt={'NO IMG PROVIDED'} className={styles.profileImg} />
+        <img src={vendor.vendorImg} alt={''} className={styles.profileImg} />
         <div className={styles.profileName}>{vendor.businessName}</div>
       </div>
       <div>

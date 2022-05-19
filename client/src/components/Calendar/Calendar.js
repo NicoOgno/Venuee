@@ -1,15 +1,17 @@
-import { useState } from "react";
-import Calendar from "react-calendar";
-import "./style.css";
-import "react-calendar/dist/Calendar.css";
+import React, { useState } from 'react';
+import Calendar from 'react-calendar';
+import './style.css';
+import styles from './styles.module.css';
 
 function App() {
   const [date, setDate] = useState(new Date());
 
   return (
-    <div className="app">
-      <div className="calendar-container">
-        <Calendar onChange={setDate} value={date} />
+    <div className={styles.calendarContainer}>
+      <Calendar onChange={setDate} value={date} />
+      <h1 className={styles.dateText}>SELECT THE DATE YOUR VENUE IS UNAVAILABLE</h1>
+      <div>
+        <button className={styles.dateButton}>SET DATE</button>
       </div>
     </div>
   );

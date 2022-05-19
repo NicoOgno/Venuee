@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import apiVendorServices from '../../../ApiServices/apiVendorServices';
 import VendorSidebar from '../../../components/VendorSidebar/VendorSidebar';
 import styles from './style.module.css';
+import Calendar from '../../../components/Calendar/Calendar';
 
 function VendorAvailability() {
   let navigate = useNavigate();
@@ -23,7 +24,9 @@ function VendorAvailability() {
       <div className={styles.vendorAvailabilityContainer}>
         <VendorSidebar vendor={vendor} />
         <div className={styles.rightSideContainer}>
-          <div className={styles.demoCalendar}>calendar</div>
+          <div className={styles.calendarContainer}>
+            <Calendar />
+          </div>
         </div>
       </div>
     </div>

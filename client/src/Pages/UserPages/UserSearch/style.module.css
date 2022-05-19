@@ -12,18 +12,36 @@
 
 .userSearchContainer {
   display: flex;
+  font-family: bentonSansReg;
 }
 
 .rightSideContainer {
   display: flex;
   flex-direction: column;
-  width: 70vw;
+  flex: 1;
 }
 
 .searchBarContainer {
+  flex: 1;
+  max-height: 10%;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.formHolder {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-evenly;
+  min-height: 100%;
+}
+
+.zipCode {
+  width: 10%;
   height: 50px;
+<<<<<<< HEAD
   width: 70vw;
   margin-left: 6vw;
   padding-left: 50px;
@@ -35,30 +53,50 @@
   border-style: solid;
   width: 10vw;
   text-align: center;
+=======
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  background: #404040;
+>>>>>>> d05b4b9699c0bd8567362daa8d28415002cd1ced
   color: white;
 }
 
-.type {
-  margin: 10px;
-  border-style: solid;
-  width: 10vw;
-  text-align: center;
+.zipCode::placeholder {
   color: white;
 }
 
-.date {
-  margin: 10px;
-  border-style: solid;
-  width: 10vw;
-  text-align: center;
+.typeSelector {
+  width: 20%;
+  height: 50px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  background: #404040;
+  color: white;
+}
+
+.dateSelect {
+  width: 15%;
+  height: 50px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  background: #404040;
   color: white;
 }
 
 .groupSize {
-  margin: 10px;
-  border-style: solid;
-  width: 10vw;
-  text-align: center;
+  width: 15%;
+  height: 50px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  background: #404040;
+  color: white;
+}
+
+.groupSize::placeholder {
   color: white;
 }
 
@@ -66,16 +104,33 @@
   background: linear-gradient(180deg, #78b242 0%, #458740 100%);
   color: white;
   text-transform: uppercase;
-  font-family: bentonSansReg;
+
   border-radius: 10px;
-  min-width: 20%;
   letter-spacing: 1px;
+  width: 8%;
+  height: 50px;
 }
 
 .emptySearchText {
+  color: white;
+  text-transform: uppercase;
+  margin-top: 35px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.noResultsContainer {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
   justify-content: center;
   align-items: center;
-  color: white;
-  margin-top: 20vh;
-  margin-left: 30vw;
+}
+
+.yesResultsContainer {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  margin-top: 75px;
 }
