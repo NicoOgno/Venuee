@@ -36,4 +36,11 @@ apiVendorServices.getVendorReservations = async (token) => {
   }
 };
 
+apiVendorServices.getVendorByName = (name) => {
+  return fetch(`${baseURL}/vendor/${name}`)
+    .then((res) => res.json())
+    .then((data) => data)
+    .catch((e) => e);
+};
+
 export default apiVendorServices;
