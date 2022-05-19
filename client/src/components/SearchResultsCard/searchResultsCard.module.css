@@ -1,5 +1,4 @@
 .cardContainer {
-  background: wheat;
   font-family: bentonSansReg;
   display: flex;
   flex-direction: column;
@@ -8,6 +7,11 @@
 .cardImg {
   height: 400px;
   width: 600px;
+  border-radius: 30px;
+}
+
+.bottomContainer {
+  display: flex;
 }
 
 .infoContainer {
@@ -31,4 +35,17 @@
   font-size: 14px;
   color: white;
   letter-spacing: 0.55em;
+}
+
+.reserveButton {
+  height: 35px;
+  width: 55px;
+  background: #404040;
+  border: white solid 2px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.reserveButton:hover {
+  cursor: pointer;
 }
