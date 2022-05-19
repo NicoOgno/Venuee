@@ -58,7 +58,7 @@ exports.getUserReservations = async (req, res) => {
         include: {
           model: Vendor,
           as: 'vendorInfo',
-          attributes: ['businessName', 'streetAddress', 'vendorImg'],
+          attributes: ['businessName', 'streetAddress', 'vendorImg', 'type'],
         },
       },
     });
@@ -106,7 +106,7 @@ exports.getReservationById = async (req, res) => {
 exports.deleteReservationById = async (req, res) => {
   try {
     const id = req.params.id;
-    await Reservation.destroy({where: {id}});
+    await Reservation.destroy({ where: { id } });
     return res.status(200).json('reservation successfully deleted');
   } catch (error) {
     return res.status(500).json('server error');

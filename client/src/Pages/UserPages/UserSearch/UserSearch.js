@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import UserSideBar from "../../../components/UserSideBar/UserSideBar";
-import styles from "./style.module.css";
-import { useNavigate } from "react-router-dom";
-import apiUserServices from "../../../ApiServices/apiUserServices";
+import React, { useEffect, useState } from 'react';
+import UserSideBar from '../../../components/UserSideBar/UserSideBar';
+import styles from './style.module.css';
+import { useNavigate } from 'react-router-dom';
+import apiUserServices from '../../../ApiServices/apiUserServices';
 
 const initialFormState = {
-  dateRequested: "",
-  zipcodeRequested: "",
-  typeRequested: "",
-  groupSize: "",
+  dateRequested: '',
+  zipcodeRequested: '',
+  typeRequested: '',
+  groupSize: '',
 };
 
 function UserSearch() {
@@ -20,7 +20,9 @@ function UserSearch() {
 
   const [formState, setFormState] = useState(initialFormState);
 
-  const token = localStorage.getItem("accessToken");
+  const [matchedResults, setMatchedResults] = useState([]);
+
+  const token = localStorage.getItem('accessToken');
 
   const getUserReservations = async () => {
     let res = await apiUserServices.getUserReservations(token);
@@ -46,7 +48,14 @@ function UserSearch() {
     }));
   };
 
-  console.log(formState);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { dateRequested, zipcodeRequested, typeRequested, groupSize } = formState;
+    const searchParams = { dateRequested, zipcodeRequested, typeRequested, groupSize };
+    const result = await apiUserServices.getAvailableVendors(searchParams);
+    setMatchedResults(result);
+  };
+
   return (
     <div className={styles.backgroundImg}>
       <div className={styles.userSearchContainer}>
@@ -101,7 +110,7 @@ function UserSearch() {
                 onChange={handleOnChange}
                 className={styles.groupSize}
               ></input>
-              <button type="button" className={styles.searchButton}>
+              <button type="button" className={styles.searchButton} onClick={handleSubmit}>
                 SEARCH
               </button>
             </form>
