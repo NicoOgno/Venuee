@@ -1,0 +1,34 @@
+.cardContainer {
+  background: wheat;
+  font-family: bentonSansReg;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardImg {
+  height: 400px;
+  width: 600px;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  text-transform: uppercase;
+  margin-left: 2px;
+}
+
+.venueName {
+  font-weight: 700;
+  font-size: 14px;
+  color: white;
+  letter-spacing: 0.55em;
+}
+
+.venueType {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  color: white;
+  letter-spacing: 0.55em;
+}
