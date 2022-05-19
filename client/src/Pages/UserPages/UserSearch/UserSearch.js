@@ -3,13 +3,22 @@ import UserSideBar from "../../../components/UserSideBar/UserSideBar";
 import styles from "./style.module.css";
 import { useNavigate } from "react-router-dom";
 import apiUserServices from "../../../ApiServices/apiUserServices";
-import VenueSearchBar from "../../../components/VenueSearchBar/VenueSearchBar";
+
+const initialFormState = {
+  dateRequested: "",
+  zipcodeRequested: "",
+  typeRequested: "",
+  groupSize: "",
+};
 
 function UserSearch() {
   let navigate = useNavigate();
 
   const [userReservations, setUserReservations] = useState([]);
+
   const [user, setUser] = useState({});
+
+  const [formState, setFormState] = useState(initialFormState);
 
   const token = localStorage.getItem("accessToken");
 
@@ -27,7 +36,17 @@ function UserSearch() {
     getUserReservations();
     getUser();
   }, []);
-  console.log(userReservations);
+  // console.log(userReservations);
+
+  const handleOnChange = (e) => {
+    const { name, value } = e.target;
+    setFormState((prevFormState) => ({
+      ...prevFormState,
+      [name]: value,
+    }));
+  };
+
+  console.log(formState);
   return (
     <div className={styles.backgroundImg}>
       <div className={styles.userSearchContainer}>
@@ -47,11 +66,45 @@ function UserSearch() {
             >
               Update
             </button> */}
-            <VenueSearchBar
-              onClick={() => {
-                navigate("/searchResults");
-              }}
-            />
+            <form className={styles.formHolder}>
+              <input
+                placeholder="*ZIP CODE"
+                name="zipcodeRequested"
+                value={formState.zipcodeRequested}
+                onChange={handleOnChange}
+                className={styles.zipCode}
+              />
+              <select
+                id="type"
+                name="typeRequested"
+                value={formState.typeRequested}
+                onChange={handleOnChange}
+                className={styles.typeSelector}
+              >
+                <option defaultValue="">TYPE</option>
+                <option value="bar">BAR</option>
+                <option value="restaurant">RESTAURANTE</option>
+                <option value="lounge">LOUNGE</option>
+                <option value="banquetHall">BANQUET HALL</option>
+              </select>
+              <input
+                type="date"
+                name="dateRequested"
+                value={formState.dateRequested}
+                onChange={handleOnChange}
+                className={styles.dateSelect}
+              />
+              <input
+                placeholder="GROUP SIZE"
+                name="groupSize"
+                value={formState.groupSize}
+                onChange={handleOnChange}
+                className={styles.groupSize}
+              ></input>
+              <button type="button" className={styles.searchButton}>
+                SEARCH
+              </button>
+            </form>
           </div>
           <h1 className={styles.emptySearchText}>NO ITEMS YET</h1>
         </div>
