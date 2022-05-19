@@ -11,14 +11,14 @@
 
 .rightSideContainer {
   display: flex;
+  justify-content: center;
   width: 70vw;
 }
 
-.demoCalendar {
+.calendarContainer {
   display: flex;
-
-  background-color: brown;
-  margin: 10vh;
-  width: 900px;
-  height: 800px;
+  height: 46vh;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15vh;
 }
