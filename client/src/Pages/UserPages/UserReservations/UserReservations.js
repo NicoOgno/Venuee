@@ -8,33 +8,38 @@ import UserReservationCard from '../../../components/UserReservationCard/UserRes
 function UserReservations() {
   let navigate = useNavigate();
 
+  const [user, setUser] = useState({});
+  const [userReservations, setUserReservations] = useState([]);
+
   const token = localStorage.getItem('accessToken');
 
+  const getUserReservations = async () => {
+    let res = await apiUserServices.getUserReservations(token);
+    setUserReservations(res);
+  };
+
+  const getUser = async () => {
+    let res = await apiUserServices.getUserProfileInfo(token);
+    setUser(res);
+  };
+
   useEffect(() => {
-    const getUser = async () => {
-      let res = await apiUserServices.getUserProfileInfo(token);
-      setUser(res);
-    };
     getUser();
+    getUserReservations();
   }, []);
 
-  const [user, setUser] = useState({});
-  console.log('this is state', user);
+  console.log(userReservations);
 
   return (
     <div className={styles.backgroundImg}>
       <div className={styles.userReservationContainer}>
         <UserSideBar user={user} />
         <div className={styles.rightSideContainer}>
-          <div className={styles.demoCard}>
-            <UserReservationCard />
-          </div>
-          <div className={styles.demoCard}>
-            <UserReservationCard />
-          </div>
-          <div className={styles.demoCard}>
-            <UserReservationCard />
-          </div>
+          {userReservations.map((item, index) => {
+            return (
+              <UserReservationCard vendor={item.vendorInfo} date={item.reserveDate} key={index} />
+            );
+          })}
         </div>
       </div>
     </div>

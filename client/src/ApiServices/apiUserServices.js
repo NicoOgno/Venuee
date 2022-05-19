@@ -53,4 +53,18 @@ apiUserServices.getUserReservations = async (token) => {
     return err;
   }
 };
+
+apiUserServices.getAvailableVendors = async (form) => {
+  try {
+    const res = await fetch(`${baseURL}/vendor/availability`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form),
+    });
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    return err;
+  }
+};
 export default apiUserServices;
