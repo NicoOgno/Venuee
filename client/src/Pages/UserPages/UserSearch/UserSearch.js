@@ -113,6 +113,7 @@ function UserSearch() {
                       date={formState.dateRequested}
                       partySize={formState.groupSize}
                       info={item}
+                      token={token}
                       key={index}
                     />
                   );

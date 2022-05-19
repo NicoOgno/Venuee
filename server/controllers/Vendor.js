@@ -138,8 +138,8 @@ exports.getAvailableVendors = async (req, res) => {
 exports.getVendorByName = async (req, res) => {
   try {
     const { businessName } = req.body;
-    const vendor = await Vendor.findAll({ where: { businessName } });
-    return res.status(200).send(vendor);
+    const vendor = await Vendor.findOne({ where: { businessName } });
+    return res.status(200).json(vendor.id);
   } catch (error) {
     return res.status(500).send({ res: 'Internal server error', error: true });
   }
