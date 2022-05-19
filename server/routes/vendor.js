@@ -12,6 +12,9 @@ vendorRouter.post('/login', vendor.vendorLogin);
 // GET VENDOR
 vendorRouter.get('/find', vendorMiddleware, vendor.getVendorProfile);
 
+//GET VENDOR BY NAME
+vendorRouter.get('/:buisnessName', vendor.getVendorByName);
+
 // GET AVAILABLE VENDORS
 vendorRouter.post('/availability', vendor.getAvailableVendors);
 

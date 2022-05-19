@@ -108,7 +108,14 @@ function UserSearch() {
             {matchedResults.length > 0 ? (
               <div className={styles.yesResultsContainer}>
                 {matchedResults.map((item, index) => {
-                  return <SearchResultsCard info={item} key={index} />;
+                  return (
+                    <SearchResultsCard
+                      date={formState.dateRequested}
+                      partySize={formState.groupSize}
+                      info={item}
+                      key={index}
+                    />
+                  );
                 })}
               </div>
             ) : (
