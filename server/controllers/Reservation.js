@@ -99,7 +99,6 @@ exports.getVendorReservations = async (req, res) => {
 exports.getReservationById = async (req, res) => {
   const id = req.params.id;
   const reservation = await Reservation.findByPk(id);
-  console.log({ reservation, id });
   return res.status(200).json({ reservation });
 };
 

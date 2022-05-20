@@ -18,16 +18,7 @@ vendorRouter.post('/name', vendor.getVendorByName);
 // GET AVAILABLE VENDORS
 vendorRouter.post('/availability', vendor.getAvailableVendors);
 
-// <<<DUPLICATE>>> GET A VENDOR'S RESERVATIONS
-//vendorRouter.get("/reservation", vendor.getVendorReservations);
-
 // GET ALL VENDORS
 vendorRouter.get('/allVendors', vendor.getAllVendors);
-
-// VENDOR LOGOUT
-// vendorRouter.post('/logout', vendorMiddleware, vendor.vendorLogout);
-
-// DELETE VENDOR PROFILE
-// vendorRouter.delete()
 
 exports.vendorRouter = vendorRouter;

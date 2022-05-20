@@ -4,8 +4,6 @@ import UserSideBar from '../../../components/UserSideBar/UserSideBar';
 import apiUserServices from '../../../ApiServices/apiUserServices';
 import UserSettings from '../../../components/UserSettings/UserSettings';
 
-// import styles from "./styles.module.css";
-
 function UserProfileInfo() {
   let navigate = useNavigate();
 
@@ -20,7 +18,6 @@ function UserProfileInfo() {
   }, []);
 
   const [user, setUser] = useState({});
-  console.log('this is state', user);
 
   return <UserSettings user={user} />;
 }

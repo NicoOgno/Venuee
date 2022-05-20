@@ -3,7 +3,6 @@ const baseURL = process.env.REACT_APP_SERVER_PORT;
 const apiUserServices = {};
 
 apiUserServices.userLogin = (user) => {
-  console.log(baseURL);
   return fetch(`${baseURL}/user/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
