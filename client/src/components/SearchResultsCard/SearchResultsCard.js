@@ -13,7 +13,6 @@ export default function SearchResultsCard({ info, partySize, date, token }) {
   const createRes = async () => {
     const vendorId = await apiVendorServices.getVendorByName(businessName);
     const newRes = await apiReservationServices.createRes(token, { ...data, vendorId });
-    console.log('res created', newRes);
     navigate('/userReservations');
   };
 

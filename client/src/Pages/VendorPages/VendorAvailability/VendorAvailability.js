@@ -18,7 +18,6 @@ function VendorAvailability() {
   }, []);
 
   const [vendor, setVendor] = useState({});
-  console.log(vendor);
   return (
     <div className={styles.backgroundImg}>
       <div className={styles.vendorAvailabilityContainer}>

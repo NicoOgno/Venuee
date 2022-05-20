@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
-import Toggle from "../Toggle/Toggle";
-import styles from "./vendorRegisterPage.module.css";
-import jetsons from "../../assets/images/jetsons.png";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import Toggle from '../Toggle/Toggle';
+import styles from './vendorRegisterPage.module.css';
+import jetsons from '../../assets/images/jetsons.png';
+import { useNavigate } from 'react-router-dom';
 
 const initialFormState = {
-  businessName: "",
-  email: "",
-  password: "",
-  streetAddress: "",
-  city: "",
-  state: "",
-  zipCode: "",
-  maxCapacity: "",
-  vendorImg: "",
+  businessName: '',
+  email: '',
+  password: '',
+  streetAddress: '',
+  city: '',
+  state: '',
+  zipCode: '',
+  maxCapacity: '',
+  vendorImg: '',
 };
 
 export default function VendorRegisterPage(props) {
@@ -30,18 +30,16 @@ export default function VendorRegisterPage(props) {
     }));
   };
 
-  console.log(formState);
-
   useEffect(() => {
     setIsUser(false);
   }, []);
 
-  const handleRegister = () => navigate("/");
+  const handleRegister = () => navigate('/');
 
   //UPLOADING IMAGES
   const handleToggle = () => {
     setIsUser(!isUser);
-    navigate("/userRegister");
+    navigate('/userRegister');
   };
 
   const hiddenFileInput = React.useRef(null);
@@ -154,11 +152,11 @@ export default function VendorRegisterPage(props) {
           register
         </button>
         <a className={styles.loginLink}>
-          already have an account?{" "}
+          already have an account?{' '}
           <span
             className={styles.login}
             onClick={() => {
-              navigate("/");
+              navigate('/');
             }}
           >
             login

@@ -25,7 +25,6 @@ function VendorReservations() {
 
   const [vendor, setVendor] = useState({});
   const [vendorReservations, setVendorReservations] = useState([]);
-  console.log(vendorReservations);
 
   return (
     <div className={styles.backgroundImg}>

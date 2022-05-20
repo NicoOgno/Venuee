@@ -28,8 +28,6 @@ function UserReservations() {
     getUserReservations();
   }, []);
 
-  console.log(userReservations);
-
   return (
     <div className={styles.backgroundImg}>
       <div className={styles.userReservationContainer}>

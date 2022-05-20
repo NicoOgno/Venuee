@@ -31,8 +31,6 @@ export default function UserRegisterPage() {
 
   //TODO ONCE ROUTES OPEN
   const handleRegister = async (e) => {
-    console.log('submitted');
-
     e.preventDefault();
     const { email, company, password, userName } = formState;
     const user = { email, company, password, userName, userImg: logo };
