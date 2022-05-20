@@ -1,0 +1,36 @@
+.venueSearchBarContainer {
+  display: flex;
+  margin-top: 25px;
+  font-family: bentonSansReg;
+  min-width: 85%;
+  max-width: 85%;
+  justify-content: space-between;
+  margin-left: 100px;
+}
+
+.zipCode {
+  width: 15%;
+}
+
+.datePicker {
+  width: 15%;
+}
+
+.typeField {
+  width: 35%;
+}
+
+.venueCapacity {
+  width: 15%;
+}
+
+.updateButton {
+  width: 15%;
+  background: #82c551;
+  border-radius: 15px;
+  color: white;
+}
+
+.updateButton:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,28 @@
+.backgroundImg {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../../../assets/images/background-green-temp.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-color: rgba(0, 0, 0, 0.1); */
+}
+
+.vendorChatContainer {
+  display: flex;
+}
+
+.rightSideContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 70vw;
+}
+
+.demoCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: brown;
+  margin: 3vh;
+  width: 50vw;
+  height: 150px;
+}

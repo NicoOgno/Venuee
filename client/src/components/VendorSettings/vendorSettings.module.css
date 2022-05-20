@@ -1,0 +1,191 @@
+.vendorSettingsPageContainer {
+  background: black;
+  display: flex;
+}
+
+.vendorSettingsContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: bentonSansReg;
+}
+
+.vendorProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100%;
+}
+
+.profileHeader {
+  text-transform: uppercase;
+  color: rgba(112, 112, 112, 1);
+  margin-top: 30px;
+  font-size: 20px;
+  letter-spacing: 10px;
+  font-weight: 400;
+}
+
+.profileImg {
+  margin-top: 15px;
+  height: 185px;
+  width: 185px;
+  border-radius: 50%;
+}
+
+.profileName {
+  color: white;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+.uploadAvatar {
+  color: white;
+  border-radius: 8px;
+  height: 40px;
+  width: 350px;
+  text-transform: uppercase;
+  margin-top: 25px;
+  background: rgba(89, 89, 89, 1);
+}
+
+.infoHeaderContainer {
+  min-width: 75%;
+  max-width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  border-bottom: 2px solid white;
+}
+
+.basicInfoHeader {
+  text-transform: uppercase;
+  color: rgba(112, 112, 112, 1);
+  /* padding-right: 475px; */
+  margin-right: auto;
+  margin-left: 0px;
+}
+
+.cancelButton {
+  text-transform: uppercase;
+  color: white;
+  background: #c4c4c4;
+  box-shadow: inset 0px 0px 5px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  height: 35px;
+  width: 90px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.updateButton {
+  text-transform: uppercase;
+  color: white;
+  background: #82c551;
+  box-shadow: inset 0px 0px 5px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  height: 35px;
+  width: 90px;
+  margin-bottom: 10px;
+}
+
+.formInputsContainer {
+  min-width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-width: 75%;
+  max-width: 75%;
+}
+
+.groupMultipleInputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputGroup {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+.inputGroupAlone {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.inputGroupCity {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.inputGroupState {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+}
+
+.inputGroupZip {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.inputGroupCapacity {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.inputGroupPics {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin-top: 15px;
+}
+
+.inputLabel {
+  text-transform: capitalize;
+  color: rgba(112, 112, 112, 1);
+  letter-spacing: 3px;
+  margin-bottom: 3px;
+}
+
+.inputField {
+  background: #c4c4c4;
+  box-shadow: inset 0px 0px 4px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  height: 45px;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.inputField::placeholder {
+  text-transform: uppercase;
+}
+
+.uploadPicsButton {
+  background: #c4c4c4;
+  box-shadow: inset 0px 0px 4px 3px rgba(0, 0, 0, 0.25);
+  color: white;
+  font-family: bentonSansReg;
+  height: 45px;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-top: 34px;
+  min-width: 10%;
+  max-width: 10%;
+}

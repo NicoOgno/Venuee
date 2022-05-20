@@ -1,0 +1,24 @@
+.backgroundImg {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../../../assets/images/background-green-temp.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.vendorAvailabilityContainer {
+  display: flex;
+}
+
+.rightSideContainer {
+  display: flex;
+  justify-content: center;
+  width: 70vw;
+}
+
+.calendarContainer {
+  display: flex;
+  height: 46vh;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15vh;
+}

@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "bentonSansReg";
+  src: url("../../assets/fonts/bentonsansregular/BentonSansRegular.otf");
+}
+
+.loginContainer {
+  background: black;
+  min-width: 100vh;
+  min-height: 100vh;
+  background: linear-gradient(360deg, #000000 65%, rgba(0, 0, 0, 0) 150%);
+  padding-top: 3rem;
+}
+
+.loginSubContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backgroundImg {
+  background-image: url("../../assets/images/background.jpg");
+}
+
+.logoImg {
+  max-width: 250px;
+  max-height: 250px;
+  margin-top: 15px;
+}
+
+.appName {
+  margin-top: 35px;
+  color: white;
+  text-transform: uppercase;
+  font-family: bentonSansReg;
+  letter-spacing: 27px;
+  margin-right: -27px;
+  font-size: 96px;
+  font-weight: 400;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 35px;
+  min-width: 450px;
+  max-width: 450px;
+}
+
+.loginInputField {
+  background: rgba(43, 43, 43, 1);
+  color: white;
+  min-width: 100%;
+  min-height: 40px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding-left: 25px;
+  box-shadow: 12px 26px 50px 0px rgba(90, 108, 234, 0.07);
+  font-family: bentonSansReg;
+  letter-spacing: 2.5px;
+}
+
+.loginButton {
+  background: linear-gradient(180deg, #78b242 0%, #458740 100%);
+  color: white;
+  text-transform: uppercase;
+  font-family: bentonSansReg;
+  border-radius: 10px;
+  min-width: 20%;
+  min-height: 30px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-top: 25px;
+}
+
+.signupLink {
+  color: white;
+  font-family: bentonSansReg;
+  text-transform: uppercase;
+  font-size: 15px;
+  margin-top: 25px;
+}
+
+.signForFree {
+  cursor: pointer;
+  background: linear-gradient(98.81deg, #9bb899 -0.82%, #77b573 101.53%);
+  background-clip: text;
+  color: transparent;
+  background-clip: text;
+}
+
+.toggleContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-left: 2rem;
+}
+
+.userSpan {
+  color: white;
+  text-transform: uppercase;
+  margin-right: 15px;
+  font-family: bentonSansReg;
+}
+
+.vendorSpan {
+  color: white;
+  text-transform: uppercase;
+  margin-left: 15px;
+  font-family: bentonSansReg;
+}

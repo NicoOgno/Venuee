@@ -1,0 +1,125 @@
+@font-face {
+  font-family: "bentonSansReg";
+  src: url("../../../assets/fonts/bentonsansregular/BentonSansRegular.otf");
+}
+
+.backgroundImg {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../../../assets/images/background-green-temp.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.userSearchContainer {
+  display: flex;
+  font-family: bentonSansReg;
+}
+
+.rightSideContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.searchBarContainer {
+  flex: 1;
+  max-height: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.formHolder {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 100%;
+}
+
+.zipCode {
+  width: 15%;
+  height: 50px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  background: #404040;
+  color: white;
+}
+
+.zipCode::placeholder {
+  color: white;
+}
+
+.typeSelector {
+  width: 20%;
+  height: 50px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  background: #404040;
+  color: white;
+}
+
+.dateSelect {
+  width: 15%;
+  height: 50px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  background: #404040;
+  color: white;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.groupSize {
+  width: 15%;
+  height: 50px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  background: #404040;
+  color: white;
+}
+
+.groupSize::placeholder {
+  color: white;
+}
+
+.searchButton {
+  background: linear-gradient(180deg, #78b242 0%, #458740 100%);
+  color: white;
+  text-transform: uppercase;
+
+  border-radius: 10px;
+  letter-spacing: 1px;
+  width: 8%;
+  height: 50px;
+}
+
+.emptySearchText {
+  color: white;
+  text-transform: uppercase;
+  margin-top: 35px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.noResultsContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.yesResultsContainer {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  margin-top: 75px;
+}

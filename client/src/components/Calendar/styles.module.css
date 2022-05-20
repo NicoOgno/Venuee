@@ -1,0 +1,21 @@
+.dateText {
+  margin-left: 17vw;
+  margin-top: -100px;
+  font-size: medium;
+  font-family: bentonSansReg;
+  color: white;
+}
+
+.dateButton {
+  margin-left: 30vw;
+  background: linear-gradient(180deg, #78b242 0%, #458740 100%);
+  color: white;
+  text-transform: uppercase;
+  font-family: bentonSansReg;
+  border-radius: 10px;
+  min-width: 20%;
+  min-height: 30px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-top: 25px;
+}

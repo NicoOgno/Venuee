@@ -1,0 +1,47 @@
+.chatCardContainer {
+  display: flex;
+  font-family: bentonSansReg;
+  margin-left: 75px;
+  align-items: center;
+  border-top: 1px solid #ffffff;
+  min-width: 75%;
+  margin-top: 25px;
+}
+
+.chatCardContainer:hover {
+  cursor: pointer;
+}
+
+.msgImg {
+  height: 75px;
+  width: 75px;
+  border-radius: 50px;
+  margin-top: 10px;
+}
+
+.chatInfoContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+}
+
+.messagePartnerName {
+  margin-top: 20px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.messageContent {
+  margin-top: 5px;
+  color: rgb(159, 157, 157);
+  text-transform: uppercase;
+}
+
+.msgTime {
+  color: rgb(159, 157, 157);
+  align-self: flex-start;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: 5px;
+  text-transform: uppercase;
+}

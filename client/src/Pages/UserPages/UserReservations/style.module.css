@@ -1,0 +1,21 @@
+.backgroundImg {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../../../assets/images/background-green-temp.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.userReservationContainer {
+  display: flex;
+  height: 100%;
+}
+
+.rightSideContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.demoCard {
+  margin-top: 2rem;
+  margin-left: 5rem;
+}
