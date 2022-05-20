@@ -22,9 +22,7 @@ export default function UserSettings({ user }) {
     }));
   };
 
-  const updateUser = () => {
-    console.log(formState);
-  };
+  const updateUser = () => {};
 
   return (
     <div className={styles.vendorSettingsPageContainer}>

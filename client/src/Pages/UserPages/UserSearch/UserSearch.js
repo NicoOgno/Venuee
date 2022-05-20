@@ -22,7 +22,6 @@ function UserSearch() {
   const [formState, setFormState] = useState(initialFormState);
 
   const [matchedResults, setMatchedResults] = useState([]);
-  console.log(matchedResults);
 
   const token = localStorage.getItem('accessToken');
 
@@ -40,7 +39,6 @@ function UserSearch() {
     getUserReservations();
     getUser();
   }, []);
-  // console.log(userReservations);
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;

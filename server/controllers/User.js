@@ -37,7 +37,6 @@ exports.registerUser = async (req, res) => {
     );
     return res.status(201).send({ accessToken, success: true });
   } catch (error) {
-    console.log('ERROR', error);
     return res.status(400).send({ error, message: 'Could not create user' });
   }
 };
@@ -84,7 +83,6 @@ exports.getUserProfile = async (req, res) => {
 exports.getAllUsers = async (req, res) => {
   try {
     const users = await User.findAll();
-    //console.log('USERS', users);
     return res.status(200).json(users);
   } catch (error) {
     return res.status(500).send({ res: 'Internal server error', error: true });

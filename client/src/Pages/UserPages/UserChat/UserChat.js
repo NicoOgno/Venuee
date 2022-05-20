@@ -19,7 +19,6 @@ function UserChat() {
   }, []);
 
   const [user, setUser] = useState({});
-  console.log('this is state', user);
 
   return <ChatCardHomeUser user={user} />;
 }

@@ -26,9 +26,7 @@ export default function VendorSettings({ vendor }) {
     }));
   };
 
-  const updateVendor = () => {
-    console.log(formState);
-  };
+  const updateVendor = () => {};
 
   return (
     <div className={styles.vendorSettingsPageContainer}>

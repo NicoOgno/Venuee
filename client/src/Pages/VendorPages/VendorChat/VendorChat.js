@@ -18,7 +18,6 @@ function VendorChat() {
   }, []);
 
   const [vendor, setVendor] = useState({});
-  console.log(vendor);
   return <ChatCardHome vendor={vendor} />;
 }
 
