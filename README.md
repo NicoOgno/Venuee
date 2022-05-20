@@ -43,4 +43,4 @@ A web application that helps users easily find and book local event spaces based
 - And use the command 'npm start' in the client folder to open the page in the browser
 
 ### Credit
-Venuee was build by Ammar Khomusi, Nicolás Ogno Aguad, Tyler Wells, Mike Kaib, and Ash Mudra
+Venuee was built by Ammar Khomusi, Nicolás Ogno Aguad, Tyler Wells, Mike Kaib, and Ash Mudra
