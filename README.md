@@ -27,15 +27,19 @@ A web application that helps users easily find and book local event spaces based
 | [Delete Reservation](#deleteReservationById)         | DELETE  | /reservation/delete/:id            |     200 |
 
 ![register](readmeImgs/register.png)
+  
+### Used Tech Stack
+  
+##Frontend
+- React Framework
+- CSS for styling
 
-### Tech Stack
-- Node.js for the runtime
-- React as the frontend interface
-- Express for the server
+##Backend
+- Node.js with Express.js for the Server
 - JWT for authentication
-- Sequelize and Postgresql for the sql database
+- Postgresql and Sequelize as the Database
 
-### Directions to Start the Application
+### Getting Started
 - Make sure you have Node.js installed on your local machine
 - 'npm install' dependencies
 - Update the .env files with your information
