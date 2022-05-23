@@ -28,44 +28,41 @@ A web application that helps users easily find and book local event spaces based
 
 ![register](readmeImgs/register.png)
   
-### Used Tech Stack
+## Used Tech Stack
   
-## Frontend
+### Frontend
 - React Framework
 - CSS for styling
 
-## Backend
+### Backend
 - Node.js with Express.js for the Server
 - JWT for authentication
 - Postgresql and Sequelize as the Database
 
-### Getting Started
+## Getting Started
 
-## Frontend
-- To start up the frontend, change directory into client folder and run:
+### Frontend
+- Have Node.js installed on your machine
+- Following the example in .env.example, add your credentials to the .env file
+- To start the frontend, change directory into client folder and run:
+```npm install```
+- After dependencies have been installed, start the client:
 ```npm start```
-- Following the example in .env.example, add your credentials to the .env file
-## Backend
-- To start the server, change directory into server folder and run:
+### Backend
+- To start, change directory into server folder
+- Following the example in .env.example, add your credentials to your .env file
+- To start the frontend run:
+```npm install```
+- Run the seed file to populate the database with filler data:
 ```node seed```
-- Then run
+- Start server
 ```nodemon --> starts the node express server```
-- Following the example in .env.example, add your credentials to the .env file
-
-node seed
-index.js change force: from false to true if you want to wipe the data
 ## Database
-- After starting the server, the database should be connected
-- 
+- you can change the sync.force property in the server's index.js:
+When 'false', the 'nodemon' command will add the seed data to data already existing in the database.
+When 'true', the 'nodemon' command will delete everything in the database, and then add the seed data to the empty database.
 
-- Make sure you have Node.js installed on your local machine
-- 'npm install' dependencies
-- Update the .env files with your information
-- Make sure you're connected to postgresql
-  (you can use pgAdmin4 to visualize the data)
-- Run the command 'node seed' in the server to autofill the database with seed data
-- Then use the command 'nodemon' in the server folder to start the server
-- And use the command 'npm start' in the client folder to open the page in the browser
+
 
 ### Credit
 Venuee was built by Ammar Khomusi, Nicolás Ogno Aguad, Tyler Wells, Mike Kaib, and Ash Mudra
