@@ -30,16 +30,34 @@ A web application that helps users easily find and book local event spaces based
   
 ### Used Tech Stack
   
-##Frontend
+## Frontend
 - React Framework
 - CSS for styling
 
-##Backend
+## Backend
 - Node.js with Express.js for the Server
 - JWT for authentication
 - Postgresql and Sequelize as the Database
 
 ### Getting Started
+
+## Frontend
+- To start up the frontend, change directory into client folder and run:
+```npm start```
+- Following the example in .env.example, add your credentials to the .env file
+## Backend
+- To start the server, change directory into server folder and run:
+```node seed```
+- Then run
+```nodemon --> starts the node express server```
+- Following the example in .env.example, add your credentials to the .env file
+
+node seed
+index.js change force: from false to true if you want to wipe the data
+## Database
+- After starting the server, the database should be connected
+- 
+
 - Make sure you have Node.js installed on your local machine
 - 'npm install' dependencies
 - Update the .env files with your information
