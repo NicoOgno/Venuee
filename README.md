@@ -58,16 +58,17 @@ Venuee was created as a response to the need in the market for convenient event 
 - Start server
 ```nodemon --> starts the node express server```
 ### Database
+- We used pgAdmin4 as our orm
+- Add your pgAdmin4 username and password to your .env file
+- The database will automatically be connected when you start the server
 - note - you can change the sync.force property in the server's index.js with these options:
-When 'false', the 'nodemon' command will add the seed data to data already existing in the database.
+When 'false', the 'nodemon' command will add the seed data to any data already existing in the database.
 When 'true', the 'nodemon' command will delete everything in the database, and then add the seed data to the empty database.
-
 
 ### Credit
 Venuee was built by:
-- [Ammar Khomusi]()
-- [Nicolás Ogno Aguad]()
-- [Tyler Wells]()
-- [Mike Kaib]()
+- [Ammar Khomusi](https://github.com/ammarkhomusi)
+- [Nicolás Ogno Aguad](https://github.com/NicoOgno)
+- [Tyler Wells](https://github.com/twellzz)
+- [Mike Kaib](https://github.com/mkcannon)
 - [Ash Mudra](https://github.com/AshMudra)
-This site was built using [GitHub Pages](https://pages.github.com/)
