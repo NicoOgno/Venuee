@@ -2,7 +2,7 @@
 
 A web application that helps users easily find and book local event spaces based on desired date and party size.
 
-![venuee main](/venuee.com/readmeImgs/venuee-main.png);
+![venuee main](/venuee/readmeImgs/venuee-main.png)
 
 ## API Endpoints
 
