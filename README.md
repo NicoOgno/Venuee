@@ -2,7 +2,7 @@
 
 A web application that helps users easily find and book local event spaces based on desired date and party size.
 
-![venuee main](readmeImgs/venuee-main.png)
+![venuee main](readmeImgs/main.png)
 
 ## API Endpoints
 
@@ -26,6 +26,7 @@ A web application that helps users easily find and book local event spaces based
 | [Get A Vendor's Reservatiosn](#getVendorReservations)| GET     | /reservation/vendor                |     200 |
 | [Delete Reservation](#deleteReservationById)         | DELETE  | /reservation/delete/:id            |     200 |
 
+![register](readmeImgs/register.png)
 
 ### Tech Stack
 - Node.js for the runtime
