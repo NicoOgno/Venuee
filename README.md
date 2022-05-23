@@ -1,7 +1,43 @@
 # Venuee
 
-A web application that helps users easily find and book local event spaces based on desired date and party size.
+Venuee was created as a response to the need in the market for convenient event space booking. This new product takes the long process of reaching out to multiple venues separately to find the right date and price, and instead puts all matches from your search in one place. Vendors and users can utilize the in-chat feature, update their profile settings, and easily book a venue with the click of a button.
 
+![venuee main](readmeImgs/main.png)
+## Used Tech Stack
+### Frontend
+- React Framework
+- CSS for styling
+### Backend
+- Node.js with Express.js for the Server
+- JWT for authentication
+- Postgresql and Sequelize as the Database
+
+![register](readmeImgs/register.png)
+## Getting Started
+### Frontend
+- Make sure Node.js is installed on your machine
+- Change directory into client folder
+- Add your credentials to your .env file, following the example in .env.example
+- To install dependencies, run:
+```npm install```
+- After dependencies have been installed, start the client:
+```npm start```
+### Backend
+- Change directory into server folder
+- Following the example in .env.example, add your credentials to your .env file
+- To install the backend dependencies, run:
+```npm install```
+- Run the seed file to populate the database with filler data:
+```node seed```
+- Start the server:
+```nodemon --> starts the node express server```
+### Database
+- We used pgAdmin4 as our orm
+- Add your pgAdmin4 username and password to your backend .env file
+- The database will automatically be connected when you start the server
+- note - you can change the sync.force property in the server's index.js with these options:
+When 'false', the 'nodemon' command will add the seed data to any data already existing in the database.
+When 'true', the 'nodemon' command will delete everything in the database, and then add the seed data to the empty database.
 ## API Endpoints
 
 | API                                                  | Method  | Endpoint                           |  Status |
@@ -21,26 +57,12 @@ A web application that helps users easily find and book local event spaces based
 | [Create User Reservation](#createUserReservation)    | POST    | /reservation/                      |     200 |
 | [Create Vendor Reservation](#createVendorReservation)| POST    | /reservation/unavailable           |     200 |
 | [Get A User's Reservations](#getUserReservations)    | GET     | /reservation/user                  |     200 |
-| [Get A Vendor's Reservatiosn](#getVendorReservations)| GET     | /reservation/vendor                |     200 |
+| [Get A Vendor's Reservations](#getVendorReservations)| GET     | /reservation/vendor                |     200 |
 | [Delete Reservation](#deleteReservationById)         | DELETE  | /reservation/delete/:id            |     200 |
-
-
-### Tech Stack
-- Node.js for the runtime
-- React as the frontend interface
-- Express for the server
-- JWT for authentication
-- Sequelize and Postgresql for the sql database
-
-### Directions to Start the Application
-- Make sure you have Node.js installed on your local machine
-- 'npm install' dependencies
-- Update the .env files with your information
-- Make sure you're connected to postgresql
-  (you can use pgAdmin4 to visualize the data)
-- Run the command 'node seed' in the server to autofill the database with seed data
-- Then use the command 'nodemon' in the server folder to start the server
-- And use the command 'npm start' in the client folder to open the page in the browser
-
 ### Credit
-Venuee was build by Ammar Khomusi, Nicolás Ogno Aguad, Tyler Wells, Mike Kaib, and Ash Mudra
+Venuee was built by:
+- [Ammar Khomusi](https://github.com/ammarkhomusi)
+- [Nicolás Ogno Aguad](https://github.com/NicoOgno)
+- [Tyler Wells](https://github.com/twellzz)
+- [Mike Kaib](https://github.com/mkcannon)
+- [Ash Mudra](https://github.com/AshMudra)
