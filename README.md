@@ -15,24 +15,25 @@ Venuee was created as a response to the need in the market for convenient event 
 ![register](readmeImgs/register.png)
 ## Getting Started
 ### Frontend
-- Have Node.js installed on your machine
-- Following the example in .env.example, add your credentials to your .env file
-- To start the frontend, change directory into client folder and run:
+- Make sure Node.js is installed on your machine
+- Change directory into client folder
+- Add your credentials to your .env file, following the example in .env.example
+- To install dependencies, run:
 ```npm install```
 - After dependencies have been installed, start the client:
 ```npm start```
 ### Backend
-- To start, change directory into server folder
+- Change directory into server folder
 - Following the example in .env.example, add your credentials to your .env file
-- To start the backend, run:
+- To install the backend dependencies, run:
 ```npm install```
 - Run the seed file to populate the database with filler data:
 ```node seed```
-- Start server
+- Start the server:
 ```nodemon --> starts the node express server```
 ### Database
 - We used pgAdmin4 as our orm
-- Add your pgAdmin4 username and password to your .env file
+- Add your pgAdmin4 username and password to your backend .env file
 - The database will automatically be connected when you start the server
 - note - you can change the sync.force property in the server's index.js with these options:
 When 'false', the 'nodemon' command will add the seed data to any data already existing in the database.
